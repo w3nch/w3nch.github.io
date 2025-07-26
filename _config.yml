@@ -16,7 +16,7 @@ timezone:
 
 title: Wr3nch # the main title
 
-tagline: Because good notes are harder to exfiltrate than flags — and twice as useful when the real work begins. # it will display as the subtitle
+tagline: Good notes are harder to get than flags — and twice as useful when the work begins. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A fast, SEO-optimized, mobile-friendly Jekyll theme built for technical blogs, cybersecurity writeups, developer documentation, and personal knowledge sharing. Clean design, powerful features, and excellent readability out of the box.
@@ -99,7 +99,7 @@ cdn:
 
 # the avatar on sidebar, support local or CORS resources
 avatar:
-https://i.pinimg.com/564x/57/2c/2c/572c2cc31c762ec929ec2af3d355038b.jpg
+
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
