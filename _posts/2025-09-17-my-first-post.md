@@ -4,7 +4,7 @@ date: 2025-09-17 14:00:00 +0800
 categories: [windows, processes, security]
 tags: [windows, system, kernel, security, baselining]
 excerpt: "Learn about essential Windows processes, normal vs abnormal behavior, and how they can be used for baselining and monitoring."
-author: Abdullah Baghuth
+author: Wrench L
 image: /images/blog_images/win_proc.png    # optional featured image
 ---
 

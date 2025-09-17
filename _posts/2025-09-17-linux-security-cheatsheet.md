@@ -4,7 +4,7 @@ date: 2025-09-17 16:00:00 +0800
 categories: [linux, security, cheatsheet]
 tags: [linux, sysadmin, hardening, firewall, monitoring]
 excerpt: "A concise Linux security cheat sheet covering user management, SSH, firewall, updates, and monitoring."
-author: wrench
+author: Wrench L
 image: /images/blog_images/linux-penguins.png
 ---
 

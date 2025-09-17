@@ -4,7 +4,7 @@ date: 2025-09-17 15:00:00 +0800
 categories: [docker, containers, devops, security]
 tags: [docker, containers, virtualization, monitoring, baselining, exploits]
 excerpt: "Learn Docker from fundamentals to advanced security: architecture, commands, vulnerabilities, exploits, and baselining."
-author: wrench
+author: Wrench L
 image: images/blog_images/docker_container.jpg
 ---
 
