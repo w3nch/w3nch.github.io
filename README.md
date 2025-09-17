@@ -1,10 +1,10 @@
-# 🚀 W3nch GitHub Site
+# W3nch GitHub Site
 
 Welcome to my personal GitHub site! Here you'll find a mix of **tech projects, blogs, and tutorials** that I work on. This site is a showcase of my journey in **cybersecurity, programming, and system research**.
 
 ---
 
-## 🔹 What You'll Find Here
+## What You'll Find Here
 
 - **Cybersecurity Projects:** Capture The Flag (CTF) challenges, exploit research, and security tools.  
 - **Blogs & Tutorials:** Technical write-ups on topics like Linux, Windows internals, Docker, and more.  
@@ -23,13 +23,13 @@ Welcome to my personal GitHub site! Here you'll find a mix of **tech projects, b
 
 ---
 
-## 📌 About Me
+## About Me
 
 Hi! I'm **wrench**, a cybersecurity enthusiast passionate about hacking, networks and system security. I build, learn, and share knowledge through this site.
 
 ---
 
-## 📬 Contact
+## Contact
 
 - Proton Mail: **wrench999@proton.me**
 - Twitter: [@w3nch](https://x.com/wr4nch)   
