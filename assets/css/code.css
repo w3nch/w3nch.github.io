@@ -1,0 +1,59 @@
+/* Inline code */
+code {
+  background: rgba(127,127,127,0.15);
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Code blocks */
+pre {
+  background: #0b0e14;
+  color: #c0caf5;
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Light mode override */
+html[data-theme='light'] pre {
+  background: #f6f8fa;
+  color: #1f2328;
+}
+
+/* Line numbers */
+.chroma .ln {
+  opacity: 0.4;
+  margin-right: 1em;
+}
+
+/* Keywords */
+.chroma .k,
+.chroma .kd {
+  color: #7aa2f7;
+}
+
+/* Strings */
+.chroma .s,
+.chroma .sa {
+  color: #9ece6a;
+}
+
+/* Comments */
+.chroma .c,
+.chroma .c1 {
+  color: #565f89;
+  font-style: italic;
+}
+
+/* Numbers */
+.chroma .mi {
+  color: #ff9e64;
+}
+
+/* Commands (bash) */
+.chroma .gp {
+  color: #7dcfff;
+}

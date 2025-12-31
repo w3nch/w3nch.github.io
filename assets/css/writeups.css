@@ -1,0 +1,9 @@
+.top-tags {
+  margin: 0.5rem 0 1.2rem 0;
+}
+
+.top-tags .tag {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  margin-right: 0.6rem;
+}

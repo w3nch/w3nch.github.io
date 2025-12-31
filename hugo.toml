@@ -1,0 +1,90 @@
+baseURL = "https://w3nch.github.io/"
+languageCode = "en-us"
+title = "Hello w3nch"
+theme = "hello-friend-ng"
+paginate = 10
+
+[params]
+  defaultTheme = "dark"
+  enableThemeToggle = true
+  customCSS = ["css/code.css", "css/writeups.css"]
+  homeTitle = "Hello, Friend."
+  homeSubtitle = "Breaking things to understand them. Hack or be hacked"
+
+[params.footer]
+  copyright = "© 2025 w3nch"
+  author = true
+  bottomText = [
+    "Powered by Hugo"
+  ]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# --- Social links ---
+[[params.social]]
+  name = "github"
+  url = "https://github.com/w3nch"
+
+[[params.social]]
+  name = "twitter"
+  url = "https://twitter.com/YOUR_HANDLE"
+
+[[params.social]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/YOUR_PROFILE"
+
+[[params.social]]
+  name = "hackthebox"
+  url = "https://app.hackthebox.com/profile/YOUR_ID"
+
+[[params.social]]
+  name = "cyberdefenders"
+  url = "https://cyberdefenders.org/p/YOUR_USERNAME"
+
+[[params.social]]
+  name = "medium"
+  url = "https://medium.com/@YOUR_USERNAME"
+
+[[params.social]]
+  name = "email"
+  url = "mailto:you@example.com"
+
+
+[menu]
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "resume"
+    name = "Resume"
+    url = "/resume.pdf"
+    weight = 4
+  [[menu.main]]
+    identifier = "writeups"
+    name = "Writeups"
+    url = "/writeups/"
+    weight = 1
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
