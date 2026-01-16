@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wireshark on Hello w3nch</title>
+    <link>http://localhost:1313/tags/wireshark/</link>
+    <description>Recent content in Wireshark on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/wireshark/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation</title>
+      <link>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</link>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</guid>
+      <description>Description In this challenge, we receive a log indicating a possible web-based attack.&#xA;The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.&#xA;Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.&#xA;The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:</description>
+    </item>
+  </channel>
+</rss>

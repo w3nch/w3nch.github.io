@@ -1,0 +1,33 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Blog on Hello w3nch</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>Recent content in Blog on Hello w3nch</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Hello World</title>
+            <link>http://localhost:1313/posts/first-post/</link>
+            <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/first-post/</guid>
+            <description>This is the first post on the site.
+Future posts will include:
+CTF writeups packet analysis crypto notes debugging weird behavior breaking things to understand them </description>
+            <content type="html"><![CDATA[<p>This is the first post on the site.</p>
+<p>Future posts will include:</p>
+<ul>
+<li>CTF writeups</li>
+<li>packet analysis</li>
+<li>crypto notes</li>
+<li>debugging weird behavior</li>
+<li>breaking things to understand them</li>
+</ul>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>

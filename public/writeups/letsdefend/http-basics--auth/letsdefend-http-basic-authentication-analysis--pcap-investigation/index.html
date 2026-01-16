@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Description In this challenge, we receive a log indicating a possible web-based attack.
+The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.
+Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.
+The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:" />
+<meta name="keywords" content=", letsdefend, soc, http, pcap, wireshark, web" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/" />
+
+
+    <title>
+        
+            LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation">
+<meta itemprop="description" content="Description In this challenge, we receive a log indicating a possible web-based attack.
+The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.
+Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.
+The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:"><meta itemprop="datePublished" content="2026-01-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-01-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="420">
+<meta itemprop="keywords" content="letsdefend,soc,http,pcap,wireshark,web," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation"/>
+<meta name="twitter:description" content="Description In this challenge, we receive a log indicating a possible web-based attack.
+The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.
+Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.
+The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:"/>
+
+
+
+
+
+    <meta property="article:section" content="SOC Writeups" />
+
+    <meta property="article:section" content="Network Forensics" />
+
+
+
+    <meta property="article:published_time" content="2026-01-14 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeups</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+    <div class="content">
+        <main class="post">
+
+            <div class="post-info">
+                
+                </p>
+            </div>
+
+            <article>
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/">LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation</a></h2>
+
+                
+                
+                
+
+                <div class="post-content">
+                    <h2 id="description">Description</h2>
+<p>In this challenge, we receive a log indicating a possible web-based attack.<br>
+The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.</p>
+<h2 id="investigation-process">Investigation Process</h2>
+<h3 id="recovering-the-pcap-file">Recovering the PCAP File</h3>
+<p>The PCAP was initially obtained in a Vm from there i obtained the files.<br>
+The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>base64 cap.pcap &gt; cap.b64  
+</span></span><span style="display:flex;"><span>base64 -d cap.b64 &gt; recovered.pcap  
+</span></span></code></pre></div><p>After decoding, the file size was verified to confirm successful recovery.</p>
+<p><img src="https://i.ibb.co/21c6YWz2/image1.png" alt=""></p>
+<h3 id="traffic-overview">Traffic Overview</h3>
+<p>Initial inspection in Wireshark showed:</p>
+<ul>
+<li>A very small number of packets</li>
+<li>Mostly ICMP and HTTP traffic</li>
+<li>Very few unique IP addresses</li>
+</ul>
+<p>This suggests focused communication rather than automated scanning or exploitation.
+<img src="https://i.ibb.co/1JpNVprD/image3.png" alt=""></p>
+<h3 id="network-observations">Network Observations</h3>
+<ul>
+<li>The IP address 1.1.1.5 is mainly associated with ICMP traffic and may represent a DHCP or internal service.</li>
+<li>The most likely client (possible attacker) IP is 192.168.63.20.</li>
+<li>Since the traffic is from an internal network, this could also represent legitimate user activity.</li>
+</ul>
+<p><img src="https://i.ibb.co/vWdjRyk/image4.png" alt="">
+<img src="https://i.ibb.co/FSZK9hH/image2.png" alt=""></p>
+<h3 id="filtering-http-requests">Filtering HTTP Requests</h3>
+<p>To identify HTTP GET requests, the following Wireshark filter was applied:
+<img src="https://i.ibb.co/0RYp42jM/image5.png" alt=""></p>
+<p>http.request.method == &ldquo;GET&rdquo;</p>
+<p>This confirmed that there are exactly five HTTP GET requests in the capture.</p>
+<p><img src="https://i.ibb.co/s96h9Mn3/image6.png" alt=""></p>
+<h3 id="extracting-credentials-from-http-basic-authentication">Extracting Credentials from HTTP Basic Authentication</h3>
+<p>An Authorization header was discovered in one of the HTTP requests:</p>
+<p>Authorization: Basic d2ViYWRtaW46VzNiNERtMW4=</p>
+<p>HTTP Basic Authentication uses Base64 encoding.<br>
+Decoding this value reveals the credentials:</p>
+<p>webadmin:W3b4Dm1n</p>
+<h3 id="full-http-request-and-response">Full HTTP Request and Response</h3>
+<p>GET / HTTP/1.0<br>
+Host: 192.168.63.100<br>
+Accept: text/html, text/plain, text/css, text/sgml, <em>/</em>;q=0.01<br>
+Accept-Encoding: gzip, compress, bzip2<br>
+Accept-Language: en<br>
+User-Agent: Lynx/2.8.7rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/0.9.8n<br>
+Authorization: Basic d2ViYWRtaW46VzNiNERtMW4=</p>
+<p>HTTP/1.1 200 OK<br>
+Date: Thu, 20 Jan 2011 07:39:08 GMT<br>
+Server: Apache/2.2.15 (FreeBSD) DAV/2 mod_ssl/2.2.15 OpenSSL/0.9.8n<br>
+Content-Type: text/html<br>
+Content-Length: 44</p>
+<!-- raw HTML omitted -->
+<h2 id="conclusion">Conclusion</h2>
+<p>This challenge demonstrates why HTTP Basic Authentication without TLS is insecure.<br>
+Credentials can be trivially extracted from packet captures.</p>
+<p>Key takeaways:</p>
+<ul>
+<li>Base64 is not encryption</li>
+<li>Credentials should never be transmitted without TLS</li>
+<li>Internal network traffic must still be monitored</li>
+<li>PCAP analysis is a critical SOC skill</li>
+</ul>
+<h2 id="challenge-questions--answers">Challenge Questions &amp; Answers</h2>
+<ol>
+<li>
+<p>How many HTTP GET requests are in the PCAP?<br>
+Answer: 5</p>
+</li>
+<li>
+<p>What is the server operating system?<br>
+Answer: FreeBSD</p>
+</li>
+<li>
+<p>What is the name and version of the web server software?<br>
+Answer: Apache/2.2.15</p>
+</li>
+<li>
+<p>What is the version of OpenSSL running on the server?<br>
+Answer: OpenSSL/0.9.8n</p>
+</li>
+<li>
+<p>What is the client’s User-Agent?<br>
+Answer: Lynx/2.8.7rel.1 libwww-FM/2.14 SSL-MM/1.4.1 OpenSSL/0.9.8n</p>
+</li>
+<li>
+<p>What username was used for HTTP Basic Authentication?<br>
+Answer: webadmin</p>
+</li>
+<li>
+<p>What password was used for HTTP Basic Authentication?<br>
+Answer: W3b4Dm1n</p>
+</li>
+</ol>
+<p>#letsdefend #soc #http #pcap #wireshark #networkforensics</p>
+
+                </div>
+            </article>
+
+            <hr />
+
+            <div class="post-info">
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/http/">http</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/pcap/">pcap</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/wireshark/">wireshark</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/web/">web</a></span>
+        
+    </p>
+
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/soc-writeups/">SOC Writeups</a></span>
+        <span class="tag"><a href="http://localhost:1313/categories/network-forensics/">Network Forensics</a></span>
+        
+    </p>
+
+            </div>
+        </main>
+    </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="http://localhost:1313/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

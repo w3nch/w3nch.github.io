@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sec on Hello w3nch</title>
+    <link>http://localhost:1313/categories/sec/</link>
+    <description>Recent content in Sec on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/sec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GothamLegend Incident Response – PowerShell Malware Analysis</title>
+      <link>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</link>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</guid>
+      <description>Scenario&#xA;Recently the networks of a large company named GothamLegend were compromised after an employee opened a phishing email containing malware. The damage caused was critical and resulted in business-wide disruption. GothamLegend had to reach out to a third-party incident response team to assist with the investigation. You are a member of the IR team - all you have is an encoded Powershell script. Can you decode it and identify what malware is responsible for this attack?</description>
+    </item>
+  </channel>
+</rss>
