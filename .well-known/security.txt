@@ -1,0 +1,7 @@
+Contact: mailto:wrench999@tutamail.com
+Encryption: https://w3nch.github.io/.well-known/pgp-public.asc
+Preferred-Languages: en
+Canonical: hhttps://w3nch.github.io/.well-known/security.txt
+
+# PGP Fingerprint
+# EA97 205B 8A7C 3911 499C 32A3 60C7 3341 1EB6 7336

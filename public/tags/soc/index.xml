@@ -6,8 +6,29 @@
     <description>Recent content in Soc on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/soc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DDoS Attacks: History and the Future</title>
+      <link>http://localhost:1313/posts/ddos-attacks-history-and-future/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ddos-attacks-history-and-future/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Packet Puzzle</title>
+      <link>http://localhost:1313/writeups/htb/sherlock/sherlock/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/htb/sherlock/sherlock/</guid>
+      <description>Scenario You are a junior security analyst at a small Japanese cryptocurrency trading company. After detecting suspicious activity on the internal network, you exported a PCAP for further investigation.</description>
+    </item>
+    <item>
+      <title>LetsDefend SOC138 – Suspicious XLS Malware Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</guid>
+      <description>Alert Name: SOC138 – Detected Suspicious Xls File&#xA;Severity: High&#xA;Event ID: 77&#xA;Event Time: Mar 13, 2021, 08:20 PM&#xA;Category: Malware&#xA;Play Book 1. Alert Overview A high-risk malware alert was triggered due to the detection of a suspicious Excel macro-enabled file (.xlsm) on the host Sofia. Macro-enabled Excel documents are commonly abused to deliver malware via embedded VBA code that downloads and executes malicious payloads.&#xA;The file was allowed by the security device, increasing the potential risk of system compromise.</description>
+    </item>
     <item>
       <title>GothamLegend Incident Response – PowerShell Malware Analysis</title>
       <link>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</link>
@@ -16,11 +37,60 @@
       <description>Scenario&#xA;Recently the networks of a large company named GothamLegend were compromised after an employee opened a phishing email containing malware. The damage caused was critical and resulted in business-wide disruption. GothamLegend had to reach out to a third-party incident response team to assist with the investigation. You are a member of the IR team - all you have is an encoded Powershell script. Can you decode it and identify what malware is responsible for this attack?</description>
     </item>
     <item>
+      <title>Inside a Blue Team SOC Home Lab: Wazuh, pfSense, Snort, Suricata, and Zeek in Action</title>
+      <link>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation</title>
       <link>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</guid>
       <description>Description In this challenge, we receive a log indicating a possible web-based attack.&#xA;The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.&#xA;Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.&#xA;The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:</description>
+    </item>
+    <item>
+      <title>LetsDefend SOC168 – Command Injection (whoami) Web Attack Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</guid>
+      <description>Alert Name: SOC168 – Whoami Command Detected in Request Body&#xA;Severity: High&#xA;Event ID: 118&#xA;Event Time: Feb 28, 2022, 04:12 AM&#xA;Category: Web Attack&#xA;Play Book 1. Alert Overview A high-severity web attack alert was triggered on WebServer1004 due to the detection of the whoami command within the HTTP request body. This behavior is commonly associated with command injection attempts, where an attacker tries to execute system-level commands through a web application.</description>
+    </item>
+    <item>
+      <title>LetsDefend SOC170 – Local File Inclusion (LFI) Attempt Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</guid>
+      <description>Field Value Event ID 120 Event Time Mar 01, 2022, 10:10 AM Rule SOC170 – Passwd Found in Requested URL – Possible LFI Attack Analyst Level Security Analyst Hostname WebServer1006 Destination IP Address 172.16.17.13 Source IP Address 106.55.45.162 HTTP Request Method GET Requested URL https://172.16.17.13/?file=../../../../etc/passwd User-Agent Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322) Alert Trigger Reason URL contains passwd Device Action Allowed Play Book 1. Alert Overview A web attack alert was triggered on WebServer1006 due to the detection of a directory traversal payload attempting to access the sensitive system file /etc/passwd via an HTTP GET request.</description>
+    </item>
+    <item>
+      <title>LetsDefend SOC335 – CVE-2024-49138 Privilege Escalation Exploitation Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</guid>
+      <description>Alert Name: SOC335 – CVE-2024-49138 Exploitation Detected&#xA;Severity: High&#xA;Event ID: 313&#xA;Event Time: Jan 22, 2025, 02:37 AM&#xA;Category: Privilege Escalation&#xA;Base Information Field Value Event ID 313 Event Time Jan 22, 2025, 02:37 AM Rule SOC335 – CVE-2024-49138 Exploitation Detected Analyst Level Security Analyst Hostname Victor IP Address 172.16.17.207 Process Name svohost.exe Process Path C:\temp\service_installer\svohost.exe Process ID 7640 Parent Process C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe Command Line ??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1 File Hash (SHA-256) b432dcf4a0f0b601b1d79848467137a5e25cab5a0b7b1224be9d3b6540122db9 Process User EC2AMAZ-ILGVOIN\LetsDefend Trigger Reason Suspicious behavior patterns linked to CVE-2024-49138 Device Action Allowed Incident Details Field Value Incident Name EventID 313 – SOC335 CVE-2024-49138 Exploitation Incident Type Privilege Escalation Created Date Jan 08, 2026, 09:12 AM Pre-Investigation Notes Date: Jan 22, 2025, 02:37 AM Hostname: Victor IP Address: 172.</description>
+    </item>
+    <item>
+      <title>LetsDefend SOC336 – Windows OLE Zero-Click RCE (CVE-2025-21298) Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</guid>
+      <description>Alert Name: SOC336 – Windows OLE Zero-Click RCE Exploitation Detected&#xA;Severity: Critical&#xA;Event ID: 314&#xA;Event Time: Feb 04, 2025, 04:18 PM&#xA;Category: Malware&#xA;Base Information Field Value Severity Critical Event ID 314 Event Time Feb 04, 2025, 04:18 PM Rule Name SOC336 – Windows OLE Zero-Click RCE Exploitation Detected CVE CVE-2025-21298 Analyst Level Security Analyst Source IP / SMTP Address 84.38.130.118 Sender Email projectmanagement@pm.me Recipient Email Austin@letsdefend.io Email Subject Important: Action Required for Upcoming Project Deadline Attachment Name mail.</description>
+    </item>
+    <item>
+      <title>Building a Custom Threat Intelligence Feed with n8n</title>
+      <link>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sigma Rules: From Basics to Advanced Detection Engineering</title>
+      <link>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Field Value Event ID 120 Event Time Mar 01, 2022, 10:10 AM Rule SOC170 – Passwd Found in Requested URL – Possible LFI Attack Analyst Level Security Analyst Hostname WebServer1006 Destination IP Address 172.16.17.13 Source IP Address 106.55.45.162 HTTP Request Method GET Requested URL https://172.16.17.13/?file=../../../../etc/passwd User-Agent Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322) Alert Trigger Reason URL contains passwd Device Action Allowed Play Book 1. Alert Overview A web attack alert was triggered on WebServer1006 due to the detection of a directory traversal payload attempting to access the sensitive system file /etc/passwd via an HTTP GET request." />
+<meta name="keywords" content=", letsdefend, soc, lfi, web-attack, directory-traversal, blue" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/" />
+
+
+    <title>
+        
+            LetsDefend SOC170 – Local File Inclusion (LFI) Attempt Analysis :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="LetsDefend SOC170 – Local File Inclusion (LFI) Attempt Analysis">
+<meta itemprop="description" content="Field Value Event ID 120 Event Time Mar 01, 2022, 10:10 AM Rule SOC170 – Passwd Found in Requested URL – Possible LFI Attack Analyst Level Security Analyst Hostname WebServer1006 Destination IP Address 172.16.17.13 Source IP Address 106.55.45.162 HTTP Request Method GET Requested URL https://172.16.17.13/?file=../../../../etc/passwd User-Agent Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322) Alert Trigger Reason URL contains passwd Device Action Allowed Play Book 1. Alert Overview A web attack alert was triggered on WebServer1006 due to the detection of a directory traversal payload attempting to access the sensitive system file /etc/passwd via an HTTP GET request."><meta itemprop="datePublished" content="2026-01-12T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-01-12T00:00:00+00:00" />
+<meta itemprop="wordCount" content="972">
+<meta itemprop="keywords" content="letsdefend,soc,lfi,web-attack,directory-traversal,blue," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="LetsDefend SOC170 – Local File Inclusion (LFI) Attempt Analysis"/>
+<meta name="twitter:description" content="Field Value Event ID 120 Event Time Mar 01, 2022, 10:10 AM Rule SOC170 – Passwd Found in Requested URL – Possible LFI Attack Analyst Level Security Analyst Hostname WebServer1006 Destination IP Address 172.16.17.13 Source IP Address 106.55.45.162 HTTP Request Method GET Requested URL https://172.16.17.13/?file=../../../../etc/passwd User-Agent Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322) Alert Trigger Reason URL contains passwd Device Action Allowed Play Book 1. Alert Overview A web attack alert was triggered on WebServer1006 due to the detection of a directory traversal payload attempting to access the sensitive system file /etc/passwd via an HTTP GET request."/>
+
+
+
+
+
+    <meta property="article:section" content="SOC Writeups" />
+
+    <meta property="article:section" content="Web Security" />
+
+
+
+    <meta property="article:published_time" content="2026-01-12 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello ;)</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeups</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+    <div class="content">
+        <main class="post">
+
+            <div class="post-info">
+                
+                </p>
+            </div>
+
+            <article>
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/">LetsDefend SOC170 – Local File Inclusion (LFI) Attempt Analysis</a></h2>
+
+                
+                
+                
+
+                <div class="post-content">
+                    <table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Event ID</td>
+<td>120</td>
+</tr>
+<tr>
+<td>Event Time</td>
+<td>Mar 01, 2022, 10:10 AM</td>
+</tr>
+<tr>
+<td>Rule</td>
+<td>SOC170 – Passwd Found in Requested URL – Possible LFI Attack</td>
+</tr>
+<tr>
+<td>Analyst Level</td>
+<td>Security Analyst</td>
+</tr>
+<tr>
+<td>Hostname</td>
+<td>WebServer1006</td>
+</tr>
+<tr>
+<td>Destination IP Address</td>
+<td>172.16.17.13</td>
+</tr>
+<tr>
+<td>Source IP Address</td>
+<td>106.55.45.162</td>
+</tr>
+<tr>
+<td>HTTP Request Method</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>Requested URL</td>
+<td><a href="https://172.16.17.13/?file=../../../../etc/passwd">https://172.16.17.13/?file=../../../../etc/passwd</a></td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)</td>
+</tr>
+<tr>
+<td>Alert Trigger Reason</td>
+<td>URL contains <code>passwd</code></td>
+</tr>
+<tr>
+<td>Device Action</td>
+<td>Allowed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="play-book">Play Book</h2>
+<h3 id="1-alert-overview">1. Alert Overview</h3>
+<p>A web attack alert was triggered on WebServer1006 due to the detection of a directory traversal payload attempting to access the sensitive system file /etc/passwd via an HTTP GET request. This behavior is commonly associated with Local File Inclusion (LFI) attacks, where an attacker attempts to read files from the underlying operating system through a vulnerable web application parameter.</p>
+<p>The request originated from an external IP address and was allowed by the security device, which required further investigation to determine whether the attempt was successful or resulted in data exposure.</p>
+<h3 id="2-key-event-details">2. Key Event Details</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>WebServer1006</td>
+</tr>
+<tr>
+<td>Destination IP</td>
+<td>172.16.17.13</td>
+</tr>
+<tr>
+<td>Source IP</td>
+<td>106.55.45.162</td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>Requested URL</td>
+<td>https://172.16.17.13/?file=../../../../etc/passwd</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)</td>
+</tr>
+<tr>
+<td>Trigger Reason</td>
+<td>URL contains passwd</td>
+</tr>
+<tr>
+<td>Device Action</td>
+<td>Allowed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-why-this-alert-was-triggered">3. Why This Alert Was Triggered</h3>
+<p>The detection rule is designed to identify known LFI indicators within requested URLs. The presence of the directory traversal sequence (../../../../) combined with the target file /etc/passwd directly matches common LFI exploitation patterns.</p>
+<p>Attackers frequently target /etc/passwd to enumerate system users and confirm whether file inclusion vulnerabilities are exploitable.</p>
+<p>Based on the rule name and the request contents, this alert indicates an attempted LFI attack against a public-facing web application.</p>
+<h3 id="4-ip-reputation-check">4. IP Reputation Check</h3>
+<p>The source IP address 106.55.45.162 is associated with Tencent Cloud Computing infrastructure located in China and is categorized as data center / web hosting traffic.</p>
+<p><img src="https://i.ibb.co/60VkyqJq/Pasted-image-20260113162808.png" alt=""></p>
+<p>AbuseIPDB results:</p>
+<ul>
+<li>IP reported 3,455 times</li>
+<li>Confidence of abuse: 1%</li>
+<li>Commonly observed in automated scanning and probing activity
+<img src="https://i.ibb.co/PsQ8jZxF/Pasted-image-20260113162914.png" alt=""></li>
+</ul>
+<p>VirusTotal analysis:</p>
+<ul>
+<li>No strong malware verdicts</li>
+<li>IP categorized as suspicious infrastructure rather than a specific malware host</li>
+</ul>
+<p>These findings suggest the IP is likely used for reconnaissance or automated attack activity rather than legitimate end-user traffic.</p>
+<h3 id="5-initial-investigation-and-traffic-analysis">5. Initial Investigation and Traffic Analysis</h3>
+<ul>
+<li>The traffic originated from an external public IP address.</li>
+<li>The request targeted an internal web server over HTTPS (port 443).</li>
+<li>The User-Agent string is outdated and commonly associated with automated tools and scanners.</li>
+<li>The HTTP response status was 500 Internal Server Error.</li>
+<li>The HTTP response size was 0 bytes.</li>
+</ul>
+<p>The response status and size indicate that the requested file was not successfully read or returned to the attacker.</p>
+<h3 id="6-log-review">6. Log Review</h3>
+<p>Firewall Logs:</p>
+<ul>
+<li>Source Port: 49028</li>
+<li>Destination Port: 443</li>
+<li>Action: Permitted</li>
+<li>Payload matched known LFI directory traversal patterns
+<img src="https://i.ibb.co/C3MDRSGr/Pasted-image-20260113163037.png" alt=""></li>
+</ul>
+<p>Web Server Logs:</p>
+<ul>
+<li>No evidence of /etc/passwd contents being returned</li>
+<li>No abnormal response size observed
+<img src="https://i.ibb.co/dRCqjtf/Pasted-image-20260113163524.png" alt=""></li>
+</ul>
+<p>System Logs:</p>
+<ul>
+<li>No command execution history</li>
+<li>No unauthorized access or privilege escalation detected</li>
+<li>Confirms the request did not result in successful exploitation</li>
+</ul>
+<h3 id="7-email-and-user-activity-review">7. Email and User Activity Review</h3>
+<ul>
+<li>No internal maintenance, testing, or simulated attack activity was scheduled at the time of the alert.</li>
+<li>No user activity or email logs correlate with this request.</li>
+</ul>
+<p>This confirms the traffic was externally generated and not related to legitimate internal activity.</p>
+<h3 id="8-mitre-attck-mapping">8. MITRE ATT&amp;CK Mapping</h3>
+<p>Tactic:
+Initial Access</p>
+<p>Technique:
+T1190 – Exploit Public-Facing Application</p>
+<p>Sub-Technique:
+Local File Inclusion / Directory Traversal</p>
+<h3 id="9-impact-assessment">9. Impact Assessment</h3>
+<ul>
+<li>Attack type: Local File Inclusion attempt</li>
+<li>Exploitation success: No</li>
+<li>Data exposure: None observed</li>
+<li>System compromise: None</li>
+<li>Lateral movement: Not detected</li>
+</ul>
+<p>This incident represents an attempted but unsuccessful exploitation.</p>
+<h3 id="10-recommended-actions">10. Recommended Actions</h3>
+<ol>
+<li>Implement strict input validation for file parameters</li>
+<li>Disable dynamic file inclusion where not required</li>
+<li>Deploy WAF rules to block directory traversal patterns</li>
+<li>Monitor for repeated attempts from the same source IP</li>
+<li>Consider blocking the source IP if no business justification exists</li>
+<li>Review application code for file handling vulnerabilities</li>
+</ol>
+<h3 id="final-verdict">Final Verdict</h3>
+<p>True Positive – Attempted Web Attack</p>
+<p>The alert represents a confirmed Local File Inclusion attempt originating from an external source. Although the attack was unsuccessful and resulted in no data exposure, it highlights a potential application weakness that should be addressed to prevent future exploitation.</p>
+<h3 id="analyst-note">Analyst Note</h3>
+<p>The alert was triggered due to an HTTP GET request attempting to access the sensitive system file /etc/passwd using directory traversal sequences (../../../../). This pattern is a well-known indicator of a Local File Inclusion (LFI) attack, typically used by attackers to read system files and enumerate users on Linux-based servers.</p>
+<p>The request originated from an external IP address associated with a cloud hosting provider, which is commonly observed in automated scanning and reconnaissance activities. The User-Agent string used in the request is outdated and frequently seen in scripted attack tools, further supporting the malicious nature of the traffic.</p>
+<p>Log analysis shows that the request was allowed by the security device; however, the HTTP response returned a 500 Internal Server Error with a response size of 0 bytes. Web server and system logs confirm that no file contents were successfully accessed or returned, and there is no evidence of command execution, privilege escalation, or system compromise.</p>
+<p>No internal user activity, maintenance window, or security testing was identified at the time of the alert. Email logs and authentication logs also show no correlation with legitimate activity.</p>
+<p>Based on the analysis, this alert is classified as a true positive representing an attempted but unsuccessful Local File Inclusion attack. No impact to the system was observed, but the attempt highlights the need for stronger input validation and web application hardening to prevent future exploitation attempts.</p>
+<h4 id="note">Note</h4>
+<p>An external IP attempted to access the /etc/passwd file using directory traversal in the URL, which is a common Local File Inclusion (LFI) attack technique. The request was allowed but returned an HTTP 500 response with no data, and logs confirm that the attack was unsuccessful. No system compromise or data exposure was detected.</p>
+
+                </div>
+            </article>
+
+            <hr />
+
+            <div class="post-info">
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/lfi/">lfi</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/web-attack/">web-attack</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/directory-traversal/">directory-traversal</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/blue/">blue</a></span>
+        
+    </p>
+
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/soc-writeups/">SOC Writeups</a></span>
+        <span class="tag"><a href="http://localhost:1313/categories/web-security/">Web Security</a></span>
+        
+    </p>
+
+            </div>
+        </main>
+    </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="http://localhost:1313/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

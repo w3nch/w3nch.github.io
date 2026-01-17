@@ -15,12 +15,5 @@
       <guid>http://localhost:1313/blog/first-post/</guid>
       <description>This is the first post on the site.&#xA;Future posts will include:&#xA;CTF writeups packet analysis crypto note debugging weird behavior breaking things to understand them </description>
     </item>
-    <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/blog/soc-home-lab/</link>
-      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/soc-home-lab/</guid>
-      <description>This is the first post on the site.&#xA;Future posts will include:&#xA;CTF writeups packet analysis crypto notes debugging weird behavior breaking things to understand them </description>
-    </item>
   </channel>
 </rss>

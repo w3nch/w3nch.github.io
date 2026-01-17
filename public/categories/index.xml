@@ -6,8 +6,43 @@
     <description>Recent content in Categories on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cybersecurity</title>
+      <link>http://localhost:1313/categories/cybersecurity/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/cybersecurity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network Security</title>
+      <link>http://localhost:1313/categories/network-security/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/network-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Malware Analysis</title>
+      <link>http://localhost:1313/categories/malware-analysis/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/malware-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SOC Writeups</title>
+      <link>http://localhost:1313/categories/soc-writeups/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/soc-writeups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home Lab</title>
+      <link>http://localhost:1313/categories/home-lab/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/home-lab/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Security Operations</title>
       <link>http://localhost:1313/categories/security-operations/</link>
@@ -16,17 +51,45 @@
       <description></description>
     </item>
     <item>
-      <title>SOC Writeups</title>
-      <link>http://localhost:1313/categories/soc-writeups/</link>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/soc-writeups/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Network Forensics</title>
       <link>http://localhost:1313/categories/network-forensics/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/network-forensics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Security</title>
+      <link>http://localhost:1313/categories/web-security/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/web-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Endpoint Security</title>
+      <link>http://localhost:1313/categories/endpoint-security/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/endpoint-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wireless Security</title>
+      <link>http://localhost:1313/categories/wireless-security/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/wireless-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Threat Intelligence</title>
+      <link>http://localhost:1313/categories/threat-intelligence/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/threat-intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Detection Engineering</title>
+      <link>http://localhost:1313/categories/detection-engineering/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/detection-engineering/</guid>
       <description></description>
     </item>
   </channel>

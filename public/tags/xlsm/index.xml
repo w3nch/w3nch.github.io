@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xlsm on Hello w3nch</title>
+    <link>http://localhost:1313/tags/xlsm/</link>
+    <description>Recent content in Xlsm on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/xlsm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LetsDefend SOC138 – Suspicious XLS Malware Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</guid>
+      <description>Alert Name: SOC138 – Detected Suspicious Xls File&#xA;Severity: High&#xA;Event ID: 77&#xA;Event Time: Mar 13, 2021, 08:20 PM&#xA;Category: Malware&#xA;Play Book 1. Alert Overview A high-risk malware alert was triggered due to the detection of a suspicious Excel macro-enabled file (.xlsm) on the host Sofia. Macro-enabled Excel documents are commonly abused to deliver malware via embedded VBA code that downloads and executes malicious payloads.&#xA;The file was allowed by the security device, increasing the potential risk of system compromise.</description>
+    </item>
+  </channel>
+</rss>

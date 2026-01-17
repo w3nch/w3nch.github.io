@@ -22,5 +22,12 @@
       <guid>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</guid>
       <description>Description In this challenge, we receive a log indicating a possible web-based attack.&#xA;The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.&#xA;Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.&#xA;The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:</description>
     </item>
+    <item>
+      <title>LetsDefend SOC168 – Command Injection (whoami) Web Attack Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</guid>
+      <description>Alert Name: SOC168 – Whoami Command Detected in Request Body&#xA;Severity: High&#xA;Event ID: 118&#xA;Event Time: Feb 28, 2022, 04:12 AM&#xA;Category: Web Attack&#xA;Play Book 1. Alert Overview A high-severity web attack alert was triggered on WebServer1004 due to the detection of the whoami command within the HTTP request body. This behavior is commonly associated with command injection attempts, where an attacker tries to execute system-level commands through a web application.</description>
+    </item>
   </channel>
 </rss>

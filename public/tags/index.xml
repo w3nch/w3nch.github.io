@@ -6,13 +6,111 @@
     <description>Recent content in Tags on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cyber-Attacks</title>
+      <link>http://localhost:1313/tags/cyber-attacks/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cyber-attacks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ddos</title>
+      <link>http://localhost:1313/tags/ddos/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ddos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Infrastructure</title>
+      <link>http://localhost:1313/tags/infrastructure/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network-Security</title>
+      <link>http://localhost:1313/tags/network-security/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/network-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Soc</title>
+      <link>http://localhost:1313/tags/soc/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/soc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wireshark</title>
+      <link>http://localhost:1313/tags/wireshark/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wireshark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blue</title>
+      <link>http://localhost:1313/tags/blue/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/blue/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Letsdefend</title>
+      <link>http://localhost:1313/tags/letsdefend/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/letsdefend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Macro</title>
+      <link>http://localhost:1313/tags/macro/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/macro/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Malware</title>
+      <link>http://localhost:1313/tags/malware/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/malware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell</title>
+      <link>http://localhost:1313/tags/powershell/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xlsm</title>
+      <link>http://localhost:1313/tags/xlsm/</link>
+      <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/xlsm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blue-Team</title>
+      <link>http://localhost:1313/tags/blue-team/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/blue-team/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Btlo</title>
       <link>http://localhost:1313/tags/btlo/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/btlo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Home-Lab</title>
+      <link>http://localhost:1313/tags/home-lab/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/home-lab/</guid>
       <description></description>
     </item>
     <item>
@@ -23,24 +121,38 @@
       <description></description>
     </item>
     <item>
-      <title>Malware</title>
-      <link>http://localhost:1313/tags/malware/</link>
+      <title>Pfsense</title>
+      <link>http://localhost:1313/tags/pfsense/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/malware/</guid>
+      <guid>http://localhost:1313/tags/pfsense/</guid>
       <description></description>
     </item>
     <item>
-      <title>Powershell</title>
-      <link>http://localhost:1313/tags/powershell/</link>
+      <title>Snort</title>
+      <link>http://localhost:1313/tags/snort/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/powershell/</guid>
+      <guid>http://localhost:1313/tags/snort/</guid>
       <description></description>
     </item>
     <item>
-      <title>Soc</title>
-      <link>http://localhost:1313/tags/soc/</link>
+      <title>Suricata</title>
+      <link>http://localhost:1313/tags/suricata/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/soc/</guid>
+      <guid>http://localhost:1313/tags/suricata/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ticketing</title>
+      <link>http://localhost:1313/tags/ticketing/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ticketing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wazuh</title>
+      <link>http://localhost:1313/tags/wazuh/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wazuh/</guid>
       <description></description>
     </item>
     <item>
@@ -51,10 +163,10 @@
       <description></description>
     </item>
     <item>
-      <title>Letsdefend</title>
-      <link>http://localhost:1313/tags/letsdefend/</link>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/letsdefend/</guid>
+      <title>Zeek</title>
+      <link>http://localhost:1313/tags/zeek/</link>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/zeek/</guid>
       <description></description>
     </item>
     <item>
@@ -65,17 +177,157 @@
       <description></description>
     </item>
     <item>
-      <title>Wireshark</title>
-      <link>http://localhost:1313/tags/wireshark/</link>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/wireshark/</guid>
+      <title>Command-Injection</title>
+      <link>http://localhost:1313/tags/command-injection/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
-      <title>Intro</title>
-      <link>http://localhost:1313/tags/intro/</link>
-      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/intro/</guid>
+      <title>Web-Attack</title>
+      <link>http://localhost:1313/tags/web-attack/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-attack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Directory-Traversal</title>
+      <link>http://localhost:1313/tags/directory-traversal/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/directory-traversal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lfi</title>
+      <link>http://localhost:1313/tags/lfi/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/lfi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Exploitation</title>
+      <link>http://localhost:1313/tags/exploitation/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/exploitation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Privilege-Escalation</title>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>http://localhost:1313/tags/windows/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/windows/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ole</title>
+      <link>http://localhost:1313/tags/ole/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ole/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rce</title>
+      <link>http://localhost:1313/tags/rce/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/rce/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zero-Click</title>
+      <link>http://localhost:1313/tags/zero-click/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/zero-click/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hacking</title>
+      <link>http://localhost:1313/tags/hacking/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hacking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pentesting</title>
+      <link>http://localhost:1313/tags/pentesting/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/pentesting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wifi</title>
+      <link>http://localhost:1313/tags/wifi/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wifi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wireless-Security</title>
+      <link>http://localhost:1313/tags/wireless-security/</link>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/wireless-security/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>N8n</title>
+      <link>http://localhost:1313/tags/n8n/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/n8n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security-Operations</title>
+      <link>http://localhost:1313/tags/security-operations/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/security-operations/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Threat-Intelligence</title>
+      <link>http://localhost:1313/tags/threat-intelligence/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/threat-intelligence/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Detection-Engineering</title>
+      <link>http://localhost:1313/tags/detection-engineering/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/detection-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Siem</title>
+      <link>http://localhost:1313/tags/siem/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/siem/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sigma</title>
+      <link>http://localhost:1313/tags/sigma/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sigma/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Threat-Detection</title>
+      <link>http://localhost:1313/tags/threat-detection/</link>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/threat-detection/</guid>
       <description></description>
     </item>
   </channel>

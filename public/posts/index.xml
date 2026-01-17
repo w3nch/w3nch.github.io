@@ -5,28 +5,57 @@
         <description>Recent content in Blog on Hello w3nch</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
-            <title>Hello World</title>
-            <link>http://localhost:1313/posts/first-post/</link>
-            <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+            <title>DDoS Attacks: History and the Future</title>
+            <link>http://localhost:1313/posts/ddos-attacks-history-and-future/</link>
+            <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>http://localhost:1313/posts/first-post/</guid>
-            <description>This is the first post on the site.
-Future posts will include:
-CTF writeups packet analysis crypto notes debugging weird behavior breaking things to understand them </description>
-            <content type="html"><![CDATA[<p>This is the first post on the site.</p>
-<p>Future posts will include:</p>
-<ul>
-<li>CTF writeups</li>
-<li>packet analysis</li>
-<li>crypto notes</li>
-<li>debugging weird behavior</li>
-<li>breaking things to understand them</li>
-</ul>
-]]></content>
+            <guid>http://localhost:1313/posts/ddos-attacks-history-and-future/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
+            <title>Inside a Blue Team SOC Home Lab: Wazuh, pfSense, Snort, Suricata, and Zeek in Action</title>
+            <link>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
+            <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
+            <title>WiFi Hacking 101 to 1337</title>
+            <link>http://localhost:1313/posts/wifi-hacking-101-to-1337/</link>
+            <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/wifi-hacking-101-to-1337/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
+            <title>Building a Custom Threat Intelligence Feed with n8n</title>
+            <link>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</link>
+            <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
+        <item>
+            <title>Sigma Rules: From Basics to Advanced Detection Engineering</title>
+            <link>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</link>
+            <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
         </item>
         
     </channel>

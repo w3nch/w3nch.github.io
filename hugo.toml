@@ -11,8 +11,12 @@ paginate = 10
   homeTitle = "Hello, Friend."
   homeSubtitle = "Breaking things to understand them. Hack or be hacked"
 
+  [params.logo]
+    logoText = "hello ;)"
+    logoHomeLink = "/"
+
 [params.footer]
-  copyright = "© 2025 w3nch"
+  copyright = "© 1337 w3nch"
   author = true
   bottomText = [
     "Powered by Hugo"
@@ -29,7 +33,7 @@ paginate = 10
 
 [[params.social]]
   name = "twitter"
-  url = "https://twitter.com/YOUR_HANDLE"
+  url = "https://x.com/wr4nch"
 
 [[params.social]]
   name = "linkedin"
@@ -37,7 +41,7 @@ paginate = 10
 
 [[params.social]]
   name = "hackthebox"
-  url = "https://app.hackthebox.com/profile/YOUR_ID"
+  url = "https://app.hackthebox.com/users/546888"
 
 [[params.social]]
   name = "cyberdefenders"
@@ -45,12 +49,11 @@ paginate = 10
 
 [[params.social]]
   name = "medium"
-  url = "https://medium.com/@YOUR_USERNAME"
+  url = "https://medium.com/@wr7nch"
 
 [[params.social]]
   name = "email"
-  url = "mailto:you@example.com"
-
+  url = "mailto:wrench999@tutamail.com"
 
 [menu]
 
@@ -77,11 +80,12 @@ paginate = 10
     name = "Resume"
     url = "/resume.pdf"
     weight = 4
+
   [[menu.main]]
     identifier = "writeups"
     name = "Writeups"
     url = "/writeups/"
-    weight = 1
+    weight = 5
 
 [markup]
   [markup.tableOfContents]

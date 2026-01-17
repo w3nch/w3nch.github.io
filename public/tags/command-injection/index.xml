@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Command-Injection on Hello w3nch</title>
+    <link>http://localhost:1313/tags/command-injection/</link>
+    <description>Recent content in Command-Injection on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/command-injection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LetsDefend SOC168 – Command Injection (whoami) Web Attack Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</link>
+      <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</guid>
+      <description>Alert Name: SOC168 – Whoami Command Detected in Request Body&#xA;Severity: High&#xA;Event ID: 118&#xA;Event Time: Feb 28, 2022, 04:12 AM&#xA;Category: Web Attack&#xA;Play Book 1. Alert Overview A high-severity web attack alert was triggered on WebServer1004 due to the detection of the whoami command within the HTTP request body. This behavior is commonly associated with command injection attempts, where an attacker tries to execute system-level commands through a web application.</description>
+    </item>
+  </channel>
+</rss>

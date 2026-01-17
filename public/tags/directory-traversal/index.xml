@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Directory-Traversal on Hello w3nch</title>
+    <link>http://localhost:1313/tags/directory-traversal/</link>
+    <description>Recent content in Directory-Traversal on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/directory-traversal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LetsDefend SOC170 – Local File Inclusion (LFI) Attempt Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</link>
+      <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</guid>
+      <description>Field Value Event ID 120 Event Time Mar 01, 2022, 10:10 AM Rule SOC170 – Passwd Found in Requested URL – Possible LFI Attack Analyst Level Security Analyst Hostname WebServer1006 Destination IP Address 172.16.17.13 Source IP Address 106.55.45.162 HTTP Request Method GET Requested URL https://172.16.17.13/?file=../../../../etc/passwd User-Agent Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322) Alert Trigger Reason URL contains passwd Device Action Allowed Play Book 1. Alert Overview A web attack alert was triggered on WebServer1006 due to the detection of a directory traversal payload attempting to access the sensitive system file /etc/passwd via an HTTP GET request.</description>
+    </item>
+  </channel>
+</rss>

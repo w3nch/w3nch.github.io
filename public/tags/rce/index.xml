@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rce on Hello w3nch</title>
+    <link>http://localhost:1313/tags/rce/</link>
+    <description>Recent content in Rce on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rce/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LetsDefend SOC336 – Windows OLE Zero-Click RCE (CVE-2025-21298) Analysis</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</guid>
+      <description>Alert Name: SOC336 – Windows OLE Zero-Click RCE Exploitation Detected&#xA;Severity: Critical&#xA;Event ID: 314&#xA;Event Time: Feb 04, 2025, 04:18 PM&#xA;Category: Malware&#xA;Base Information Field Value Severity Critical Event ID 314 Event Time Feb 04, 2025, 04:18 PM Rule Name SOC336 – Windows OLE Zero-Click RCE Exploitation Detected CVE CVE-2025-21298 Analyst Level Security Analyst Source IP / SMTP Address 84.38.130.118 Sender Email projectmanagement@pm.me Recipient Email Austin@letsdefend.io Email Subject Important: Action Required for Upcoming Project Deadline Attachment Name mail.</description>
+    </item>
+  </channel>
+</rss>
