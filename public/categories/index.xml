@@ -23,6 +23,20 @@
       <description></description>
     </item>
     <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/categories/programming/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/categories/python/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Malware Analysis</title>
       <link>http://localhost:1313/categories/malware-analysis/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
@@ -90,6 +104,20 @@
       <link>http://localhost:1313/categories/detection-engineering/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/detection-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>http://localhost:1313/categories/development/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools &amp; Workflows</title>
+      <link>http://localhost:1313/categories/tools--workflows/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/tools--workflows/</guid>
       <description></description>
     </item>
   </channel>

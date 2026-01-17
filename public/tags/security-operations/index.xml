@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Building a Custom Threat Intelligence Feed with n8n</title>
+      <link>http://localhost:1313/writeups/coding/leetcode/test/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/coding/leetcode/test/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

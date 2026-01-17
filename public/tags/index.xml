@@ -23,6 +23,13 @@
       <description></description>
     </item>
     <item>
+      <title>Exercism</title>
+      <link>http://localhost:1313/tags/exercism/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/exercism/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Infrastructure</title>
       <link>http://localhost:1313/tags/infrastructure/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
@@ -37,10 +44,38 @@
       <description></description>
     </item>
     <item>
+      <title>Oop</title>
+      <link>http://localhost:1313/tags/oop/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/oop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming-Basics</title>
+      <link>http://localhost:1313/tags/programming-basics/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/programming-basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Soc</title>
       <link>http://localhost:1313/tags/soc/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/soc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Space-Age</title>
+      <link>http://localhost:1313/tags/space-age/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/space-age/</guid>
       <description></description>
     </item>
     <item>
@@ -328,6 +363,41 @@
       <link>http://localhost:1313/tags/threat-detection/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/threat-detection/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Collaboration</title>
+      <link>http://localhost:1313/tags/collaboration/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/collaboration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Devops</title>
+      <link>http://localhost:1313/tags/devops/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Github</title>
+      <link>http://localhost:1313/tags/github/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/github/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Version-Control</title>
+      <link>http://localhost:1313/tags/version-control/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/version-control/</guid>
       <description></description>
     </item>
   </channel>

@@ -23,6 +23,13 @@
       <description>Scenario You are a junior security analyst at a small Japanese cryptocurrency trading company. After detecting suspicious activity on the internal network, you exported a PCAP for further investigation.</description>
     </item>
     <item>
+      <title>Space Age</title>
+      <link>http://localhost:1313/writeups/coding/exercism/space-age/</link>
+      <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/coding/exercism/space-age/</guid>
+      <description>Introduction The year is 2525 and you&amp;rsquo;ve just embarked on a journey to visit all planets in the Solar System (Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune). The first stop is Mercury, where customs require you to fill out a form (bureaucracy is apparently not Earth-specific). As you hand over the form to the customs officer, they scrutinize it and frown. &amp;ldquo;Do you really expect me to believe you&amp;rsquo;re just 50 years old?</description>
+    </item>
+    <item>
       <title>LetsDefend SOC138 – Suspicious XLS Malware Analysis</title>
       <link>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
@@ -93,10 +100,24 @@
       <description></description>
     </item>
     <item>
+      <title>Building a Custom Threat Intelligence Feed with n8n</title>
+      <link>http://localhost:1313/writeups/coding/leetcode/test/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/coding/leetcode/test/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Sigma Rules: From Basics to Advanced Detection Engineering</title>
       <link>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How Git and GitHub Work: A Practical Guide for Beginners</title>
+      <link>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</link>
+      <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</guid>
       <description></description>
     </item>
   </channel>

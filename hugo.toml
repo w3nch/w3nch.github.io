@@ -83,7 +83,7 @@ paginate = 10
 
   [[menu.main]]
     identifier = "writeups"
-    name = "Writeups"
+    name = "Writeup"
     url = "/writeups/"
     weight = 5
 

@@ -58,5 +58,15 @@
             <content type="html"><![CDATA[]]></content>
         </item>
         
+        <item>
+            <title>How Git and GitHub Work: A Practical Guide for Beginners</title>
+            <link>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</link>
+            <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</guid>
+            <description></description>
+            <content type="html"><![CDATA[]]></content>
+        </item>
+        
     </channel>
 </rss>
