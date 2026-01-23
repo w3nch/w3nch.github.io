@@ -120,5 +120,12 @@
       <guid>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Turning Text into Handwritten Assignments: Automating the Boring Part</title>
+      <link>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
+      <description>Let me start with the real reason this project exists.&#xA;My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.&#xA;If you’ve ever done this, you already know how annoying it is.&#xA;Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload.</description>
+    </item>
   </channel>
 </rss>

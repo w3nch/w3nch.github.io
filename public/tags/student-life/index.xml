@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Automation on Hello w3nch</title>
-    <link>http://localhost:1313/tags/automation/</link>
-    <description>Recent content in Automation on Hello w3nch</description>
+    <title>Student-Life on Hello w3nch</title>
+    <link>http://localhost:1313/tags/student-life/</link>
+    <description>Recent content in Student-Life on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/automation/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Building a Custom Threat Intelligence Feed with n8n</title>
-      <link>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</link>
-      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Building a Custom Threat Intelligence Feed with n8n</title>
-      <link>http://localhost:1313/writeups/coding/leetcode/test/</link>
-      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/coding/leetcode/test/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Sat, 15 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/student-life/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Turning Text into Handwritten Assignments: Automating the Boring Part</title>
       <link>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>

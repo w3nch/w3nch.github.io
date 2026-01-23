@@ -400,5 +400,26 @@
       <guid>http://localhost:1313/tags/version-control/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Cli-Tools</title>
+      <link>http://localhost:1313/tags/cli-tools/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cli-tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Productivity</title>
+      <link>http://localhost:1313/tags/productivity/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/productivity/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Student-Life</title>
+      <link>http://localhost:1313/tags/student-life/</link>
+      <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/student-life/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

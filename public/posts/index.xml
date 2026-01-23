@@ -68,5 +68,239 @@
             <content type="html"><![CDATA[]]></content>
         </item>
         
+        <item>
+            <title>Turning Text into Handwritten Assignments: Automating the Boring Part</title>
+            <link>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
+            <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
+            <description>Let me start with the real reason this project exists.
+My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.
+If you’ve ever done this, you already know how annoying it is.
+Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload.</description>
+            <content type="html"><![CDATA[<p>Let me start with the real reason this project exists.</p>
+<p>My college keeps giving assignments and insists that they must be <strong>handwritten</strong>. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to <strong>scan or take photos and upload them to a Google Form</strong>.</p>
+<p>If you’ve ever done this, you already know how annoying it is.</p>
+<p>Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload. The funny part? The assignment was already written digitally in the first place.</p>
+<p>So I did what any tired student who knows a bit of coding would do:<br>
+I decided to automate it.</p>
+<p><img src="https://c.tenor.com/RSc9Gw10HnsAAAAd/tenor.gif" alt=""></p>
+<h2 id="the-idea">The Idea</h2>
+<p>The goal was simple:</p>
+<ul>
+<li>
+<p>Write the assignment normally as text</p>
+</li>
+<li>
+<p>Convert it into something that <em>looks handwritten</em></p>
+</li>
+<li>
+<p>Upload it like everyone else</p>
+</li>
+</ul>
+<p>No fancy AI. No online services. Just a tool that saves time and sanity.</p>
+<p>I wanted it to be:</p>
+<ul>
+<li>
+<p>Fully offline</p>
+</li>
+<li>
+<p>Fast</p>
+</li>
+<li>
+<p>Easy to use</p>
+</li>
+<li>
+<p>Scriptable from the command line</p>
+</li>
+</ul>
+<h2 id="the-first-attempt-and-why-it-failed">The First Attempt (and Why It Failed)</h2>
+<p>Like most people, I first tried libraries that promise “text to handwriting” in one function call. One popular example is <code>pywhatkit</code>.</p>
+<p>On paper, it sounds perfect. In reality, it relies on an external API.</p>
+<p>That caused problems almost immediately:</p>
+<ul>
+<li>
+<p>Sometimes it worked, sometimes it didn’t</p>
+</li>
+<li>
+<p>Internet was required</p>
+</li>
+<li>
+<p>Random errors like “Unable to access API”</p>
+</li>
+<li>
+<p>No control over fonts or layout</p>
+</li>
+</ul>
+<p><img src="https://i.ibb.co/RTDNcM49/2026-01-22-15-12.png" alt=""></p>
+<p>For something as basic as converting text to handwriting, this felt unnecessarily fragile. If I’m already writing code, I want it to work every time.</p>
+<p>So I scrapped that idea.
+<img src="https://i.ibb.co/gXpJ1xh/2026-01-22-15-11.png" alt=""></p>
+<h2 id="rethinking-the-problem">Rethinking the Problem</h2>
+<p>Instead of thinking “convert text into handwriting,” I changed the way I looked at it.</p>
+<p>What I actually needed was this:</p>
+<ul>
+<li>
+<p>Take text from a file</p>
+</li>
+<li>
+<p>Draw it onto a page</p>
+</li>
+<li>
+<p>Use a handwriting-style font</p>
+</li>
+<li>
+<p>Save the result as an image</p>
+</li>
+</ul>
+<p>That’s it.</p>
+<p>Once you see it this way, the problem becomes much simpler and much more reliable.</p>
+<h2 id="why-i-chose-png-instead-of-pdf">Why I Chose PNG Instead of PDF</h2>
+<p>At first, PDF seemed like the obvious choice. But PDFs come with annoying font restrictions, especially with decorative or calligraphy fonts.</p>
+<p>PNG images are way more flexible:</p>
+<ul>
+<li>
+<p>Almost any font works</p>
+</li>
+<li>
+<p>No font embedding issues</p>
+</li>
+<li>
+<p>Easy to preview</p>
+</li>
+<li>
+<p>Easy to upload to Google Forms</p>
+</li>
+<li>
+<p>Can be converted to PDF later if needed</p>
+</li>
+</ul>
+<p>Since the college only cares about seeing “handwritten” pages, PNG was more than enough.</p>
+<h2 id="the-cli-workflow">The CLI Workflow</h2>
+<p>I didn’t want a GUI. I wanted something fast.</p>
+<p>The ideal workflow looks like this:</p>
+<ul>
+<li>
+<p>Write the assignment in <code>input.txt</code></p>
+</li>
+<li>
+<p>Run one command</p>
+</li>
+<li>
+<p>Get a handwritten image out</p>
+</li>
+</ul>
+<p>Something like:<br>
+txt2hand input.txt output.png</p>
+<p>That’s it.</p>
+<p>This makes it easy to:</p>
+<ul>
+<li>
+<p>Regenerate pages if something changes</p>
+</li>
+<li>
+<p>Try different fonts</p>
+</li>
+<li>
+<p>Batch-convert multiple assignments</p>
+</li>
+<li>
+<p>Automate everything</p>
+</li>
+</ul>
+<h2 id="the-tools-that-made-it-work">The Tools That Made It Work</h2>
+<p>Here’s everything the tool actually uses:</p>
+<ul>
+<li>
+<p><strong>Pillow (PIL)</strong><br>
+This is the core library. It’s used to create images, load handwriting fonts, and draw text onto a blank page.</p>
+</li>
+<li>
+<p><strong>A handwriting font (TTF or OTF)</strong><br>
+Any handwritten-style font works. This gives the output its “handwritten” look. Google Fonts.i used caveat here.</p>
+</li>
+</ul>
+<p>That’s it. No APIs. No internet. No background services.</p>
+<p>Pillow lets you draw text directly onto an image, and unlike PDF tools, it doesn’t complain about artistic fonts. That meant I could use fonts that actually look like real handwriting.</p>
+<p>Once the basics were working, it was easy to add small touches like:</p>
+<ul>
+<li>
+<p>Slight text jitter</p>
+</li>
+<li>
+<p>Imperfect line spacing</p>
+</li>
+<li>
+<p>Natural margins</p>
+</li>
+</ul>
+<p>Those tiny imperfections make a huge difference. Perfect alignment looks fake. Slight messiness looks human.</p>
+<p>You can install the only dependency like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install pillow
+</span></span></code></pre></div><h2 id="how-the-tool-works-internally">How the Tool Works Internally</h2>
+<p>At a high level, the process looks like this:</p>
+<ol>
+<li>
+<p>Read the assignment text from a <code>.txt</code> file</p>
+</li>
+<li>
+<p>Create a blank A4-sized image</p>
+</li>
+<li>
+<p>Load a handwriting-style font</p>
+</li>
+<li>
+<p>Draw each line of text onto the image</p>
+</li>
+<li>
+<p>Add small random offsets to make it look human</p>
+</li>
+<li>
+<p>Save the final result as a PNG image</p>
+</li>
+</ol>
+<p>Simple, predictable, and fully offline. The code can be found on my GitHub.</p>
+<h2 id="why-the-randomness-matters">Why the Randomness Matters</h2>
+<p>If you render text perfectly aligned, it immediately looks fake. Real handwriting has tiny inconsistencies.</p>
+<p>That’s why the script adds:</p>
+<ul>
+<li>
+<p>Small horizontal and vertical offsets</p>
+</li>
+<li>
+<p>Natural line spacing</p>
+</li>
+<li>
+<p>Soft margins</p>
+</li>
+</ul>
+<p>These imperfections make the output feel human instead of robotic.</p>
+<h2 id="the-result">The Result</h2>
+<p><img src="https://i.ibb.co/LhHTWfFc/handwritten-page-1.png" alt=""></p>
+<p>Now instead of writing pages by hand, my workflow is:</p>
+<ul>
+<li>
+<p>Write the assignment once</p>
+</li>
+<li>
+<p>Run the tool</p>
+</li>
+<li>
+<p>Upload the generated handwritten image</p>
+</li>
+</ul>
+<p>Adjust the values as you like the size , font , color add in more image</p>
+<p>from this whole thing the best part?<br>
+Other students can use it too.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>I know this might not look the best but if it works it work <strong>Don&rsquo;t Touch it</strong></p>
+<p>This wasn’t about cheating or shortcuts. The work is still done. The content is still written. The only thing automated is the boring, repetitive part that adds no real value.</p>
+<p>If colleges want handwritten submissions but accept digital uploads, tools like this are inevitable.</p>
+<p>Sometimes the best motivation to build something isn’t innovation  it’s pure frustration.</p>
+<p>And honestly?<br>
+My wrist has never been happier.</p>
+]]></content>
+        </item>
+        
     </channel>
 </rss>

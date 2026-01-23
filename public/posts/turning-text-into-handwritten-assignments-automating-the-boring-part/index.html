@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Let me start with the real reason this project exists.
+My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.
+If you’ve ever done this, you already know how annoying it is.
+Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload." />
+<meta name="keywords" content=", python, automation, cli-tools, productivity, student-life" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/" />
+
+
+    <title>
+        
+            Turning Text into Handwritten Assignments: Automating the Boring Part :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="Turning Text into Handwritten Assignments: Automating the Boring Part">
+<meta itemprop="description" content="Let me start with the real reason this project exists.
+My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.
+If you’ve ever done this, you already know how annoying it is.
+Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload."><meta itemprop="datePublished" content="2023-04-15T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2023-04-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="853">
+<meta itemprop="keywords" content="python,automation,cli-tools,productivity,student-life," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Turning Text into Handwritten Assignments: Automating the Boring Part"/>
+<meta name="twitter:description" content="Let me start with the real reason this project exists.
+My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.
+If you’ve ever done this, you already know how annoying it is.
+Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload."/>
+
+
+
+
+
+    <meta property="article:section" content="Projects" />
+
+    <meta property="article:section" content="Automation" />
+
+
+
+    <meta property="article:published_time" content="2023-04-15 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello ;)</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeup</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+  <div class="content">
+    <main class="post">
+
+      <div class="post-info">
+        <p>
+
+          
+        </p>
+      </div>
+
+      <article>
+        <h1 class="post-title">
+          <a href="http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/">Turning Text into Handwritten Assignments: Automating the Boring Part</a>
+        </h1>
+
+        
+
+        
+
+        
+
+        <div class="post-content">
+          <p>Let me start with the real reason this project exists.</p>
+<p>My college keeps giving assignments and insists that they must be <strong>handwritten</strong>. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to <strong>scan or take photos and upload them to a Google Form</strong>.</p>
+<p>If you’ve ever done this, you already know how annoying it is.</p>
+<p>Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload. The funny part? The assignment was already written digitally in the first place.</p>
+<p>So I did what any tired student who knows a bit of coding would do:<br>
+I decided to automate it.</p>
+<p><img src="https://c.tenor.com/RSc9Gw10HnsAAAAd/tenor.gif" alt=""></p>
+<h2 id="the-idea">The Idea</h2>
+<p>The goal was simple:</p>
+<ul>
+<li>
+<p>Write the assignment normally as text</p>
+</li>
+<li>
+<p>Convert it into something that <em>looks handwritten</em></p>
+</li>
+<li>
+<p>Upload it like everyone else</p>
+</li>
+</ul>
+<p>No fancy AI. No online services. Just a tool that saves time and sanity.</p>
+<p>I wanted it to be:</p>
+<ul>
+<li>
+<p>Fully offline</p>
+</li>
+<li>
+<p>Fast</p>
+</li>
+<li>
+<p>Easy to use</p>
+</li>
+<li>
+<p>Scriptable from the command line</p>
+</li>
+</ul>
+<h2 id="the-first-attempt-and-why-it-failed">The First Attempt (and Why It Failed)</h2>
+<p>Like most people, I first tried libraries that promise “text to handwriting” in one function call. One popular example is <code>pywhatkit</code>.</p>
+<p>On paper, it sounds perfect. In reality, it relies on an external API.</p>
+<p>That caused problems almost immediately:</p>
+<ul>
+<li>
+<p>Sometimes it worked, sometimes it didn’t</p>
+</li>
+<li>
+<p>Internet was required</p>
+</li>
+<li>
+<p>Random errors like “Unable to access API”</p>
+</li>
+<li>
+<p>No control over fonts or layout</p>
+</li>
+</ul>
+<p><img src="https://i.ibb.co/RTDNcM49/2026-01-22-15-12.png" alt=""></p>
+<p>For something as basic as converting text to handwriting, this felt unnecessarily fragile. If I’m already writing code, I want it to work every time.</p>
+<p>So I scrapped that idea.
+<img src="https://i.ibb.co/gXpJ1xh/2026-01-22-15-11.png" alt=""></p>
+<h2 id="rethinking-the-problem">Rethinking the Problem</h2>
+<p>Instead of thinking “convert text into handwriting,” I changed the way I looked at it.</p>
+<p>What I actually needed was this:</p>
+<ul>
+<li>
+<p>Take text from a file</p>
+</li>
+<li>
+<p>Draw it onto a page</p>
+</li>
+<li>
+<p>Use a handwriting-style font</p>
+</li>
+<li>
+<p>Save the result as an image</p>
+</li>
+</ul>
+<p>That’s it.</p>
+<p>Once you see it this way, the problem becomes much simpler and much more reliable.</p>
+<h2 id="why-i-chose-png-instead-of-pdf">Why I Chose PNG Instead of PDF</h2>
+<p>At first, PDF seemed like the obvious choice. But PDFs come with annoying font restrictions, especially with decorative or calligraphy fonts.</p>
+<p>PNG images are way more flexible:</p>
+<ul>
+<li>
+<p>Almost any font works</p>
+</li>
+<li>
+<p>No font embedding issues</p>
+</li>
+<li>
+<p>Easy to preview</p>
+</li>
+<li>
+<p>Easy to upload to Google Forms</p>
+</li>
+<li>
+<p>Can be converted to PDF later if needed</p>
+</li>
+</ul>
+<p>Since the college only cares about seeing “handwritten” pages, PNG was more than enough.</p>
+<h2 id="the-cli-workflow">The CLI Workflow</h2>
+<p>I didn’t want a GUI. I wanted something fast.</p>
+<p>The ideal workflow looks like this:</p>
+<ul>
+<li>
+<p>Write the assignment in <code>input.txt</code></p>
+</li>
+<li>
+<p>Run one command</p>
+</li>
+<li>
+<p>Get a handwritten image out</p>
+</li>
+</ul>
+<p>Something like:<br>
+txt2hand input.txt output.png</p>
+<p>That’s it.</p>
+<p>This makes it easy to:</p>
+<ul>
+<li>
+<p>Regenerate pages if something changes</p>
+</li>
+<li>
+<p>Try different fonts</p>
+</li>
+<li>
+<p>Batch-convert multiple assignments</p>
+</li>
+<li>
+<p>Automate everything</p>
+</li>
+</ul>
+<h2 id="the-tools-that-made-it-work">The Tools That Made It Work</h2>
+<p>Here’s everything the tool actually uses:</p>
+<ul>
+<li>
+<p><strong>Pillow (PIL)</strong><br>
+This is the core library. It’s used to create images, load handwriting fonts, and draw text onto a blank page.</p>
+</li>
+<li>
+<p><strong>A handwriting font (TTF or OTF)</strong><br>
+Any handwritten-style font works. This gives the output its “handwritten” look. Google Fonts.i used caveat here.</p>
+</li>
+</ul>
+<p>That’s it. No APIs. No internet. No background services.</p>
+<p>Pillow lets you draw text directly onto an image, and unlike PDF tools, it doesn’t complain about artistic fonts. That meant I could use fonts that actually look like real handwriting.</p>
+<p>Once the basics were working, it was easy to add small touches like:</p>
+<ul>
+<li>
+<p>Slight text jitter</p>
+</li>
+<li>
+<p>Imperfect line spacing</p>
+</li>
+<li>
+<p>Natural margins</p>
+</li>
+</ul>
+<p>Those tiny imperfections make a huge difference. Perfect alignment looks fake. Slight messiness looks human.</p>
+<p>You can install the only dependency like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install pillow
+</span></span></code></pre></div><h2 id="how-the-tool-works-internally">How the Tool Works Internally</h2>
+<p>At a high level, the process looks like this:</p>
+<ol>
+<li>
+<p>Read the assignment text from a <code>.txt</code> file</p>
+</li>
+<li>
+<p>Create a blank A4-sized image</p>
+</li>
+<li>
+<p>Load a handwriting-style font</p>
+</li>
+<li>
+<p>Draw each line of text onto the image</p>
+</li>
+<li>
+<p>Add small random offsets to make it look human</p>
+</li>
+<li>
+<p>Save the final result as a PNG image</p>
+</li>
+</ol>
+<p>Simple, predictable, and fully offline. The code can be found on my GitHub.</p>
+<h2 id="why-the-randomness-matters">Why the Randomness Matters</h2>
+<p>If you render text perfectly aligned, it immediately looks fake. Real handwriting has tiny inconsistencies.</p>
+<p>That’s why the script adds:</p>
+<ul>
+<li>
+<p>Small horizontal and vertical offsets</p>
+</li>
+<li>
+<p>Natural line spacing</p>
+</li>
+<li>
+<p>Soft margins</p>
+</li>
+</ul>
+<p>These imperfections make the output feel human instead of robotic.</p>
+<h2 id="the-result">The Result</h2>
+<p><img src="https://i.ibb.co/LhHTWfFc/handwritten-page-1.png" alt=""></p>
+<p>Now instead of writing pages by hand, my workflow is:</p>
+<ul>
+<li>
+<p>Write the assignment once</p>
+</li>
+<li>
+<p>Run the tool</p>
+</li>
+<li>
+<p>Upload the generated handwritten image</p>
+</li>
+</ul>
+<p>Adjust the values as you like the size , font , color add in more image</p>
+<p>from this whole thing the best part?<br>
+Other students can use it too.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>I know this might not look the best but if it works it work <strong>Don&rsquo;t Touch it</strong></p>
+<p>This wasn’t about cheating or shortcuts. The work is still done. The content is still written. The only thing automated is the boring, repetitive part that adds no real value.</p>
+<p>If colleges want handwritten submissions but accept digital uploads, tools like this are inevitable.</p>
+<p>Sometimes the best motivation to build something isn’t innovation  it’s pure frustration.</p>
+<p>And honestly?<br>
+My wrist has never been happier.</p>
+
+        </div>
+      </article>
+
+      <hr />
+
+      <div class="post-info">
+        
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/python/">python</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/automation/">automation</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/cli-tools/">cli-tools</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/productivity/">productivity</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/student-life/">student-life</a></span>
+        
+    </p>
+
+        
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/projects/">Projects</a></span>
+        <span class="tag"><a href="http://localhost:1313/categories/automation/">Automation</a></span>
+        
+    </p>
+
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          853 Words
+        </p>
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          
+            2023-04-15 05:30
+          
+
+           
+            
+          
+        </p>
+      </div>
+
+      
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">How Git and GitHub Work: A Practical Guide for Beginners</span>
+                </a>
+            </span>
+            
+
+            
+        </div>
+    </div>
+
+
+      
+
+      
+
+      
+
+    </main>
+  </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="http://localhost:1313/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

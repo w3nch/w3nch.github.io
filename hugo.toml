@@ -9,7 +9,7 @@ paginate = 10
   enableThemeToggle = true
   customCSS = ["css/code.css", "css/writeups.css"]
   homeTitle = "Hello, Friend."
-  homeSubtitle = "Breaking things to understand them. Hack or be hacked"
+  homeSubtitle = "Breaking things to understand them."
 
   [params.logo]
     logoText = "hello ;)"
