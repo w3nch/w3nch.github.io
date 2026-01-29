@@ -3,10 +3,106 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2026-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2026-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/curiosity/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/experiments/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hacking/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/learning/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/leetcode/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/sandbox/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/auditd/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/writeups/btlo/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/bruteforce/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/btlo/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/writeups/btlo/incident-response/paranoid/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/forensics/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/incident-response/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/incident-response/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/linux/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/linux-forensics/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/writeups/</loc>
+    <lastmod>2026-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/letsdefend/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/writeups/letsdefend/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/macros/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/malware/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/malware-investigation/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/phishing/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/powershell/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/soc/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/soc-analysis/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</loc>
+    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/writeups/coding/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
@@ -32,9 +128,6 @@
     <loc>http://localhost:1313/writeups/htb/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-01-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/infrastructure/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
   </url><url>
@@ -56,13 +149,7 @@
     <loc>http://localhost:1313/tags/programming-basics/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2026-01-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/python/</loc>
-    <lastmod>2026-01-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/soc/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/writeups/coding/exercism/space-age/</loc>
@@ -71,22 +158,10 @@
     <loc>http://localhost:1313/tags/space-age/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-01-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/wireshark/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/writeups/</loc>
-    <lastmod>2026-01-17T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/blue/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/letsdefend/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/writeups/letsdefend/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</loc>
@@ -95,13 +170,7 @@
     <loc>http://localhost:1313/tags/macro/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/malware/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/malware-analysis/</loc>
-    <lastmod>2026-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/powershell/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/soc-writeups/</loc>
@@ -110,13 +179,7 @@
     <loc>http://localhost:1313/tags/xlsm/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/writeups/btlo/</loc>
-    <lastmod>2026-01-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/blue-team/</loc>
-    <lastmod>2026-01-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/btlo/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</loc>
@@ -197,9 +260,6 @@
     <loc>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</loc>
     <lastmod>2026-01-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
-    <lastmod>2026-01-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2026-01-11T00:00:00+00:00</lastmod>
   </url><url>
@@ -214,9 +274,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/zero-click/</loc>
     <lastmod>2026-01-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hacking/</loc>
-    <lastmod>2026-01-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/pentesting/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>

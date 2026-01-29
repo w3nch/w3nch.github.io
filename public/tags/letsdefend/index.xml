@@ -6,8 +6,15 @@
     <description>Recent content in Letsdefend on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/letsdefend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</link>
+      <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</guid>
+      <description>Alert Name: SOC205 – Malicious Macro has been executed&#xA;Severity: High&#xA;Event ID: 231&#xA;Event Time: Feb 28, 2024 – 08:42 AM&#xA;Category: Malware&#xA;Platform: LetsDefend SOC&#xA;Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.&#xA;This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software.</description>
+    </item>
     <item>
       <title>LetsDefend SOC138 – Suspicious XLS Malware Analysis</title>
       <link>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</link>

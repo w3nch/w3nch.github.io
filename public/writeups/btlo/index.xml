@@ -6,8 +6,15 @@
     <description>Recent content in Blue Team Labs Online (BTLO) on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/writeups/btlo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BTLO Incident Response Case Study: Pranoid</title>
+      <link>http://localhost:1313/writeups/btlo/incident-response/paranoid/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/btlo/incident-response/paranoid/</guid>
+      <description>Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.&#xA;Scope and Evidence Primary artifact:&#xA;audit.log (Linux auditd) Tools used:&#xA;aureport ausearch Manual timeline correlation Observed timeframe:</description>
+    </item>
     <item>
       <title>GothamLegend Incident Response – PowerShell Malware Analysis</title>
       <link>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</link>

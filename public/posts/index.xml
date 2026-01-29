@@ -5,8 +5,65 @@
         <description>Recent content in Blog on Hello w3nch</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>What Happens If You Import os on LeetCode?</title>
+            <link>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</link>
+            <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</guid>
+            <description>Disclaimer: I do not promote hacking or abusing systems without permission. Everything shown here is purely for learning and experimentation.
+I was doing what I usually do solving problems on LeetCode using python when a random thought popped into my head:
+What if I import os and try to run something on the system?
+So I took a basic problem, Two Sum, solved it normally… and then added a tiny extra line at the end.</description>
+            <content type="html"><![CDATA[<p><strong>Disclaimer:</strong> I do not promote hacking or abusing systems without permission. Everything shown here is purely for learning and experimentation.</p>
+<p>I was doing what I usually do solving problems on <strong>LeetCode</strong> using python when a random thought popped into my head:</p>
+<blockquote>
+<p><em>What if I import <code>os</code> and try to run something on the system?</em></p>
+</blockquote>
+<p>So I took a basic problem, <strong>Two Sum</strong>, solved it normally… and then added a tiny extra line at the end.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">twoSum</span>(self, nums: List[int], target: int) <span style="color:#f92672">-&gt;</span> List[int]:
+</span></span><span style="display:flex;"><span>		seen <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>		get <span style="color:#f92672">=</span> seen<span style="color:#f92672">.</span>get
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> i, n <span style="color:#f92672">in</span> enumerate(nums):
+</span></span><span style="display:flex;"><span>		j <span style="color:#f92672">=</span> get(target <span style="color:#f92672">-</span> n)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> j <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">return</span> [j, i]
+</span></span><span style="display:flex;"><span>		seen[n] <span style="color:#f92672">=</span> i
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>files <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>listdir(<span style="color:#e6db74">&#34;.&#34;</span>)
+</span></span><span style="display:flex;"><span>print(files)
+</span></span></code></pre></div><p>To my surprise (and honestly, not much surprise ), it <strong>did produce output</strong> a list of files present in the working directory.</p>
+<p><img src="https://i.ibb.co/v6qVXtr8/Pasted-image-20260129135006.png" alt=""></p>
+<h2 id="whats-really-going-on">What’s Really Going On?</h2>
+<p>The code is clearly being executed inside a <strong>sandboxed environment</strong>. This is expected online judges like LeetCode <em>must</em> isolate user code. Still, it’s interesting to see how permissive that sandbox is at a basic level.</p>
+<p>Now, just to be clear:<br>
+I’m <strong>not</strong> attempting any sandbox escape or bypass here. This is just curiosity exploration.</p>
+<h3 id="messing-with-runtime">Messing with Runtime</h3>
+<p>LeetCode displays runtime metrics, so naturally, I wondered how that value is being calculated. For fun, I tried tweaking the runtime display by changing the execution behavior at exit:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> atexit; atexit<span style="color:#f92672">.</span>register(<span style="color:#66d9ef">lambda</span>: open(<span style="color:#e6db74">&#34;display_runtime.txt&#34;</span>,<span style="color:#e6db74">&#34;w&#34;</span>)<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#34;0&#34;</span>) <span style="color:#f92672">or</span> <span style="color:#66d9ef">None</span>)
+</span></span></code></pre></div><p>basically what this code does is  overwrote <code>display_runtime.txt</code>, result with 0 value and as runtime tries to display it comes out as <strong>0ms</strong>.</p>
+<p><img src="https://i.ibb.co/QFsjxmxc/Pasted-image-20260129135818.png" alt=""></p>
+<h2 id="should-you-do-this">Should You Do This?</h2>
+<p>Absolutely not.
+This won’t improve:</p>
+<ul>
+<li>Your problem solving skills</li>
+<li>Your algorithmic thinking</li>
+<li>Your understanding of data structures
+But what it <em>does</em> help with is understanding:</li>
+<li>How online judges execute code</li>
+<li>How sandboxes are structured</li>
+<li>How runtime and metadata might be handled on the backend</li>
+</ul>
+<p>There are more interesting files in the environment too, if you’re curious enough to look but again, <strong>this is for learning, not abuse</strong>.</p>
+]]></content>
+        </item>
         
         <item>
             <title>DDoS Attacks: History and the Future</title>

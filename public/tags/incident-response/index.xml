@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Incident-Response on Hello w3nch</title>
+    <link>http://localhost:1313/tags/incident-response/</link>
+    <description>Recent content in Incident-Response on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 28 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/incident-response/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BTLO Incident Response Case Study: Pranoid</title>
+      <link>http://localhost:1313/writeups/btlo/incident-response/paranoid/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/btlo/incident-response/paranoid/</guid>
+      <description>Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.&#xA;Scope and Evidence Primary artifact:&#xA;audit.log (Linux auditd) Tools used:&#xA;aureport ausearch Manual timeline correlation Observed timeframe:</description>
+    </item>
+    <item>
+      <title>SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</link>
+      <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</guid>
+      <description>Alert Name: SOC205 – Malicious Macro has been executed&#xA;Severity: High&#xA;Event ID: 231&#xA;Event Time: Feb 28, 2024 – 08:42 AM&#xA;Category: Malware&#xA;Platform: LetsDefend SOC&#xA;Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.&#xA;This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software.</description>
+    </item>
+  </channel>
+</rss>

