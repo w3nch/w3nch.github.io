@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Alert Name: SOC127 – SQL Injection Detected
+Severity: High
+Event ID: 235
+Event Time: Mar 07, 2024 – 12:51 PM
+Category: Web Application Attack
+Platform: LetsDefend SOC
+This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.
+Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background." />
+<meta name="keywords" content=", letsdefend, soc, blue-team, sql-injection, web-security" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/posts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/" />
+
+
+    <title>
+        
+            SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling">
+<meta itemprop="description" content="Alert Name: SOC127 – SQL Injection Detected
+Severity: High
+Event ID: 235
+Event Time: Mar 07, 2024 – 12:51 PM
+Category: Web Application Attack
+Platform: LetsDefend SOC
+This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.
+Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background."><meta itemprop="datePublished" content="2026-01-29T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-01-29T00:00:00+00:00" />
+<meta itemprop="wordCount" content="669">
+<meta itemprop="keywords" content="letsdefend,soc,blue-team,sql-injection,web-security," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling"/>
+<meta name="twitter:description" content="Alert Name: SOC127 – SQL Injection Detected
+Severity: High
+Event ID: 235
+Event Time: Mar 07, 2024 – 12:51 PM
+Category: Web Application Attack
+Platform: LetsDefend SOC
+This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.
+Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background."/>
+
+
+
+
+
+    <meta property="article:section" content="SOC Writeups" />
+
+    <meta property="article:section" content="sqli &amp; RCE" />
+
+
+
+    <meta property="article:published_time" content="2026-01-29 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello ;)</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeup</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+  <div class="content">
+    <main class="post">
+
+      <div class="post-info">
+        <p>
+
+          
+        </p>
+      </div>
+
+      <article>
+        <h1 class="post-title">
+          <a href="http://localhost:1313/posts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/">SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling</a>
+        </h1>
+
+        
+
+        
+
+        
+
+        <div class="post-content">
+          <p><strong>Alert Name:</strong> SOC127 – SQL Injection Detected<br>
+<strong>Severity:</strong> High<br>
+<strong>Event ID:</strong> 235<br>
+<strong>Event Time:</strong> Mar 07, 2024 – 12:51 PM<br>
+<strong>Category:</strong> Web Application Attack<br>
+<strong>Platform:</strong> LetsDefend SOC</p>
+<p>This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.</p>
+<p>Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background. This shows that systems can look normal on the surface while still being misused.</p>
+<p>It also shows that attackers often use automated tools to test many tricks very quickly. Once they find a weak spot, they can start pulling information from the system.</p>
+<p>The big takeaway is that websites need to be built carefully and constantly monitored, because small weaknesses can allow outsiders to access sensitive information without anyone noticing right away.</p>
+<hr>
+<h2 id="alert-overview"><strong>Alert Overview</strong></h2>
+<p>A high-severity SQL injection alert was triggered after suspicious HTTP requests were detected originating from an external IP address targeting a web application.</p>
+<p>SQL injection attacks allow attackers to manipulate backend database queries by injecting malicious SQL code through user-controllable input fields. In this case, multiple parameters were identified as vulnerable, allowing the attacker to interact with the database directly.</p>
+<h2 id="key-event-details"><strong>Key Event Details</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Destination Hostname</td>
+<td>WebServer1000</td>
+</tr>
+<tr>
+<td>Destination IP</td>
+<td>172.16.20.12</td>
+</tr>
+<tr>
+<td>Source IP</td>
+<td>118.194.247.28</td>
+</tr>
+<tr>
+<td>HTTP Method</td>
+<td>GET</td>
+</tr>
+<tr>
+<td>Vulnerable Parameters</td>
+<td><code>id</code>, <code>douj</code></td>
+</tr>
+<tr>
+<td>HTTP Status</td>
+<td>200 (Success)</td>
+</tr>
+<tr>
+<td>Response Size</td>
+<td>865 bytes</td>
+</tr>
+<tr>
+<td>Tool Identified</td>
+<td>sqlmap 1.7.2</td>
+</tr>
+<tr>
+<td>Device Action</td>
+<td>Allowed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="threat-indicators-identified"><strong>Threat Indicators Identified</strong></h2>
+<ul>
+<li>Automated SQL injection tool usage (sqlmap)</li>
+<li>Boolean-based SQL injection payloads</li>
+<li>UNION-based SQL injection</li>
+<li>Database enumeration attempts</li>
+<li>Obfuscated SQL payloads using XML and character encoding</li>
+<li>Dangerous function calls (<code>xp_cmdshell</code>)</li>
+<li>Consistent successful HTTP responses</li>
+</ul>
+<h3 id="attack-flow--timeline"><strong>Attack Flow &amp; Timeline</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Time (UTC)</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12:50 PM</td>
+<td>Port scanning activity detected</td>
+</tr>
+<tr>
+<td>12:51 PM</td>
+<td>Initial SQL injection payload observed</td>
+</tr>
+<tr>
+<td>12:51 PM</td>
+<td>UNION-based data extraction attempts</td>
+</tr>
+<tr>
+<td>12:53 PM</td>
+<td>Boolean-based SQL injection confirmation</td>
+</tr>
+<tr>
+<td>12:53 PM</td>
+<td>Continued automated exploitation attempts</td>
+</tr>
+</tbody>
+</table>
+<h2 id="payload-analysis-examples"><strong>Payload Analysis (Examples)</strong></h2>
+<p>![[Pasted image 20260129150705.png]]</p>
+<h3 id="union-based-sql-injection"><strong>UNION-Based SQL Injection</strong></h3>
+<pre tabindex="0"><code>UNION ALL SELECT 1,NULL,&#39;&lt;script&gt;alert(&#34;XSS&#34;)&lt;/script&gt;&#39;,table_name FROM information_schema.tables
+</code></pre><h3 id="boolean-based-sql-injection"><strong>Boolean-Based SQL Injection</strong></h3>
+<pre tabindex="0"><code>id=1 AND 9816=9452--
+</code></pre><h3 id="obfuscated-sql-injection"><strong>Obfuscated SQL Injection</strong></h3>
+<pre tabindex="0"><code>CAST((CHR(113)||CHR(107)||CHR(107)||CHR(118)||CHR(113))||(SELECT (CASE WHEN (2574=2574) THEN 1 ELSE 0 END))::text AS NUMERIC)
+</code></pre><h3 id="command-execution-attempt"><strong>Command Execution Attempt</strong></h3>
+<pre tabindex="0"><code>EXEC xp_cmdshell(&#39;cat ../../../etc/passwd&#39;)
+</code></pre><p>These payloads confirm <strong>active exploitation and post-exploitation testing</strong>.</p>
+<h2 id="reputation-check"><strong>Reputation Check</strong></h2>
+<p>The source IP <strong>118.194.247.28</strong> was checked against multiple threat intelligence platforms:</p>
+<ul>
+<li><a href="https://www.virustotal.com/gui/ip-address/118.194.247.28">VirusTotal</a>
+![[Pasted image 20260129150334.png]]</li>
+<li><a href="https://www.abuseipdb.com/check/118.194.247.28">AbuseIPDB</a>
+![[Pasted image 20260129150343.png]]</li>
+<li><a href="https://talosintelligence.com/reputation_center/lookup?search=118.194.247.28">Cisco Talos</a>
+![[Pasted image 20260129150416.png]]</li>
+</ul>
+<p>The IP address was reported for <strong>web attacks, scanning activity, and malicious behavior</strong>, further validating the malicious nature of the traffic.</p>
+<h2 id="attack-assessment"><strong>Attack Assessment</strong></h2>
+<ul>
+<li><strong>SQL Injection Successful:</strong> Yes</li>
+<li><strong>Database Interaction:</strong> Confirmed</li>
+<li><strong>Database Enumeration:</strong> Observed</li>
+<li><strong>Command Execution:</strong> Attempted (not confirmed)</li>
+<li><strong>Planned Test:</strong> No</li>
+<li><strong>Traffic Direction:</strong> Internet → Company Network</li>
+</ul>
+<p>This incident represents a <strong>successful compromise of the web application’s database layer</strong>.</p>
+<h2 id="impact-assessment"><strong>Impact Assessment</strong></h2>
+<ul>
+<li>Unauthorized database access: <strong>Yes</strong></li>
+<li>Data exposure: <strong>Possible</strong></li>
+<li>Web application integrity: <strong>Compromised</strong></li>
+<li>Risk of escalation: <strong>High</strong></li>
+<li>Business impact: <strong>High</strong></li>
+</ul>
+<h2 id="lessons-learned"><strong>Lessons Learned</strong></h2>
+<ul>
+<li>Public-facing applications must be protected against SQL injection.</li>
+<li>Input validation and prepared statements should be enforced.</li>
+<li>Web Application Firewalls (WAF) must be enabled and tuned.</li>
+<li>Dangerous database functions should be disabled.</li>
+<li>Continuous monitoring of HTTP traffic is essential.</li>
+<li>Regular security testing and code reviews are critical.</li>
+</ul>
+<h2 id="mitre-attck-mapping">MITRE ATT&amp;CK Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Tactic</th>
+<th>Technique</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reconnaissance</td>
+<td>Active Scanning</td>
+<td>T1595</td>
+</tr>
+<tr>
+<td>Initial Access</td>
+<td>Exploit Public-Facing Application</td>
+<td>T1190</td>
+</tr>
+<tr>
+<td>Discovery</td>
+<td>Database Enumeration</td>
+<td>T1083</td>
+</tr>
+<tr>
+<td>Execution</td>
+<td>Command Injection</td>
+<td>T1059</td>
+</tr>
+</tbody>
+</table>
+<h2 id="artifacts-collected"><strong>Artifacts Collected</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attacker IP</td>
+<td>118.194.247.28</td>
+</tr>
+<tr>
+<td>Target Host</td>
+<td>WebServer1000</td>
+</tr>
+<tr>
+<td>Tool</td>
+<td>sqlmap 1.7.2</td>
+</tr>
+<tr>
+<td>HTTP Endpoints</td>
+<td><code>/</code>, <code>/index.php</code></td>
+</tr>
+<tr>
+<td>Vulnerable Parameters</td>
+<td><code>id</code>, <code>douj</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="final-verdict"><strong>Final Verdict</strong></h2>
+<p><strong>True Positive – Successful SQL Injection Attack</strong></p>
+<p>The attacker successfully exploited a SQL injection vulnerability using automated tooling, gaining unauthorized interaction with the backend database. Although full system compromise was not confirmed, this incident represents a <strong>critical application security failure</strong> requiring immediate remediation.</p>
+<h2 id="analyst-note"><strong>Analyst Note</strong></h2>
+<p>This case highlights how automated tools such as sqlmap can rapidly exploit poorly protected web applications. Even without confirmed operating system compromise, database-level access poses significant risk. Strong input validation, secure coding practices, and proactive web security monitoring are essential to prevent similar incidents.</p>
+
+        </div>
+      </article>
+
+      <hr />
+
+      <div class="post-info">
+        
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/blue-team/">blue-team</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/sql-injection/">sql-injection</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/web-security/">web-security</a></span>
+        
+    </p>
+
+        
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="http://localhost:1313/categories/soc-writeups/">SOC Writeups</a></span>
+        <span class="tag"><a href="http://localhost:1313/categories/sqli-rce/">sqli &amp; RCE</a></span>
+        
+    </p>
+
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          669 Words
+        </p>
+
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          
+            2026-01-29 05:30
+          
+
+           
+            
+          
+        </p>
+      </div>
+
+      
+    <div class="pagination">
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/">
+                    <span class="button__text">What Happens If You Import os on LeetCode?</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+      
+
+      
+
+      
+
+    </main>
+  </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="http://localhost:1313/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

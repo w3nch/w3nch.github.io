@@ -6,8 +6,22 @@
     <description>Recent content in Soc on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/soc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Password Storage Fails: A Security Timeline Every Defender Should Know</title>
+      <link>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</link>
+      <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</guid>
+      <description>Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.&#xA;Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way.</description>
+    </item>
+    <item>
+      <title>SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</guid>
+      <description>Alert Name: SOC127 – SQL Injection Detected&#xA;Severity: High&#xA;Event ID: 235&#xA;Event Time: Mar 07, 2024 – 12:51 PM&#xA;Category: Web Application Attack&#xA;Platform: LetsDefend SOC&#xA;This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.&#xA;Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background.</description>
+    </item>
     <item>
       <title>SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</title>
       <link>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</link>

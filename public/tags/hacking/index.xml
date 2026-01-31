@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</guid>
-      <description>#leetcode #hacking&#xA;Disclaimer: I do not promote hacking or abusing systems without permission. Everything shown here is purely for learning and experimentation.&#xA;I was doing what I usually do solving problems on LeetCode using python when a random thought popped into my head:&#xA;What if I import os and try to run something on the system?&#xA;So I took a basic problem, Two Sum, solved it normally… and then added a tiny extra line at the end.</description>
+      <description>Disclaimer: I do not promote hacking or abusing systems without permission. Everything shown here is purely for learning and experimentation.&#xA;I was doing what I usually do solving problems on LeetCode using python when a random thought popped into my head:&#xA;What if I import os and try to run something on the system?&#xA;So I took a basic problem, Two Sum, solved it normally… and then added a tiny extra line at the end.</description>
     </item>
     <item>
       <title>WiFi Hacking 101 to 1337</title>
