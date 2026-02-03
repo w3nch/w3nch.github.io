@@ -44,6 +44,9 @@
     <loc>http://localhost:1313/tags/curiosity/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/endpoint-security/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/experiments/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -62,6 +65,15 @@
     <loc>http://localhost:1313/writeups/letsdefend/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/malware--endpoint/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/malware-analysis/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/powershell/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
   </url><url>
@@ -72,6 +84,9 @@
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</loc>
+    <lastmod>2026-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/sql-injection/</loc>
@@ -132,9 +147,6 @@
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/phishing/</loc>
-    <lastmod>2026-01-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/powershell/</loc>
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/soc-analysis/</loc>

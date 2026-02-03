@@ -23,6 +23,13 @@
       <description>Alert Name: SOC127 – SQL Injection Detected&#xA;Severity: High&#xA;Event ID: 235&#xA;Event Time: Mar 07, 2024 – 12:51 PM&#xA;Category: Web Application Attack&#xA;Platform: LetsDefend SOC&#xA;This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.&#xA;Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background.</description>
     </item>
     <item>
+      <title>SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</link>
+      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</guid>
+      <description>#soc #letsdefend&#xA;Event ID: 238&#xA;Rule Name: SOC153 – Suspicious PowerShell Script Executed&#xA;Severity: HIGH&#xA;Category: Endpoint Compromise / Malware&#xA;Event Time: March 14, 2024 – 05:23 PM&#xA;Compromised Host: Tony (172.16.17.206)&#xA;Someone at work opened a suspicious file they probably shouldn&amp;rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&amp;rsquo;t know what&amp;rsquo;s on it, but it starts doing things automatically.</description>
+    </item>
+    <item>
       <title>SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</title>
       <link>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>

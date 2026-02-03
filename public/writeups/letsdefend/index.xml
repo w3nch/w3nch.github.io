@@ -6,8 +6,15 @@
     <description>Recent content in LetsDefend on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/writeups/letsdefend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection</title>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</link>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</guid>
+      <description>Event ID: 238&#xA;Rule Name: SOC153 – Suspicious PowerShell Script Executed&#xA;Severity: HIGH&#xA;Category: Endpoint Compromise / Malware&#xA;Event Time: March 14, 2024 – 05:23 PM&#xA;Compromised Host: Tony (172.16.17.206)&#xA;Tony at work opened a suspicious file they probably shouldn&amp;rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&amp;rsquo;t know what&amp;rsquo;s on it, but it starts doing things automatically.</description>
+    </item>
     <item>
       <title>SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling</title>
       <link>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</link>
