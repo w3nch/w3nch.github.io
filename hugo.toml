@@ -92,3 +92,7 @@ paginate = 10
     startLevel = 2
     endLevel = 4
     ordered = false
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"

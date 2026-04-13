@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cli-Tools on Hello w3nch</title>
-    <link>http://localhost:1313/tags/cli-tools/</link>
+    <link>https://w3nch.github.io/tags/cli-tools/</link>
     <description>Recent content in Cli-Tools on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 15 Apr 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cli-tools/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://w3nch.github.io/tags/cli-tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Turning Text into Handwritten Assignments: Automating the Boring Part</title>
-      <link>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
+      <link>https://w3nch.github.io/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
+      <guid>https://w3nch.github.io/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
       <description>Let me start with the real reason this project exists.&#xA;My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.&#xA;If you’ve ever done this, you already know how annoying it is.&#xA;Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload.</description>
     </item>
   </channel>

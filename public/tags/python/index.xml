@@ -2,31 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Hello w3nch</title>
-    <link>http://localhost:1313/tags/python/</link>
+    <link>https://w3nch.github.io/tags/python/</link>
     <description>Recent content in Python on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 29 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://w3nch.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Tar Path Traversal with Symlink Exploitation</title>
+      <link>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</guid>
+      <description>Executive Summary Archive extraction is one of the most trusted operations in modern computing. From package managers to backup systems, we routinely extract TAR files without a second thought. But what happens when the archive itself is malicious?&#xA;This analysis examines a how archive traversal technique uses deeply nested directory structures and symbolic link chains to bypass validation mechanisms and write files outside the intended extraction directory. By understanding how path resolution works at the filesystem level, we can see why simple validation fails and how attackers exploit this gap.</description>
+    </item>
     <item>
       <title>What Happens If You Import os on LeetCode?</title>
-      <link>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</link>
+      <link>https://w3nch.github.io/posts/what-happens-if-you-import-os-on-leetcode/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</guid>
+      <guid>https://w3nch.github.io/posts/what-happens-if-you-import-os-on-leetcode/</guid>
       <description>Disclaimer: I do not promote hacking or abusing systems without permission. Everything shown here is purely for learning and experimentation.&#xA;I was doing what I usually do solving problems on LeetCode using python when a random thought popped into my head:&#xA;What if I import os and try to run something on the system?&#xA;So I took a basic problem, Two Sum, solved it normally… and then added a tiny extra line at the end.</description>
     </item>
     <item>
       <title>Space Age</title>
-      <link>http://localhost:1313/writeups/coding/exercism/space-age/</link>
+      <link>https://w3nch.github.io/writeups/coding/exercism/space-age/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/coding/exercism/space-age/</guid>
+      <guid>https://w3nch.github.io/writeups/coding/exercism/space-age/</guid>
       <description>Introduction The year is 2525 and you&amp;rsquo;ve just embarked on a journey to visit all planets in the Solar System (Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune). The first stop is Mercury, where customs require you to fill out a form (bureaucracy is apparently not Earth-specific). As you hand over the form to the customs officer, they scrutinize it and frown. &amp;ldquo;Do you really expect me to believe you&amp;rsquo;re just 50 years old?</description>
     </item>
     <item>
       <title>Turning Text into Handwritten Assignments: Automating the Boring Part</title>
-      <link>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
+      <link>https://w3nch.github.io/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
+      <guid>https://w3nch.github.io/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
       <description>Let me start with the real reason this project exists.&#xA;My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.&#xA;If you’ve ever done this, you already know how annoying it is.&#xA;Writing multiple pages by hand takes time, your hand starts hurting, and half the effort goes into making sure it looks neat enough to upload.</description>
     </item>
   </channel>

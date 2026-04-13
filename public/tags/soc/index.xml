@@ -2,129 +2,136 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Soc on Hello w3nch</title>
-    <link>http://localhost:1313/tags/soc/</link>
+    <link>https://w3nch.github.io/tags/soc/</link>
     <description>Recent content in Soc on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 31 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/soc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 05 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://w3nch.github.io/tags/soc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOC326 Case Study: Impersonating Domain MX Record Change Leading to Active Phishing Campaign</title>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</link>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</guid>
+      <description>Event ID: 304&#xA;Rule Name: SOC326 – Impersonating Domain MX Record Change Detected&#xA;Severity: HIGH&#xA;Category: Brand Protection / Phishing&#xA;Event Time: September 17, 2024 – 12:05 PM&#xA;Impacted Asset: LETSDEFEND&#xA;Background Sometimes attackers don’t kick the door down — they quietly make a copy of your house key first.&#xA;In this case, the threat actor registered a look-alike domain and configured email infrastructure before launching a phishing campaign. What initially appeared to be an early warning quickly escalated into active exploitation, resulting in a user clicking a malicious link and communicating with attacker-controlled infrastructure.</description>
+    </item>
+    <item>
+      <title>SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection</title>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</link>
+      <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</guid>
+      <description>Event ID: 238&#xA;Rule Name: SOC153 – Suspicious PowerShell Script Executed&#xA;Severity: HIGH&#xA;Category: Endpoint Compromise / Malware&#xA;Event Time: March 14, 2024 – 05:23 PM&#xA;Compromised Host: Tony (172.16.17.206)&#xA;Tony at work opened a suspicious file they probably shouldn&amp;rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&amp;rsquo;t know what&amp;rsquo;s on it, but it starts doing things automatically.</description>
+    </item>
     <item>
       <title>How Password Storage Fails: A Security Timeline Every Defender Should Know</title>
-      <link>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</link>
+      <link>https://w3nch.github.io/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</guid>
+      <guid>https://w3nch.github.io/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</guid>
       <description>Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.&#xA;Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way.</description>
     </item>
     <item>
       <title>SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</guid>
       <description>Alert Name: SOC127 – SQL Injection Detected&#xA;Severity: High&#xA;Event ID: 235&#xA;Event Time: Mar 07, 2024 – 12:51 PM&#xA;Category: Web Application Attack&#xA;Platform: LetsDefend SOC&#xA;This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.&#xA;Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background.</description>
     </item>
     <item>
-      <title>SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</link>
-      <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</guid>
-      <description>#soc #letsdefend&#xA;Event ID: 238&#xA;Rule Name: SOC153 – Suspicious PowerShell Script Executed&#xA;Severity: HIGH&#xA;Category: Endpoint Compromise / Malware&#xA;Event Time: March 14, 2024 – 05:23 PM&#xA;Compromised Host: Tony (172.16.17.206)&#xA;Someone at work opened a suspicious file they probably shouldn&amp;rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&amp;rsquo;t know what&amp;rsquo;s on it, but it starts doing things automatically.</description>
-    </item>
-    <item>
       <title>SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</guid>
       <description>Alert Name: SOC205 – Malicious Macro has been executed&#xA;Severity: High&#xA;Event ID: 231&#xA;Event Time: Feb 28, 2024 – 08:42 AM&#xA;Category: Malware&#xA;Platform: LetsDefend SOC&#xA;Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.&#xA;This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software.</description>
     </item>
     <item>
       <title>DDoS Attacks: History and the Future</title>
-      <link>http://localhost:1313/posts/ddos-attacks-history-and-future/</link>
+      <link>https://w3nch.github.io/posts/ddos-attacks-history-and-future/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ddos-attacks-history-and-future/</guid>
+      <guid>https://w3nch.github.io/posts/ddos-attacks-history-and-future/</guid>
       <description></description>
     </item>
     <item>
       <title>Packet Puzzle</title>
-      <link>http://localhost:1313/writeups/htb/sherlock/sherlock/</link>
+      <link>https://w3nch.github.io/writeups/htb/sherlock/sherlock/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/htb/sherlock/sherlock/</guid>
+      <guid>https://w3nch.github.io/writeups/htb/sherlock/sherlock/</guid>
       <description>Scenario You are a junior security analyst at a small Japanese cryptocurrency trading company. After detecting suspicious activity on the internal network, you exported a PCAP for further investigation.</description>
     </item>
     <item>
       <title>LetsDefend SOC138 – Suspicious XLS Malware Analysis</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</guid>
       <description>Alert Name: SOC138 – Detected Suspicious Xls File&#xA;Severity: High&#xA;Event ID: 77&#xA;Event Time: Mar 13, 2021, 08:20 PM&#xA;Category: Malware&#xA;Play Book 1. Alert Overview A high-risk malware alert was triggered due to the detection of a suspicious Excel macro-enabled file (.xlsm) on the host Sofia. Macro-enabled Excel documents are commonly abused to deliver malware via embedded VBA code that downloads and executes malicious payloads.&#xA;The file was allowed by the security device, increasing the potential risk of system compromise.</description>
     </item>
     <item>
       <title>GothamLegend Incident Response – PowerShell Malware Analysis</title>
-      <link>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</link>
+      <link>https://w3nch.github.io/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</guid>
+      <guid>https://w3nch.github.io/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</guid>
       <description>Scenario&#xA;Recently the networks of a large company named GothamLegend were compromised after an employee opened a phishing email containing malware. The damage caused was critical and resulted in business-wide disruption. GothamLegend had to reach out to a third-party incident response team to assist with the investigation. You are a member of the IR team - all you have is an encoded Powershell script. Can you decode it and identify what malware is responsible for this attack?</description>
     </item>
     <item>
       <title>Inside a Blue Team SOC Home Lab: Wazuh, pfSense, Snort, Suricata, and Zeek in Action</title>
-      <link>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
+      <link>https://w3nch.github.io/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
+      <guid>https://w3nch.github.io/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
       <description></description>
     </item>
     <item>
       <title>LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation</title>
-      <link>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</guid>
       <description>Description In this challenge, we receive a log indicating a possible web-based attack.&#xA;The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.&#xA;Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.&#xA;The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:</description>
     </item>
     <item>
       <title>LetsDefend SOC168 – Command Injection (whoami) Web Attack Analysis</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</guid>
       <description>Alert Name: SOC168 – Whoami Command Detected in Request Body&#xA;Severity: High&#xA;Event ID: 118&#xA;Event Time: Feb 28, 2022, 04:12 AM&#xA;Category: Web Attack&#xA;Play Book 1. Alert Overview A high-severity web attack alert was triggered on WebServer1004 due to the detection of the whoami command within the HTTP request body. This behavior is commonly associated with command injection attempts, where an attacker tries to execute system-level commands through a web application.</description>
     </item>
     <item>
       <title>LetsDefend SOC170 – Local File Inclusion (LFI) Attempt Analysis</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</link>
       <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</guid>
       <description>Field Value Event ID 120 Event Time Mar 01, 2022, 10:10 AM Rule SOC170 – Passwd Found in Requested URL – Possible LFI Attack Analyst Level Security Analyst Hostname WebServer1006 Destination IP Address 172.16.17.13 Source IP Address 106.55.45.162 HTTP Request Method GET Requested URL https://172.16.17.13/?file=../../../../etc/passwd User-Agent Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322) Alert Trigger Reason URL contains passwd Device Action Allowed Play Book 1. Alert Overview A web attack alert was triggered on WebServer1006 due to the detection of a directory traversal payload attempting to access the sensitive system file /etc/passwd via an HTTP GET request.</description>
     </item>
     <item>
       <title>LetsDefend SOC335 – CVE-2024-49138 Privilege Escalation Exploitation Analysis</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</link>
       <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</guid>
       <description>Alert Name: SOC335 – CVE-2024-49138 Exploitation Detected&#xA;Severity: High&#xA;Event ID: 313&#xA;Event Time: Jan 22, 2025, 02:37 AM&#xA;Category: Privilege Escalation&#xA;Base Information Field Value Event ID 313 Event Time Jan 22, 2025, 02:37 AM Rule SOC335 – CVE-2024-49138 Exploitation Detected Analyst Level Security Analyst Hostname Victor IP Address 172.16.17.207 Process Name svohost.exe Process Path C:\temp\service_installer\svohost.exe Process ID 7640 Parent Process C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe Command Line ??\C:\Windows\system32\conhost.exe 0xffffffff -ForceV1 File Hash (SHA-256) b432dcf4a0f0b601b1d79848467137a5e25cab5a0b7b1224be9d3b6540122db9 Process User EC2AMAZ-ILGVOIN\LetsDefend Trigger Reason Suspicious behavior patterns linked to CVE-2024-49138 Device Action Allowed Incident Details Field Value Incident Name EventID 313 – SOC335 CVE-2024-49138 Exploitation Incident Type Privilege Escalation Created Date Jan 08, 2026, 09:12 AM Pre-Investigation Notes Date: Jan 22, 2025, 02:37 AM Hostname: Victor IP Address: 172.</description>
     </item>
     <item>
       <title>LetsDefend SOC336 – Windows OLE Zero-Click RCE (CVE-2025-21298) Analysis</title>
-      <link>http://localhost:1313/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</link>
+      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</guid>
+      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</guid>
       <description>Alert Name: SOC336 – Windows OLE Zero-Click RCE Exploitation Detected&#xA;Severity: Critical&#xA;Event ID: 314&#xA;Event Time: Feb 04, 2025, 04:18 PM&#xA;Category: Malware&#xA;Base Information Field Value Severity Critical Event ID 314 Event Time Feb 04, 2025, 04:18 PM Rule Name SOC336 – Windows OLE Zero-Click RCE Exploitation Detected CVE CVE-2025-21298 Analyst Level Security Analyst Source IP / SMTP Address 84.38.130.118 Sender Email projectmanagement@pm.me Recipient Email Austin@letsdefend.io Email Subject Important: Action Required for Upcoming Project Deadline Attachment Name mail.</description>
     </item>
     <item>
       <title>Building a Custom Threat Intelligence Feed with n8n</title>
-      <link>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</link>
+      <link>https://w3nch.github.io/posts/building-a-custom-threat-intelligence-feed-with-n8n/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
+      <guid>https://w3nch.github.io/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
       <description></description>
     </item>
     <item>
       <title>Building a Custom Threat Intelligence Feed with n8n</title>
-      <link>http://localhost:1313/writeups/coding/leetcode/test/</link>
+      <link>https://w3nch.github.io/writeups/coding/leetcode/test/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/writeups/coding/leetcode/test/</guid>
+      <guid>https://w3nch.github.io/writeups/coding/leetcode/test/</guid>
       <description></description>
     </item>
     <item>
       <title>Sigma Rules: From Basics to Advanced Detection Engineering</title>
-      <link>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</link>
+      <link>https://w3nch.github.io/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</guid>
+      <guid>https://w3nch.github.io/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</guid>
       <description></description>
     </item>
   </channel>

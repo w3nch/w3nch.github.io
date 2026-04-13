@@ -140,4 +140,3 @@ This approach does introduce challenges like device loss and account recovery, b
 ---
 
 Passwords should never be readable, never reversible, and never easy to guess. Most real breaches are not caused by advanced hacking techniques. They happen because basic design decisions were made years earlier and never corrected. Understanding how password storage evolved explains why modern systems work the way they do today.If you like to read more on this there is a amazin article on [medium by Renan Dias](https://dojowithrenan.medium.com/the-5-factors-of-authentication-bcb79d354c13)
-

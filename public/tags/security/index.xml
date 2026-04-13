@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Hello w3nch</title>
+    <link>https://w3nch.github.io/tags/security/</link>
+    <description>Recent content in Security on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://w3nch.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Tar Path Traversal with Symlink Exploitation</title>
+      <link>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</guid>
+      <description>Executive Summary Archive extraction is one of the most trusted operations in modern computing. From package managers to backup systems, we routinely extract TAR files without a second thought. But what happens when the archive itself is malicious?&#xA;This analysis examines a how archive traversal technique uses deeply nested directory structures and symbolic link chains to bypass validation mechanisms and write files outside the intended extraction directory. By understanding how path resolution works at the filesystem level, we can see why simple validation fails and how attackers exploit this gap.</description>
+    </item>
+    <item>
+      <title>How Iran Shut Down the Internet: A Technical Analysis of Centralized Network Control</title>
+      <link>https://w3nch.github.io/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</link>
+      <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://w3nch.github.io/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</guid>
+      <description>Disclaimer: This article is written from a purely technical perspective to educate readers about internet infrastructure and network architecture. I have no political affiliation and seeks only to examine the technical mechanisms that enabled Iran&amp;rsquo;s 2026 internet shutdown.&#xA;Introduction On January 8, 2026, at 8:00 PM Iran Standard Time, approximately 92 million Iranian citizens were suddenly disconnected from the global internet. This shutdown, which began during the twelfth day of nationwide protests, represented one of the most extensive and sophisticated internet blackouts ever recorded Wikipedia Georgia Tech News.</description>
+    </item>
+  </channel>
+</rss>

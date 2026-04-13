@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Event ID: 304
+Rule Name: SOC326 – Impersonating Domain MX Record Change Detected
+Severity: HIGH
+Category: Brand Protection / Phishing
+Event Time: September 17, 2024 – 12:05 PM
+Impacted Asset: LETSDEFEND
+Background Sometimes attackers don’t kick the door down — they quietly make a copy of your house key first.
+In this case, the threat actor registered a look-alike domain and configured email infrastructure before launching a phishing campaign. What initially appeared to be an early warning quickly escalated into active exploitation, resulting in a user clicking a malicious link and communicating with attacker-controlled infrastructure." />
+<meta name="keywords" content=", letsdefend, soc, blue-team, phishing, mx-record, email-security, domain-impersonation" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/" />
+
+
+    <title>
+        
+            SOC326 Case Study: Impersonating Domain MX Record Change Leading to Active Phishing Campaign :: Hello w3nch 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="css/code.css">
+    
+
+    
+        <link rel="stylesheet" type="text/css" href="css/writeups.css">
+    
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+<meta itemprop="name" content="SOC326 Case Study: Impersonating Domain MX Record Change Leading to Active Phishing Campaign">
+<meta itemprop="description" content="Event ID: 304
+Rule Name: SOC326 – Impersonating Domain MX Record Change Detected
+Severity: HIGH
+Category: Brand Protection / Phishing
+Event Time: September 17, 2024 – 12:05 PM
+Impacted Asset: LETSDEFEND
+Background Sometimes attackers don’t kick the door down — they quietly make a copy of your house key first.
+In this case, the threat actor registered a look-alike domain and configured email infrastructure before launching a phishing campaign. What initially appeared to be an early warning quickly escalated into active exploitation, resulting in a user clicking a malicious link and communicating with attacker-controlled infrastructure."><meta itemprop="datePublished" content="2026-02-05T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2026-02-05T00:00:00+00:00" />
+<meta itemprop="wordCount" content="939">
+<meta itemprop="keywords" content="letsdefend,soc,blue-team,phishing,mx-record,email-security,domain-impersonation," />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SOC326 Case Study: Impersonating Domain MX Record Change Leading to Active Phishing Campaign"/>
+<meta name="twitter:description" content="Event ID: 304
+Rule Name: SOC326 – Impersonating Domain MX Record Change Detected
+Severity: HIGH
+Category: Brand Protection / Phishing
+Event Time: September 17, 2024 – 12:05 PM
+Impacted Asset: LETSDEFEND
+Background Sometimes attackers don’t kick the door down — they quietly make a copy of your house key first.
+In this case, the threat actor registered a look-alike domain and configured email infrastructure before launching a phishing campaign. What initially appeared to be an early warning quickly escalated into active exploitation, resulting in a user clicking a malicious link and communicating with attacker-controlled infrastructure."/>
+
+
+
+
+
+    <meta property="article:section" content="SOC Writeups" />
+
+    <meta property="article:section" content="Phishing &amp; Digital Risk" />
+
+
+
+    <meta property="article:published_time" content="2026-02-05 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                hello ;)</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner">
+                <li><a href="/about/">About</a></li>
+            
+                <li><a href="/posts/">Blog</a></li>
+            
+                <li><a href="/contact/">Contact</a></li>
+            
+                <li><a href="/resume.pdf">Resume</a></li>
+            
+                <li><a href="/writeups/">Writeup</a></li>
+            
+    </ul>
+</nav>
+
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+ </svg></span>
+        </span>
+    </span>
+</header>
+
+
+            
+    <div class="content">
+        <main class="post">
+
+            <div class="post-info">
+                
+                </p>
+            </div>
+
+            <article>
+                <h2 class="post-title"><a href="https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/">SOC326 Case Study: Impersonating Domain MX Record Change Leading to Active Phishing Campaign</a></h2>
+
+                
+                
+                
+
+                <div class="post-content">
+                    <p><strong>Event ID:</strong> 304<br>
+<strong>Rule Name:</strong> SOC326 – Impersonating Domain MX Record Change Detected<br>
+<strong>Severity:</strong> HIGH<br>
+<strong>Category:</strong> Brand Protection / Phishing<br>
+<strong>Event Time:</strong> September 17, 2024 – 12:05 PM<br>
+<strong>Impacted Asset:</strong> LETSDEFEND</p>
+<h2 id="background">Background</h2>
+<p>Sometimes attackers don’t kick the door down — they quietly make a copy of your house key first.</p>
+<p>In this case, the threat actor registered a <strong>look-alike domain</strong> and configured email infrastructure before launching a phishing campaign. What initially appeared to be an <em>early warning</em> quickly escalated into <strong>active exploitation</strong>, resulting in a user clicking a malicious link and communicating with attacker-controlled infrastructure.</p>
+<h3 id="incident-analysis-summary">Incident Analysis Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alert Name</td>
+<td>SOC326 – Impersonating Domain MX Record Change Detected</td>
+</tr>
+<tr>
+<td>Severity</td>
+<td>High (Confirmed Phishing Activity)</td>
+</tr>
+<tr>
+<td>Event ID</td>
+<td>304</td>
+</tr>
+<tr>
+<td>Event Time</td>
+<td>Sep 17, 2024 – 12:05 PM</td>
+</tr>
+<tr>
+<td>Impersonated Domain</td>
+<td>letsdefwnd[.]io</td>
+</tr>
+<tr>
+<td>MX Record</td>
+<td>mail.mailerhost.net</td>
+</tr>
+<tr>
+<td>Alert Source</td>
+<td><a href="mailto:no-reply@cti-report.io">no-reply@cti-report.io</a></td>
+</tr>
+<tr>
+<td>Alert Verdict</td>
+<td>True Positive</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-alert-overview">1. Alert Overview</h2>
+<p>The alert was generated by <strong>Digital Risk Protection</strong> after detecting a <strong>Mail Exchange (MX) record change</strong> on a suspicious domain closely resembling the legitimate <strong>letsdefend.io</strong> domain.</p>
+<p>The impersonating domain <strong>letsdefwnd[.]io</strong> (typosquatting via character substitution: <em>e → w</em>) was configured with a valid mail server (<strong>mail.mailerhost.net</strong>), strongly suggesting preparation for email-based phishing.</p>
+<p>At the time of alert creation, no confirmed phishing email had yet been identified.</p>
+<h2 id="2-detection--verification">2. Detection &amp; Verification</h2>
+<p>Initial triage involved reviewing the notification email received by the SOC:</p>
+<ul>
+<li><strong>Sender:</strong> <a href="mailto:no-reply@cti-report.io">no-reply@cti-report.io</a></li>
+<li><strong>Recipient:</strong> <a href="mailto:soc@letsdefend.io">soc@letsdefend.io</a></li>
+<li><strong>Email Content:</strong> Informational security alert</li>
+<li><strong>Attachments:</strong> None</li>
+</ul>
+<p>Conclusion at this stage:<br>
+The alert email itself was <strong>malicious</strong>, and the <strong>domain infrastructure change</strong> warranted deeper investigation.</p>
+<h2 id="3-incident-analysis">3. Incident Analysis</h2>
+<h3 id="timeline-progression">Timeline Progression</h3>
+<p><strong>September 17, 2024</strong></p>
+<ul>
+<li>MX record change detected for letsdefwnd[.]io</li>
+<li>Alert raised as early warning</li>
+</ul>
+<p><strong>September 18, 2024</strong></p>
+<ul>
+<li>A phishing email was observed in Email Security logs</li>
+<li>Campaign escalated from preparation to active exploitation</li>
+</ul>
+<h3 id="phishing-email-discovery">Phishing Email Discovery</h3>
+<p>A search in the <strong>Email Security</strong> tab revealed a phishing email sent one day after the alert:
+<img src="https://i.ibb.co/tTyjJ7N0/Pasted-image-20260205151420.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sender</td>
+<td>voucher@letsdefwnd[.]io</td>
+</tr>
+<tr>
+<td>Recipient</td>
+<td><a href="mailto:mateo@letsdefend.io">mateo@letsdefend.io</a></td>
+</tr>
+<tr>
+<td>Subject</td>
+<td>Congratulations! You’ve Won a Voucher</td>
+</tr>
+<tr>
+<td>Delivery Status</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>Sep 18, 2024 – 08:00 AM</td>
+</tr>
+</tbody>
+</table>
+<p>The email leveraged <strong>social engineering and urgency</strong>, enticing the user to click a button claiming a limited-time voucher reward.</p>
+<p><img src="https://i.ibb.co/L4mrndv/Pasted-image-20260205153139.png" alt=""></p>
+<h3 id="malicious-url-identified">Malicious URL Identified</h3>
+<ul>
+<li><strong>Embedded Link:</strong> hxxp://letsdefwnd[.]io/</li>
+<li><strong>Contains URL:</strong> Yes <br>
+This confirmed that the impersonating domain was being actively used for phishing.</li>
+</ul>
+<h2 id="4-url--infrastructure-analysis">4. URL &amp; Infrastructure Analysis</h2>
+<h3 id="osint--sandbox-review">OSINT &amp; Sandbox Review</h3>
+<ul>
+<li><strong>VirusTotal (URL):</strong> Initially appeared clean</li>
+<li><strong>Talos:</strong> Unknown reputation</li>
+<li><strong>URL resolution:</strong> Intermittent / unstable</li>
+</ul>
+<p><img src="https://i.ibb.co/6779D3tC/Pasted-image-20260205153209.png" alt=""></p>
+<p>Despite mixed OSINT results, further investigation showed <strong>real-world exploitation</strong>, proving the domain was malicious in practice.</p>
+<h3 id="network--endpoint-evidence">Network &amp; Endpoint Evidence</h3>
+<p>Log correlation revealed successful communication between the victim endpoint and attacker infrastructure:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source IP</td>
+<td>172.16.20.3 (Internal)</td>
+</tr>
+<tr>
+<td>Destination IP</td>
+<td>45.33.23.183</td>
+</tr>
+<tr>
+<td>Destination Port</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>Sep 18, 2024 – 08:00 AM</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://i.ibb.co/Zph48T0f/Pasted-image-20260205153316.png" alt=""></p>
+<p>EDR telemetry confirmed:</p>
+<p><img src="https://i.ibb.co/3YzqrbMp/Pasted-image-20260205153722.png" alt=""></p>
+<ul>
+<li>User clicked the phishing link</li>
+<li>Outbound traffic to <strong>45.33.23.183</strong></li>
+<li>IP flagged by multiple intelligence sources for <strong>spam, phishing, and malicious activity</strong></li>
+</ul>
+<h2 id="5-reputation--threat-intelligence">5. Reputation &amp; Threat Intelligence</h2>
+<h3 id="domain-intelligence">Domain Intelligence</h3>
+<p><img src="https://i.ibb.co/DHwS9thm/Pasted-image-20260205153852.png" alt=""></p>
+<ul>
+<li><strong>Registrar:</strong> Sav.com, LLC</li>
+<li><strong>Registrant:</strong> Privacy Protection (Redacted)</li>
+<li><strong>Domain Status:</strong> clientTransferProhibited</li>
+<li><strong>DNS Servers:</strong> ns1.giantpanda.com, ns2.giantpanda.com</li>
+</ul>
+<h3 id="ip-reputation">IP Reputation</h3>
+<p><strong>45.33.23.183</strong></p>
+<ul>
+<li>Flagged by VirusTotal vendors</li>
+<li>Reported on AbuseIPDB for phishing and spam</li>
+<li>Observed as C2 / phishing infrastructure</li>
+</ul>
+<h2 id="6-indicators-of-compromise-iocs">6. Indicators of Compromise (IOCs)</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phishing Domain</td>
+<td>letsdefwnd[.]io</td>
+</tr>
+<tr>
+<td>Malicious URL</td>
+<td>hxxp://letsdefwnd[.]io/</td>
+</tr>
+<tr>
+<td>Sender Address</td>
+<td>voucher@letsdefwnd[.]io</td>
+</tr>
+<tr>
+<td>MX Record</td>
+<td>mail.mailerhost.net</td>
+</tr>
+<tr>
+<td>C2 / Infra IP</td>
+<td>45.33.23.183</td>
+</tr>
+<tr>
+<td>Additional IPs</td>
+<td>72.14.178.174, 45.33.30.197, 173.255.194.134</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://i.ibb.co/fdWWLMtV/Pasted-image-20260205152333.png" alt=""></p>
+<h2 id="7-mitre-attck-mapping">7. MITRE ATT&amp;CK Mapping</h2>
+<table>
+<thead>
+<tr>
+<th>Tactic</th>
+<th>Technique</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initial Access</td>
+<td>Phishing</td>
+<td>T1566</td>
+</tr>
+<tr>
+<td>Resource Development</td>
+<td>Acquire Infrastructure</td>
+<td>T1583</td>
+</tr>
+<tr>
+<td>Credential Access</td>
+<td>Phishing for Information</td>
+<td>T1566.002</td>
+</tr>
+<tr>
+<td>Command &amp; Control</td>
+<td>Application Layer Protocol</td>
+<td>T1071</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-response--containment-actions">8. Response &amp; Containment Actions</h2>
+<p>Immediate actions taken:</p>
+<ul>
+<li>Phishing email <strong>deleted</strong> from recipient mailbox</li>
+<li>Affected endpoint <strong>contained via EDR</strong></li>
+<li>Malicious domain and IP <strong>blocked</strong> at perimeter controls</li>
+<li>Artifacts added to IOC watchlists</li>
+</ul>
+<h2 id="9-final-assessment">9. Final Assessment</h2>
+<p><strong>Verdict:</strong>  <strong>True Positive</strong><br>
+<strong>Threat Status:</strong> Active phishing campaign confirmed</p>
+<p><img src="https://i.ibb.co/s9QcBFYn/Pasted-image-20260205154736.png" alt=""></p>
+<p>What began as an MX record change alert evolved into a <strong>fully executed phishing attack</strong>, validating the effectiveness of early domain monitoring. The attacker successfully delivered a phishing email, convinced the user to click the link, and established communication with malicious infrastructure.</p>
+<h2 id="lessons-learned">Lessons Learned</h2>
+<ul>
+<li>MX record changes are a <strong>critical early indicator</strong> of phishing campaigns</li>
+<li>Typosquatting remains highly effective against internal users</li>
+<li>OSINT “clean” results do not equal benign activity</li>
+<li>Domain monitoring must be paired with <strong>email and endpoint telemetry</strong></li>
+<li>User awareness training remains essential</li>
+</ul>
+<h3 id="analyst-note">Analyst Note</h3>
+<p>On <strong>September 17, 2024</strong>, a Digital Risk Protection alert (<strong>SOC326</strong>) was triggered after detecting a <strong>Mail Exchange (MX) record change</strong> on the domain <strong>letsdefwnd[.]io</strong>, which closely resembles the legitimate <strong>letsdefend.io</strong> domain. The MX record was updated to <strong>mail.mailerhost.net</strong>, indicating that the domain had been configured to send and receive email and could be used for phishing activity.</p>
+<p>Initial review of the alert email from <strong><a href="mailto:no-reply@cti-report.io">no-reply@cti-report.io</a></strong> confirmed that the notification itself was informational and did <strong>not contain any attachments or URLs</strong>. However, due to the typosquatting nature of the domain and the presence of an active MX record, the alert was treated as a high-risk early warning indicator.</p>
+<p>Further investigation in the <strong>Email Security</strong> logs identified a <strong>phishing email delivered on September 18, 2024</strong>, one day after the alert was generated. The email originated from <strong>voucher@letsdefwnd[.]io</strong> and was sent to an internal user (<strong><a href="mailto:mateo@letsdefend.io">mateo@letsdefend.io</a></strong>). The message contained an embedded hyperlink pointing to <strong>hxxp://letsdefwnd[.]io/</strong> and used social engineering tactics to entice the recipient with a fake voucher offer.</p>
+<p>Endpoint and network telemetry confirmed that the user <strong>clicked the malicious link</strong>, resulting in outbound communication to <strong>45.33.23.183</strong>, an IP address associated with phishing and malicious activity based on threat intelligence sources. This confirmed that the impersonating domain was actively weaponized and no longer in a preparatory phase.</p>
+<p>The phishing email was deleted, the affected endpoint was contained for further investigation, and the malicious domain and associated IP addresses were blocked at perimeter security controls.</p>
+
+                </div>
+            </article>
+
+            <hr />
+
+            <div class="post-info">
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="https://w3nch.github.io/tags/letsdefend/">letsdefend</a></span>
+        <span class="tag"><a href="https://w3nch.github.io/tags/soc/">soc</a></span>
+        <span class="tag"><a href="https://w3nch.github.io/tags/blue-team/">blue-team</a></span>
+        <span class="tag"><a href="https://w3nch.github.io/tags/phishing/">phishing</a></span>
+        <span class="tag"><a href="https://w3nch.github.io/tags/mx-record/">mx-record</a></span>
+        <span class="tag"><a href="https://w3nch.github.io/tags/email-security/">email-security</a></span>
+        <span class="tag"><a href="https://w3nch.github.io/tags/domain-impersonation/">domain-impersonation</a></span>
+        
+    </p>
+
+                
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://w3nch.github.io/categories/soc-writeups/">SOC Writeups</a></span>
+        <span class="tag"><a href="https://w3nch.github.io/categories/phishing-digital-risk/">Phishing &amp; Digital Risk</a></span>
+        
+    </p>
+
+            </div>
+        </main>
+    </div>
+
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            
+            <span><a href="https://w3nch.github.io/"></a></span>
+            <span></span>
+            
+            
+        </div>
+    </div>
+    
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by Hugo</span>
+        </div>
+    </div>
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
+
+
+
+
+    </body>
+</html>

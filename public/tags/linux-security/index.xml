@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux-Security on Hello w3nch</title>
+    <link>https://w3nch.github.io/tags/linux-security/</link>
+    <description>Recent content in Linux-Security on Hello w3nch</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://w3nch.github.io/tags/linux-security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Tar Path Traversal with Symlink Exploitation</title>
+      <link>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
+      <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</guid>
+      <description>Executive Summary Archive extraction is one of the most trusted operations in modern computing. From package managers to backup systems, we routinely extract TAR files without a second thought. But what happens when the archive itself is malicious?&#xA;This analysis examines a how archive traversal technique uses deeply nested directory structures and symbolic link chains to bypass validation mechanisms and write files outside the intended extraction directory. By understanding how path resolution works at the filesystem level, we can see why simple validation fails and how attackers exploit this gap.</description>
+    </item>
+  </channel>
+</rss>
