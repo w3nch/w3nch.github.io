@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Domain-Impersonation on Hello w3nch</title>
-    <link>https://w3nch.github.io/tags/domain-impersonation/</link>
+    <link>http://localhost:1313/tags/domain-impersonation/</link>
     <description>Recent content in Domain-Impersonation on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/tags/domain-impersonation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/domain-impersonation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SOC326 Case Study: Impersonating Domain MX Record Change Leading to Active Phishing Campaign</title>
-      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</link>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</guid>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</guid>
       <description>Event ID: 304&#xA;Rule Name: SOC326 – Impersonating Domain MX Record Change Detected&#xA;Severity: HIGH&#xA;Category: Brand Protection / Phishing&#xA;Event Time: September 17, 2024 – 12:05 PM&#xA;Impacted Asset: LETSDEFEND&#xA;Background Sometimes attackers don’t kick the door down — they quietly make a copy of your house key first.&#xA;In this case, the threat actor registered a look-alike domain and configured email infrastructure before launching a phishing campaign. What initially appeared to be an early warning quickly escalated into active exploitation, resulting in a user clicking a malicious link and communicating with attacker-controlled infrastructure.</description>
     </item>
   </channel>

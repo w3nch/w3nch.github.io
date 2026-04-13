@@ -2,811 +2,816 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://w3nch.github.io/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/cybersecurity/</loc>
+    <loc>http://localhost:1313/categories/cybersecurity/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/linux-security/</loc>
+    <loc>http://localhost:1313/categories/linux-security/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/linux-security/</loc>
+    <loc>http://localhost:1313/tags/linux-security/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/python/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</loc>
+    <loc>http://localhost:1313/posts/python-tar-path-traversal-and-symlink-exploitation/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/security/</loc>
+    <loc>http://localhost:1313/tags/security/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/symlink/</loc>
+    <loc>http://localhost:1313/tags/symlink/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2026-03-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/analysis/</loc>
+    <loc>http://localhost:1313/tags/analysis/</loc>
     <lastmod>2026-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/bgp/</loc>
+    <loc>http://localhost:1313/tags/bgp/</loc>
     <lastmod>2026-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/bgp/</loc>
+    <loc>http://localhost:1313/categories/bgp/</loc>
     <lastmod>2026-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</loc>
+    <loc>http://localhost:1313/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</loc>
     <lastmod>2026-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/meet-me-room/</loc>
+    <loc>http://localhost:1313/categories/meet-me-room/</loc>
     <lastmod>2026-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/network/</loc>
+    <loc>http://localhost:1313/tags/network/</loc>
     <lastmod>2026-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/networking/</loc>
+    <loc>http://localhost:1313/categories/networking/</loc>
     <lastmod>2026-02-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/blue-team/</loc>
+    <loc>http://localhost:1313/tags/blue-team/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/domain-impersonation/</loc>
+    <loc>http://localhost:1313/tags/domain-impersonation/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/email-security/</loc>
+    <loc>http://localhost:1313/tags/email-security/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/letsdefend/</loc>
+    <loc>http://localhost:1313/tags/letsdefend/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/mx-record/</loc>
+    <loc>http://localhost:1313/tags/mx-record/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/phishing/</loc>
+    <loc>http://localhost:1313/tags/phishing/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/phishing--digital-risk/</loc>
+    <loc>http://localhost:1313/categories/phishing--digital-risk/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/soc/</loc>
+    <loc>http://localhost:1313/tags/soc/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/soc-writeups/</loc>
+    <loc>http://localhost:1313/categories/soc-writeups/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/</loc>
+    <loc>http://localhost:1313/writeups/</loc>
     <lastmod>2026-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/endpoint-security/</loc>
+    <loc>http://localhost:1313/tags/endpoint-security/</loc>
     <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/malware--endpoint/</loc>
+    <loc>http://localhost:1313/categories/malware--endpoint/</loc>
     <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/malware-analysis/</loc>
+    <loc>http://localhost:1313/tags/malware-analysis/</loc>
     <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/powershell/</loc>
+    <loc>http://localhost:1313/tags/powershell/</loc>
     <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</loc>
     <lastmod>2026-02-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/breaches/</loc>
+    <loc>http://localhost:1313/tags/breaches/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/defensive-security/</loc>
+    <loc>http://localhost:1313/categories/defensive-security/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/hashing/</loc>
+    <loc>http://localhost:1313/tags/hashing/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</loc>
+    <loc>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/identity-security/</loc>
+    <loc>http://localhost:1313/categories/identity-security/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/infosec/</loc>
+    <loc>http://localhost:1313/tags/infosec/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/passwords/</loc>
+    <loc>http://localhost:1313/tags/passwords/</loc>
     <lastmod>2026-01-31T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/curiosity/</loc>
+    <loc>http://localhost:1313/tags/curiosity/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/experiments/</loc>
+    <loc>http://localhost:1313/categories/experiments/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/hacking/</loc>
+    <loc>http://localhost:1313/tags/hacking/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/learning/</loc>
+    <loc>http://localhost:1313/categories/learning/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/leetcode/</loc>
+    <loc>http://localhost:1313/tags/leetcode/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/sandbox/</loc>
+    <loc>http://localhost:1313/tags/sandbox/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/sql-injection/</loc>
+    <loc>http://localhost:1313/tags/sql-injection/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/sqli--rce/</loc>
+    <loc>http://localhost:1313/categories/sqli--rce/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/web-security/</loc>
+    <loc>http://localhost:1313/tags/web-security/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/what-happens-if-you-import-os-on-leetcode/</loc>
+    <loc>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</loc>
     <lastmod>2026-01-29T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/auditd/</loc>
+    <loc>http://localhost:1313/tags/auditd/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/btlo/</loc>
+    <loc>http://localhost:1313/writeups/btlo/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/bruteforce/</loc>
+    <loc>http://localhost:1313/tags/bruteforce/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/btlo/</loc>
+    <loc>http://localhost:1313/tags/btlo/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/btlo/incident-response/paranoid/</loc>
+    <loc>http://localhost:1313/writeups/btlo/incident-response/paranoid/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/forensics/</loc>
+    <loc>http://localhost:1313/tags/forensics/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/incident-response/</loc>
+    <loc>http://localhost:1313/categories/incident-response/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/incident-response/</loc>
+    <loc>http://localhost:1313/tags/incident-response/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/linux-forensics/</loc>
+    <loc>http://localhost:1313/categories/linux-forensics/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/privilege-escalation/</loc>
+    <loc>http://localhost:1313/tags/privilege-escalation/</loc>
     <lastmod>2026-01-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/macros/</loc>
+    <loc>http://localhost:1313/tags/macros/</loc>
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/malware/</loc>
+    <loc>http://localhost:1313/tags/malware/</loc>
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/malware-investigation/</loc>
+    <loc>http://localhost:1313/categories/malware-investigation/</loc>
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/soc-analysis/</loc>
+    <loc>http://localhost:1313/categories/soc-analysis/</loc>
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/</loc>
     <lastmod>2026-01-19T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/coding/</loc>
+    <loc>http://localhost:1313/writeups/coding/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/cyber-attacks/</loc>
+    <loc>http://localhost:1313/tags/cyber-attacks/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/ddos/</loc>
+    <loc>http://localhost:1313/tags/ddos/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/ddos-attacks-history-and-future/</loc>
+    <loc>http://localhost:1313/posts/ddos-attacks-history-and-future/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/exercism/</loc>
+    <loc>http://localhost:1313/tags/exercism/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/coding/exercism/</loc>
+    <loc>http://localhost:1313/writeups/coding/exercism/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/htb/</loc>
+    <loc>http://localhost:1313/writeups/htb/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/infrastructure/</loc>
+    <loc>http://localhost:1313/tags/infrastructure/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/network-security/</loc>
+    <loc>http://localhost:1313/categories/network-security/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/network-security/</loc>
+    <loc>http://localhost:1313/tags/network-security/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/oop/</loc>
+    <loc>http://localhost:1313/tags/oop/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/htb/sherlock/sherlock/</loc>
+    <loc>http://localhost:1313/writeups/htb/sherlock/sherlock/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/programming/</loc>
+    <loc>http://localhost:1313/categories/programming/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/programming-basics/</loc>
+    <loc>http://localhost:1313/tags/programming-basics/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/python/</loc>
+    <loc>http://localhost:1313/categories/python/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/coding/exercism/space-age/</loc>
+    <loc>http://localhost:1313/writeups/coding/exercism/space-age/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/space-age/</loc>
+    <loc>http://localhost:1313/tags/space-age/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/wireshark/</loc>
+    <loc>http://localhost:1313/tags/wireshark/</loc>
     <lastmod>2026-01-17T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/blue/</loc>
+    <loc>http://localhost:1313/tags/blue/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc138---detected-suspicious-xls-file/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/macro/</loc>
+    <loc>http://localhost:1313/tags/macro/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/malware-analysis/</loc>
+    <loc>http://localhost:1313/categories/malware-analysis/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/xlsm/</loc>
+    <loc>http://localhost:1313/tags/xlsm/</loc>
     <lastmod>2026-01-16T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</loc>
+    <loc>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/home-lab/</loc>
+    <loc>http://localhost:1313/categories/home-lab/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/home-lab/</loc>
+    <loc>http://localhost:1313/tags/home-lab/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/http/</loc>
+    <loc>http://localhost:1313/tags/http/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</loc>
+    <loc>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/pfsense/</loc>
+    <loc>http://localhost:1313/tags/pfsense/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/security-operations/</loc>
+    <loc>http://localhost:1313/categories/security-operations/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/snort/</loc>
+    <loc>http://localhost:1313/tags/snort/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/suricata/</loc>
+    <loc>http://localhost:1313/tags/suricata/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/ticketing/</loc>
+    <loc>http://localhost:1313/tags/ticketing/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/wazuh/</loc>
+    <loc>http://localhost:1313/tags/wazuh/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/web/</loc>
+    <loc>http://localhost:1313/tags/web/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/zeek/</loc>
+    <loc>http://localhost:1313/tags/zeek/</loc>
     <lastmod>2026-01-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</loc>
     <lastmod>2026-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/network-forensics/</loc>
+    <loc>http://localhost:1313/categories/network-forensics/</loc>
     <lastmod>2026-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/pcap/</loc>
+    <loc>http://localhost:1313/tags/pcap/</loc>
     <lastmod>2026-01-14T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/command-injection/</loc>
+    <loc>http://localhost:1313/tags/command-injection/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/web-security/</loc>
+    <loc>http://localhost:1313/categories/web-security/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/web-attack/</loc>
+    <loc>http://localhost:1313/tags/web-attack/</loc>
     <lastmod>2026-01-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/directory-traversal/</loc>
+    <loc>http://localhost:1313/tags/directory-traversal/</loc>
     <lastmod>2026-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc170---passwd-found-in-requested-url---possible-lfi-attack/</loc>
     <lastmod>2026-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/lfi/</loc>
+    <loc>http://localhost:1313/tags/lfi/</loc>
     <lastmod>2026-01-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/endpoint-security/</loc>
+    <loc>http://localhost:1313/categories/endpoint-security/</loc>
     <lastmod>2026-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/exploitation/</loc>
+    <loc>http://localhost:1313/tags/exploitation/</loc>
     <lastmod>2026-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/-soc335--cve-2024-49138-privilege-escalation-exploitation-analysis/</loc>
     <lastmod>2026-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/windows/</loc>
+    <loc>http://localhost:1313/tags/windows/</loc>
     <lastmod>2026-01-11T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</loc>
+    <loc>http://localhost:1313/writeups/letsdefend/alerts/soc336---windows-ole-zero-click-rce-exploitation-detected-cve-2025-21298name-of-triggered-alert/</loc>
     <lastmod>2026-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/ole/</loc>
+    <loc>http://localhost:1313/tags/ole/</loc>
     <lastmod>2026-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/rce/</loc>
+    <loc>http://localhost:1313/tags/rce/</loc>
     <lastmod>2026-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/zero-click/</loc>
+    <loc>http://localhost:1313/tags/zero-click/</loc>
     <lastmod>2026-01-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/pentesting/</loc>
+    <loc>http://localhost:1313/tags/pentesting/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/wifi/</loc>
+    <loc>http://localhost:1313/tags/wifi/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/wifi-hacking-101-to-1337/</loc>
+    <loc>http://localhost:1313/posts/wifi-hacking-101-to-1337/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/wireless-security/</loc>
+    <loc>http://localhost:1313/categories/wireless-security/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/wireless-security/</loc>
+    <loc>http://localhost:1313/tags/wireless-security/</loc>
     <lastmod>2026-01-09T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/automation/</loc>
+    <loc>http://localhost:1313/tags/automation/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/building-a-custom-threat-intelligence-feed-with-n8n/</loc>
+    <loc>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/coding/leetcode/test/</loc>
+    <loc>http://localhost:1313/writeups/coding/leetcode/test/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/coding/leetcode/</loc>
+    <loc>http://localhost:1313/writeups/coding/leetcode/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/n8n/</loc>
+    <loc>http://localhost:1313/tags/n8n/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/security-operations/</loc>
+    <loc>http://localhost:1313/tags/security-operations/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/threat-intelligence/</loc>
+    <loc>http://localhost:1313/categories/threat-intelligence/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/threat-intelligence/</loc>
+    <loc>http://localhost:1313/tags/threat-intelligence/</loc>
     <lastmod>2026-01-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/detection-engineering/</loc>
+    <loc>http://localhost:1313/categories/detection-engineering/</loc>
     <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/detection-engineering/</loc>
+    <loc>http://localhost:1313/tags/detection-engineering/</loc>
     <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/siem/</loc>
+    <loc>http://localhost:1313/tags/siem/</loc>
     <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/sigma/</loc>
+    <loc>http://localhost:1313/tags/sigma/</loc>
     <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</loc>
+    <loc>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</loc>
     <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/threat-detection/</loc>
+    <loc>http://localhost:1313/tags/threat-detection/</loc>
     <lastmod>2026-01-07T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/collaboration/</loc>
+    <loc>http://localhost:1313/resume/</loc>
+    <lastmod>2025-12-31T13:05:22+05:30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/collaboration/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/development/</loc>
+    <loc>http://localhost:1313/categories/development/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/devops/</loc>
+    <loc>http://localhost:1313/tags/devops/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/git/</loc>
+    <loc>http://localhost:1313/tags/git/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/github/</loc>
+    <loc>http://localhost:1313/tags/github/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/how-git-and-github-work-a-practical-guide-for-beginners/</loc>
+    <loc>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/tools--workflows/</loc>
+    <loc>http://localhost:1313/categories/tools--workflows/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/version-control/</loc>
+    <loc>http://localhost:1313/tags/version-control/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/automation/</loc>
+    <loc>http://localhost:1313/categories/automation/</loc>
     <lastmod>2023-04-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/cli-tools/</loc>
+    <loc>http://localhost:1313/tags/cli-tools/</loc>
     <lastmod>2023-04-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/productivity/</loc>
+    <loc>http://localhost:1313/tags/productivity/</loc>
     <lastmod>2023-04-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/categories/projects/</loc>
+    <loc>http://localhost:1313/categories/projects/</loc>
     <lastmod>2023-04-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/tags/student-life/</loc>
+    <loc>http://localhost:1313/tags/student-life/</loc>
     <lastmod>2023-04-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</loc>
+    <loc>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</loc>
     <lastmod>2023-04-15T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/coding/codechef/</loc>
+    <loc>http://localhost:1313/writeups/coding/codechef/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/contact/</loc>
+    <loc>http://localhost:1313/contact/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/cyberdefenders/</loc>
+    <loc>http://localhost:1313/writeups/cyberdefenders/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/echoctf/</loc>
+    <loc>http://localhost:1313/writeups/echoctf/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/picoctf/</loc>
+    <loc>http://localhost:1313/writeups/picoctf/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://w3nch.github.io/writeups/thm/</loc>
+    <loc>http://localhost:1313/writeups/thm/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

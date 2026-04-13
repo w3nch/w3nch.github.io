@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Hello w3nch</title>
-    <link>https://w3nch.github.io/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Tar Path Traversal with Symlink Exploitation</title>
-      <link>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
+      <link>http://localhost:1313/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</guid>
+      <guid>http://localhost:1313/posts/python-tar-path-traversal-and-symlink-exploitation/</guid>
       <description>Executive Summary Archive extraction is one of the most trusted operations in modern computing. From package managers to backup systems, we routinely extract TAR files without a second thought. But what happens when the archive itself is malicious?&#xA;This analysis examines a how archive traversal technique uses deeply nested directory structures and symbolic link chains to bypass validation mechanisms and write files outside the intended extraction directory. By understanding how path resolution works at the filesystem level, we can see why simple validation fails and how attackers exploit this gap.</description>
     </item>
     <item>
       <title>BTLO Incident Response Case Study: Pranoid</title>
-      <link>https://w3nch.github.io/writeups/btlo/incident-response/paranoid/</link>
+      <link>http://localhost:1313/writeups/btlo/incident-response/paranoid/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/btlo/incident-response/paranoid/</guid>
+      <guid>http://localhost:1313/writeups/btlo/incident-response/paranoid/</guid>
       <description>Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.&#xA;Scope and Evidence Primary artifact:&#xA;audit.log (Linux auditd) Tools used:&#xA;aureport ausearch Manual timeline correlation Observed timeframe:</description>
     </item>
   </channel>

@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Http on Hello w3nch</title>
-    <link>https://w3nch.github.io/tags/http/</link>
+    <link>http://localhost:1313/tags/http/</link>
     <description>Recent content in Http on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GothamLegend Incident Response – PowerShell Malware Analysis</title>
-      <link>https://w3nch.github.io/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</link>
+      <link>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</guid>
+      <guid>http://localhost:1313/writeups/btlo/security-operations/gothamlegend-incident-response--powershell-malware-analysis/</guid>
       <description>Scenario&#xA;Recently the networks of a large company named GothamLegend were compromised after an employee opened a phishing email containing malware. The damage caused was critical and resulted in business-wide disruption. GothamLegend had to reach out to a third-party incident response team to assist with the investigation. You are a member of the IR team - all you have is an encoded Powershell script. Can you decode it and identify what malware is responsible for this attack?</description>
     </item>
     <item>
       <title>LetsDefend HTTP Basic Authentication Analysis – PCAP Investigation</title>
-      <link>https://w3nch.github.io/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</link>
+      <link>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</guid>
+      <guid>http://localhost:1313/writeups/letsdefend/http-basics--auth/letsdefend-http-basic-authentication-analysis--pcap-investigation/</guid>
       <description>Description In this challenge, we receive a log indicating a possible web-based attack.&#xA;The objective is to analyze a provided PCAP file and extract meaningful information related to HTTP activity and authentication.&#xA;Investigation Process Recovering the PCAP File The PCAP was initially obtained in a Vm from there i obtained the files.&#xA;The following commands were used to take the files out of the vm as here was not much network traffic so no large size of the file:</description>
     </item>
     <item>
       <title>LetsDefend SOC168 – Command Injection (whoami) Web Attack Analysis</title>
-      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</link>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</guid>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc168---whoami-command-detected-in-request-body/</guid>
       <description>Alert Name: SOC168 – Whoami Command Detected in Request Body&#xA;Severity: High&#xA;Event ID: 118&#xA;Event Time: Feb 28, 2022, 04:12 AM&#xA;Category: Web Attack&#xA;Play Book 1. Alert Overview A high-severity web attack alert was triggered on WebServer1004 due to the detection of the whoami command within the HTTP request body. This behavior is commonly associated with command injection attempts, where an attacker tries to execute system-level commands through a web application.</description>
     </item>
   </channel>

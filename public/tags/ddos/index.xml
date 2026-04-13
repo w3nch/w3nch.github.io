@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ddos on Hello w3nch</title>
-    <link>https://w3nch.github.io/tags/ddos/</link>
+    <link>http://localhost:1313/tags/ddos/</link>
     <description>Recent content in Ddos on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 17 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/tags/ddos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ddos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DDoS Attacks: History and the Future</title>
-      <link>https://w3nch.github.io/posts/ddos-attacks-history-and-future/</link>
+      <link>http://localhost:1313/posts/ddos-attacks-history-and-future/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/posts/ddos-attacks-history-and-future/</guid>
+      <guid>http://localhost:1313/posts/ddos-attacks-history-and-future/</guid>
       <description></description>
     </item>
   </channel>

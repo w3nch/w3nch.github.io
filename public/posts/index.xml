@@ -1,19 +1,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Blog on Hello w3nch</title>
-        <link>https://w3nch.github.io/posts/</link>
+        <link>http://localhost:1313/posts/</link>
         <description>Recent content in Blog on Hello w3nch</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
-        <atom:link href="https://w3nch.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Python Tar Path Traversal with Symlink Exploitation</title>
-            <link>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
+            <link>http://localhost:1313/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
             <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/python-tar-path-traversal-and-symlink-exploitation/</guid>
+            <guid>http://localhost:1313/posts/python-tar-path-traversal-and-symlink-exploitation/</guid>
             <description>Executive Summary Archive extraction is one of the most trusted operations in modern computing. From package managers to backup systems, we routinely extract TAR files without a second thought. But what happens when the archive itself is malicious?
 This analysis examines a how archive traversal technique uses deeply nested directory structures and symbolic link chains to bypass validation mechanisms and write files outside the intended extraction directory. By understanding how path resolution works at the filesystem level, we can see why simple validation fails and how attackers exploit this gap.</description>
             <content type="html"><![CDATA[<h3 id="executive-summary">Executive Summary</h3>
@@ -221,10 +221,10 @@ Path normalization functions may fail on extremely long paths or paths with many
         
         <item>
             <title>How Iran Shut Down the Internet: A Technical Analysis of Centralized Network Control</title>
-            <link>https://w3nch.github.io/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</link>
+            <link>http://localhost:1313/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</link>
             <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</guid>
+            <guid>http://localhost:1313/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/</guid>
             <description>Disclaimer: This article is written from a purely technical perspective to educate readers about internet infrastructure and network architecture. I have no political affiliation and seeks only to examine the technical mechanisms that enabled Iran&amp;rsquo;s 2026 internet shutdown.
 Introduction On January 8, 2026, at 8:00 PM Iran Standard Time, approximately 92 million Iranian citizens were suddenly disconnected from the global internet. This shutdown, which began during the twelfth day of nationwide protests, represented one of the most extensive and sophisticated internet blackouts ever recorded Wikipedia Georgia Tech News.</description>
             <content type="html"><![CDATA[<p><strong>Disclaimer:</strong> This article is written from a purely technical perspective to educate readers about internet infrastructure and network architecture. I have no political affiliation and seeks only to examine the technical mechanisms that enabled Iran&rsquo;s 2026 internet shutdown.</p>
@@ -354,10 +354,10 @@ Introduction On January 8, 2026, at 8:00 PM Iran Standard Time, approximately 92
         
         <item>
             <title>How Password Storage Fails: A Security Timeline Every Defender Should Know</title>
-            <link>https://w3nch.github.io/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</link>
+            <link>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</link>
             <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</guid>
+            <guid>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</guid>
             <description>Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.
 Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way.</description>
             <content type="html"><![CDATA[<p>Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.</p>
@@ -443,10 +443,10 @@ For example, the password  hashed with SHA-256 will always produce the same resu
         
         <item>
             <title>What Happens If You Import os on LeetCode?</title>
-            <link>https://w3nch.github.io/posts/what-happens-if-you-import-os-on-leetcode/</link>
+            <link>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</link>
             <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/what-happens-if-you-import-os-on-leetcode/</guid>
+            <guid>http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/</guid>
             <description>Disclaimer: I do not promote hacking or abusing systems without permission. Everything shown here is purely for learning and experimentation.
 I was doing what I usually do solving problems on LeetCode using python when a random thought popped into my head:
 What if I import os and try to run something on the system?
@@ -500,70 +500,70 @@ But what it <em>does</em> help with is understanding:</li>
         
         <item>
             <title>DDoS Attacks: History and the Future</title>
-            <link>https://w3nch.github.io/posts/ddos-attacks-history-and-future/</link>
+            <link>http://localhost:1313/posts/ddos-attacks-history-and-future/</link>
             <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/ddos-attacks-history-and-future/</guid>
+            <guid>http://localhost:1313/posts/ddos-attacks-history-and-future/</guid>
             <description></description>
             <content type="html"><![CDATA[]]></content>
         </item>
         
         <item>
             <title>Inside a Blue Team SOC Home Lab: Wazuh, pfSense, Snort, Suricata, and Zeek in Action</title>
-            <link>https://w3nch.github.io/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
+            <link>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
             <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
+            <guid>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
             <description></description>
             <content type="html"><![CDATA[]]></content>
         </item>
         
         <item>
             <title>WiFi Hacking 101 to 1337</title>
-            <link>https://w3nch.github.io/posts/wifi-hacking-101-to-1337/</link>
+            <link>http://localhost:1313/posts/wifi-hacking-101-to-1337/</link>
             <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/wifi-hacking-101-to-1337/</guid>
+            <guid>http://localhost:1313/posts/wifi-hacking-101-to-1337/</guid>
             <description></description>
             <content type="html"><![CDATA[]]></content>
         </item>
         
         <item>
             <title>Building a Custom Threat Intelligence Feed with n8n</title>
-            <link>https://w3nch.github.io/posts/building-a-custom-threat-intelligence-feed-with-n8n/</link>
+            <link>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</link>
             <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
+            <guid>http://localhost:1313/posts/building-a-custom-threat-intelligence-feed-with-n8n/</guid>
             <description></description>
             <content type="html"><![CDATA[]]></content>
         </item>
         
         <item>
             <title>Sigma Rules: From Basics to Advanced Detection Engineering</title>
-            <link>https://w3nch.github.io/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</link>
+            <link>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</link>
             <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</guid>
+            <guid>http://localhost:1313/posts/sigma-rules-from-basics-to-advanced-detection-engineering/</guid>
             <description></description>
             <content type="html"><![CDATA[]]></content>
         </item>
         
         <item>
             <title>How Git and GitHub Work: A Practical Guide for Beginners</title>
-            <link>https://w3nch.github.io/posts/how-git-and-github-work-a-practical-guide-for-beginners/</link>
+            <link>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</link>
             <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/how-git-and-github-work-a-practical-guide-for-beginners/</guid>
+            <guid>http://localhost:1313/posts/how-git-and-github-work-a-practical-guide-for-beginners/</guid>
             <description></description>
             <content type="html"><![CDATA[]]></content>
         </item>
         
         <item>
             <title>Turning Text into Handwritten Assignments: Automating the Boring Part</title>
-            <link>https://w3nch.github.io/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
+            <link>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</link>
             <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
             
-            <guid>https://w3nch.github.io/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
+            <guid>http://localhost:1313/posts/turning-text-into-handwritten-assignments-automating-the-boring-part/</guid>
             <description>Let me start with the real reason this project exists.
 My college keeps giving assignments and insists that they must be handwritten. Not typed. Not PDFs generated from Word. Handwritten and after writing everything, we still have to scan or take photos and upload them to a Google Form.
 If you’ve ever done this, you already know how annoying it is.

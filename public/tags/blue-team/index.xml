@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blue-Team on Hello w3nch</title>
-    <link>https://w3nch.github.io/tags/blue-team/</link>
+    <link>http://localhost:1313/tags/blue-team/</link>
     <description>Recent content in Blue-Team on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/tags/blue-team/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/blue-team/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SOC326 Case Study: Impersonating Domain MX Record Change Leading to Active Phishing Campaign</title>
-      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</link>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</guid>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc326---impersonating-domain-mx-record-change-detected/</guid>
       <description>Event ID: 304&#xA;Rule Name: SOC326 – Impersonating Domain MX Record Change Detected&#xA;Severity: HIGH&#xA;Category: Brand Protection / Phishing&#xA;Event Time: September 17, 2024 – 12:05 PM&#xA;Impacted Asset: LETSDEFEND&#xA;Background Sometimes attackers don’t kick the door down — they quietly make a copy of your house key first.&#xA;In this case, the threat actor registered a look-alike domain and configured email infrastructure before launching a phishing campaign. What initially appeared to be an early warning quickly escalated into active exploitation, resulting in a user clicking a malicious link and communicating with attacker-controlled infrastructure.</description>
     </item>
     <item>
       <title>SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection</title>
-      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</link>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</link>
       <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</guid>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/</guid>
       <description>Event ID: 238&#xA;Rule Name: SOC153 – Suspicious PowerShell Script Executed&#xA;Severity: HIGH&#xA;Category: Endpoint Compromise / Malware&#xA;Event Time: March 14, 2024 – 05:23 PM&#xA;Compromised Host: Tony (172.16.17.206)&#xA;Tony at work opened a suspicious file they probably shouldn&amp;rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&amp;rsquo;t know what&amp;rsquo;s on it, but it starts doing things automatically.</description>
     </item>
     <item>
       <title>How Password Storage Fails: A Security Timeline Every Defender Should Know</title>
-      <link>https://w3nch.github.io/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</link>
+      <link>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</guid>
+      <guid>http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/</guid>
       <description>Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.&#xA;Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way.</description>
     </item>
     <item>
       <title>SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling</title>
-      <link>https://w3nch.github.io/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</link>
+      <link>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</guid>
+      <guid>http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/</guid>
       <description>Alert Name: SOC127 – SQL Injection Detected&#xA;Severity: High&#xA;Event ID: 235&#xA;Event Time: Mar 07, 2024 – 12:51 PM&#xA;Category: Web Application Attack&#xA;Platform: LetsDefend SOC&#xA;This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.&#xA;Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background.</description>
     </item>
     <item>
       <title>Inside a Blue Team SOC Home Lab: Wazuh, pfSense, Snort, Suricata, and Zeek in Action</title>
-      <link>https://w3nch.github.io/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
+      <link>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
+      <guid>http://localhost:1313/posts/inside-a-blue-team-soc-home-lab-wazuh-pfsense-snort-suricata-and-zeek-in-action/</guid>
       <description></description>
     </item>
   </channel>

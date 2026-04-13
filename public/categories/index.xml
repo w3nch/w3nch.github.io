@@ -2,241 +2,241 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Hello w3nch</title>
-    <link>https://w3nch.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cybersecurity</title>
-      <link>https://w3nch.github.io/categories/cybersecurity/</link>
+      <link>http://localhost:1313/categories/cybersecurity/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/cybersecurity/</guid>
+      <guid>http://localhost:1313/categories/cybersecurity/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux Security</title>
-      <link>https://w3nch.github.io/categories/linux-security/</link>
+      <link>http://localhost:1313/categories/linux-security/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/linux-security/</guid>
+      <guid>http://localhost:1313/categories/linux-security/</guid>
       <description></description>
     </item>
     <item>
       <title>BGP</title>
-      <link>https://w3nch.github.io/categories/bgp/</link>
+      <link>http://localhost:1313/categories/bgp/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/bgp/</guid>
+      <guid>http://localhost:1313/categories/bgp/</guid>
       <description></description>
     </item>
     <item>
       <title>Meet-Me Room</title>
-      <link>https://w3nch.github.io/categories/meet-me-room/</link>
+      <link>http://localhost:1313/categories/meet-me-room/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/meet-me-room/</guid>
+      <guid>http://localhost:1313/categories/meet-me-room/</guid>
       <description></description>
     </item>
     <item>
       <title>Networking</title>
-      <link>https://w3nch.github.io/categories/networking/</link>
+      <link>http://localhost:1313/categories/networking/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/networking/</guid>
+      <guid>http://localhost:1313/categories/networking/</guid>
       <description></description>
     </item>
     <item>
       <title>Phishing &amp; Digital Risk</title>
-      <link>https://w3nch.github.io/categories/phishing--digital-risk/</link>
+      <link>http://localhost:1313/categories/phishing--digital-risk/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/phishing--digital-risk/</guid>
+      <guid>http://localhost:1313/categories/phishing--digital-risk/</guid>
       <description></description>
     </item>
     <item>
       <title>SOC Writeups</title>
-      <link>https://w3nch.github.io/categories/soc-writeups/</link>
+      <link>http://localhost:1313/categories/soc-writeups/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/soc-writeups/</guid>
+      <guid>http://localhost:1313/categories/soc-writeups/</guid>
       <description></description>
     </item>
     <item>
       <title>Malware &amp; Endpoint</title>
-      <link>https://w3nch.github.io/categories/malware--endpoint/</link>
+      <link>http://localhost:1313/categories/malware--endpoint/</link>
       <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/malware--endpoint/</guid>
+      <guid>http://localhost:1313/categories/malware--endpoint/</guid>
       <description></description>
     </item>
     <item>
       <title>Defensive Security</title>
-      <link>https://w3nch.github.io/categories/defensive-security/</link>
+      <link>http://localhost:1313/categories/defensive-security/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/defensive-security/</guid>
+      <guid>http://localhost:1313/categories/defensive-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Identity Security</title>
-      <link>https://w3nch.github.io/categories/identity-security/</link>
+      <link>http://localhost:1313/categories/identity-security/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/identity-security/</guid>
+      <guid>http://localhost:1313/categories/identity-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Experiments</title>
-      <link>https://w3nch.github.io/categories/experiments/</link>
+      <link>http://localhost:1313/categories/experiments/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/experiments/</guid>
+      <guid>http://localhost:1313/categories/experiments/</guid>
       <description></description>
     </item>
     <item>
       <title>Learning</title>
-      <link>https://w3nch.github.io/categories/learning/</link>
+      <link>http://localhost:1313/categories/learning/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/learning/</guid>
+      <guid>http://localhost:1313/categories/learning/</guid>
       <description></description>
     </item>
     <item>
       <title>Sqli &amp; RCE</title>
-      <link>https://w3nch.github.io/categories/sqli--rce/</link>
+      <link>http://localhost:1313/categories/sqli--rce/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/sqli--rce/</guid>
+      <guid>http://localhost:1313/categories/sqli--rce/</guid>
       <description></description>
     </item>
     <item>
       <title>Incident Response</title>
-      <link>https://w3nch.github.io/categories/incident-response/</link>
+      <link>http://localhost:1313/categories/incident-response/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/incident-response/</guid>
+      <guid>http://localhost:1313/categories/incident-response/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux Forensics</title>
-      <link>https://w3nch.github.io/categories/linux-forensics/</link>
+      <link>http://localhost:1313/categories/linux-forensics/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/linux-forensics/</guid>
+      <guid>http://localhost:1313/categories/linux-forensics/</guid>
       <description></description>
     </item>
     <item>
       <title>Malware Investigation</title>
-      <link>https://w3nch.github.io/categories/malware-investigation/</link>
+      <link>http://localhost:1313/categories/malware-investigation/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/malware-investigation/</guid>
+      <guid>http://localhost:1313/categories/malware-investigation/</guid>
       <description></description>
     </item>
     <item>
       <title>SOC Analysis</title>
-      <link>https://w3nch.github.io/categories/soc-analysis/</link>
+      <link>http://localhost:1313/categories/soc-analysis/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/soc-analysis/</guid>
+      <guid>http://localhost:1313/categories/soc-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Network Security</title>
-      <link>https://w3nch.github.io/categories/network-security/</link>
+      <link>http://localhost:1313/categories/network-security/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/network-security/</guid>
+      <guid>http://localhost:1313/categories/network-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://w3nch.github.io/categories/programming/</link>
+      <link>http://localhost:1313/categories/programming/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/programming/</guid>
+      <guid>http://localhost:1313/categories/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://w3nch.github.io/categories/python/</link>
+      <link>http://localhost:1313/categories/python/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/python/</guid>
+      <guid>http://localhost:1313/categories/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Malware Analysis</title>
-      <link>https://w3nch.github.io/categories/malware-analysis/</link>
+      <link>http://localhost:1313/categories/malware-analysis/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/malware-analysis/</guid>
+      <guid>http://localhost:1313/categories/malware-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Home Lab</title>
-      <link>https://w3nch.github.io/categories/home-lab/</link>
+      <link>http://localhost:1313/categories/home-lab/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/home-lab/</guid>
+      <guid>http://localhost:1313/categories/home-lab/</guid>
       <description></description>
     </item>
     <item>
       <title>Security Operations</title>
-      <link>https://w3nch.github.io/categories/security-operations/</link>
+      <link>http://localhost:1313/categories/security-operations/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/security-operations/</guid>
+      <guid>http://localhost:1313/categories/security-operations/</guid>
       <description></description>
     </item>
     <item>
       <title>Network Forensics</title>
-      <link>https://w3nch.github.io/categories/network-forensics/</link>
+      <link>http://localhost:1313/categories/network-forensics/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/network-forensics/</guid>
+      <guid>http://localhost:1313/categories/network-forensics/</guid>
       <description></description>
     </item>
     <item>
       <title>Web Security</title>
-      <link>https://w3nch.github.io/categories/web-security/</link>
+      <link>http://localhost:1313/categories/web-security/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/web-security/</guid>
+      <guid>http://localhost:1313/categories/web-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Endpoint Security</title>
-      <link>https://w3nch.github.io/categories/endpoint-security/</link>
+      <link>http://localhost:1313/categories/endpoint-security/</link>
       <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/endpoint-security/</guid>
+      <guid>http://localhost:1313/categories/endpoint-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Wireless Security</title>
-      <link>https://w3nch.github.io/categories/wireless-security/</link>
+      <link>http://localhost:1313/categories/wireless-security/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/wireless-security/</guid>
+      <guid>http://localhost:1313/categories/wireless-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Threat Intelligence</title>
-      <link>https://w3nch.github.io/categories/threat-intelligence/</link>
+      <link>http://localhost:1313/categories/threat-intelligence/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/threat-intelligence/</guid>
+      <guid>http://localhost:1313/categories/threat-intelligence/</guid>
       <description></description>
     </item>
     <item>
       <title>Detection Engineering</title>
-      <link>https://w3nch.github.io/categories/detection-engineering/</link>
+      <link>http://localhost:1313/categories/detection-engineering/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/detection-engineering/</guid>
+      <guid>http://localhost:1313/categories/detection-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>https://w3nch.github.io/categories/development/</link>
+      <link>http://localhost:1313/categories/development/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/development/</guid>
+      <guid>http://localhost:1313/categories/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Tools &amp; Workflows</title>
-      <link>https://w3nch.github.io/categories/tools--workflows/</link>
+      <link>http://localhost:1313/categories/tools--workflows/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/tools--workflows/</guid>
+      <guid>http://localhost:1313/categories/tools--workflows/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>https://w3nch.github.io/categories/automation/</link>
+      <link>http://localhost:1313/categories/automation/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/automation/</guid>
+      <guid>http://localhost:1313/categories/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>Projects</title>
-      <link>https://w3nch.github.io/categories/projects/</link>
+      <link>http://localhost:1313/categories/projects/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/categories/projects/</guid>
+      <guid>http://localhost:1313/categories/projects/</guid>
       <description></description>
     </item>
   </channel>

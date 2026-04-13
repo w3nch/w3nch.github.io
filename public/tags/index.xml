@@ -2,612 +2,612 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Hello w3nch</title>
-    <link>https://w3nch.github.io/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>https://w3nch.github.io/tags/linux/</link>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/linux/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux-Security</title>
-      <link>https://w3nch.github.io/tags/linux-security/</link>
+      <link>http://localhost:1313/tags/linux-security/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/linux-security/</guid>
+      <guid>http://localhost:1313/tags/linux-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://w3nch.github.io/tags/python/</link>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/python/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Security</title>
-      <link>https://w3nch.github.io/tags/security/</link>
+      <link>http://localhost:1313/tags/security/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/security/</guid>
+      <guid>http://localhost:1313/tags/security/</guid>
       <description></description>
     </item>
     <item>
       <title>Symlink</title>
-      <link>https://w3nch.github.io/tags/symlink/</link>
+      <link>http://localhost:1313/tags/symlink/</link>
       <pubDate>Sun, 01 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/symlink/</guid>
+      <guid>http://localhost:1313/tags/symlink/</guid>
       <description></description>
     </item>
     <item>
       <title>Analysis</title>
-      <link>https://w3nch.github.io/tags/analysis/</link>
+      <link>http://localhost:1313/tags/analysis/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/analysis/</guid>
+      <guid>http://localhost:1313/tags/analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>BGP</title>
-      <link>https://w3nch.github.io/tags/bgp/</link>
+      <link>http://localhost:1313/tags/bgp/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/bgp/</guid>
+      <guid>http://localhost:1313/tags/bgp/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>https://w3nch.github.io/tags/network/</link>
+      <link>http://localhost:1313/tags/network/</link>
       <pubDate>Wed, 11 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/network/</guid>
+      <guid>http://localhost:1313/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Blue-Team</title>
-      <link>https://w3nch.github.io/tags/blue-team/</link>
+      <link>http://localhost:1313/tags/blue-team/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/blue-team/</guid>
+      <guid>http://localhost:1313/tags/blue-team/</guid>
       <description></description>
     </item>
     <item>
       <title>Domain-Impersonation</title>
-      <link>https://w3nch.github.io/tags/domain-impersonation/</link>
+      <link>http://localhost:1313/tags/domain-impersonation/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/domain-impersonation/</guid>
+      <guid>http://localhost:1313/tags/domain-impersonation/</guid>
       <description></description>
     </item>
     <item>
       <title>Email-Security</title>
-      <link>https://w3nch.github.io/tags/email-security/</link>
+      <link>http://localhost:1313/tags/email-security/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/email-security/</guid>
+      <guid>http://localhost:1313/tags/email-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Letsdefend</title>
-      <link>https://w3nch.github.io/tags/letsdefend/</link>
+      <link>http://localhost:1313/tags/letsdefend/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/letsdefend/</guid>
+      <guid>http://localhost:1313/tags/letsdefend/</guid>
       <description></description>
     </item>
     <item>
       <title>Mx-Record</title>
-      <link>https://w3nch.github.io/tags/mx-record/</link>
+      <link>http://localhost:1313/tags/mx-record/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/mx-record/</guid>
+      <guid>http://localhost:1313/tags/mx-record/</guid>
       <description></description>
     </item>
     <item>
       <title>Phishing</title>
-      <link>https://w3nch.github.io/tags/phishing/</link>
+      <link>http://localhost:1313/tags/phishing/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/phishing/</guid>
+      <guid>http://localhost:1313/tags/phishing/</guid>
       <description></description>
     </item>
     <item>
       <title>Soc</title>
-      <link>https://w3nch.github.io/tags/soc/</link>
+      <link>http://localhost:1313/tags/soc/</link>
       <pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/soc/</guid>
+      <guid>http://localhost:1313/tags/soc/</guid>
       <description></description>
     </item>
     <item>
       <title>Endpoint-Security</title>
-      <link>https://w3nch.github.io/tags/endpoint-security/</link>
+      <link>http://localhost:1313/tags/endpoint-security/</link>
       <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/endpoint-security/</guid>
+      <guid>http://localhost:1313/tags/endpoint-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Malware-Analysis</title>
-      <link>https://w3nch.github.io/tags/malware-analysis/</link>
+      <link>http://localhost:1313/tags/malware-analysis/</link>
       <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/malware-analysis/</guid>
+      <guid>http://localhost:1313/tags/malware-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Powershell</title>
-      <link>https://w3nch.github.io/tags/powershell/</link>
+      <link>http://localhost:1313/tags/powershell/</link>
       <pubDate>Tue, 03 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/powershell/</guid>
+      <guid>http://localhost:1313/tags/powershell/</guid>
       <description></description>
     </item>
     <item>
       <title>Breaches</title>
-      <link>https://w3nch.github.io/tags/breaches/</link>
+      <link>http://localhost:1313/tags/breaches/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/breaches/</guid>
+      <guid>http://localhost:1313/tags/breaches/</guid>
       <description></description>
     </item>
     <item>
       <title>Hashing</title>
-      <link>https://w3nch.github.io/tags/hashing/</link>
+      <link>http://localhost:1313/tags/hashing/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/hashing/</guid>
+      <guid>http://localhost:1313/tags/hashing/</guid>
       <description></description>
     </item>
     <item>
       <title>Infosec</title>
-      <link>https://w3nch.github.io/tags/infosec/</link>
+      <link>http://localhost:1313/tags/infosec/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/infosec/</guid>
+      <guid>http://localhost:1313/tags/infosec/</guid>
       <description></description>
     </item>
     <item>
       <title>Passwords</title>
-      <link>https://w3nch.github.io/tags/passwords/</link>
+      <link>http://localhost:1313/tags/passwords/</link>
       <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/passwords/</guid>
+      <guid>http://localhost:1313/tags/passwords/</guid>
       <description></description>
     </item>
     <item>
       <title>Curiosity</title>
-      <link>https://w3nch.github.io/tags/curiosity/</link>
+      <link>http://localhost:1313/tags/curiosity/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/curiosity/</guid>
+      <guid>http://localhost:1313/tags/curiosity/</guid>
       <description></description>
     </item>
     <item>
       <title>Hacking</title>
-      <link>https://w3nch.github.io/tags/hacking/</link>
+      <link>http://localhost:1313/tags/hacking/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/hacking/</guid>
+      <guid>http://localhost:1313/tags/hacking/</guid>
       <description></description>
     </item>
     <item>
       <title>Leetcode</title>
-      <link>https://w3nch.github.io/tags/leetcode/</link>
+      <link>http://localhost:1313/tags/leetcode/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/leetcode/</guid>
+      <guid>http://localhost:1313/tags/leetcode/</guid>
       <description></description>
     </item>
     <item>
       <title>Sandbox</title>
-      <link>https://w3nch.github.io/tags/sandbox/</link>
+      <link>http://localhost:1313/tags/sandbox/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/sandbox/</guid>
+      <guid>http://localhost:1313/tags/sandbox/</guid>
       <description></description>
     </item>
     <item>
       <title>Sql-Injection</title>
-      <link>https://w3nch.github.io/tags/sql-injection/</link>
+      <link>http://localhost:1313/tags/sql-injection/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/sql-injection/</guid>
+      <guid>http://localhost:1313/tags/sql-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>Web-Security</title>
-      <link>https://w3nch.github.io/tags/web-security/</link>
+      <link>http://localhost:1313/tags/web-security/</link>
       <pubDate>Thu, 29 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/web-security/</guid>
+      <guid>http://localhost:1313/tags/web-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Auditd</title>
-      <link>https://w3nch.github.io/tags/auditd/</link>
+      <link>http://localhost:1313/tags/auditd/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/auditd/</guid>
+      <guid>http://localhost:1313/tags/auditd/</guid>
       <description></description>
     </item>
     <item>
       <title>Bruteforce</title>
-      <link>https://w3nch.github.io/tags/bruteforce/</link>
+      <link>http://localhost:1313/tags/bruteforce/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/bruteforce/</guid>
+      <guid>http://localhost:1313/tags/bruteforce/</guid>
       <description></description>
     </item>
     <item>
       <title>Btlo</title>
-      <link>https://w3nch.github.io/tags/btlo/</link>
+      <link>http://localhost:1313/tags/btlo/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/btlo/</guid>
+      <guid>http://localhost:1313/tags/btlo/</guid>
       <description></description>
     </item>
     <item>
       <title>Forensics</title>
-      <link>https://w3nch.github.io/tags/forensics/</link>
+      <link>http://localhost:1313/tags/forensics/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/forensics/</guid>
+      <guid>http://localhost:1313/tags/forensics/</guid>
       <description></description>
     </item>
     <item>
       <title>Incident-Response</title>
-      <link>https://w3nch.github.io/tags/incident-response/</link>
+      <link>http://localhost:1313/tags/incident-response/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/incident-response/</guid>
+      <guid>http://localhost:1313/tags/incident-response/</guid>
       <description></description>
     </item>
     <item>
       <title>Privilege-Escalation</title>
-      <link>https://w3nch.github.io/tags/privilege-escalation/</link>
+      <link>http://localhost:1313/tags/privilege-escalation/</link>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/privilege-escalation/</guid>
+      <guid>http://localhost:1313/tags/privilege-escalation/</guid>
       <description></description>
     </item>
     <item>
       <title>Macros</title>
-      <link>https://w3nch.github.io/tags/macros/</link>
+      <link>http://localhost:1313/tags/macros/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/macros/</guid>
+      <guid>http://localhost:1313/tags/macros/</guid>
       <description></description>
     </item>
     <item>
       <title>Malware</title>
-      <link>https://w3nch.github.io/tags/malware/</link>
+      <link>http://localhost:1313/tags/malware/</link>
       <pubDate>Mon, 19 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/malware/</guid>
+      <guid>http://localhost:1313/tags/malware/</guid>
       <description></description>
     </item>
     <item>
       <title>Cyber-Attacks</title>
-      <link>https://w3nch.github.io/tags/cyber-attacks/</link>
+      <link>http://localhost:1313/tags/cyber-attacks/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/cyber-attacks/</guid>
+      <guid>http://localhost:1313/tags/cyber-attacks/</guid>
       <description></description>
     </item>
     <item>
       <title>Ddos</title>
-      <link>https://w3nch.github.io/tags/ddos/</link>
+      <link>http://localhost:1313/tags/ddos/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/ddos/</guid>
+      <guid>http://localhost:1313/tags/ddos/</guid>
       <description></description>
     </item>
     <item>
       <title>Exercism</title>
-      <link>https://w3nch.github.io/tags/exercism/</link>
+      <link>http://localhost:1313/tags/exercism/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/exercism/</guid>
+      <guid>http://localhost:1313/tags/exercism/</guid>
       <description></description>
     </item>
     <item>
       <title>Infrastructure</title>
-      <link>https://w3nch.github.io/tags/infrastructure/</link>
+      <link>http://localhost:1313/tags/infrastructure/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/infrastructure/</guid>
+      <guid>http://localhost:1313/tags/infrastructure/</guid>
       <description></description>
     </item>
     <item>
       <title>Network-Security</title>
-      <link>https://w3nch.github.io/tags/network-security/</link>
+      <link>http://localhost:1313/tags/network-security/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/network-security/</guid>
+      <guid>http://localhost:1313/tags/network-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Oop</title>
-      <link>https://w3nch.github.io/tags/oop/</link>
+      <link>http://localhost:1313/tags/oop/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/oop/</guid>
+      <guid>http://localhost:1313/tags/oop/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming-Basics</title>
-      <link>https://w3nch.github.io/tags/programming-basics/</link>
+      <link>http://localhost:1313/tags/programming-basics/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/programming-basics/</guid>
+      <guid>http://localhost:1313/tags/programming-basics/</guid>
       <description></description>
     </item>
     <item>
       <title>Space-Age</title>
-      <link>https://w3nch.github.io/tags/space-age/</link>
+      <link>http://localhost:1313/tags/space-age/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/space-age/</guid>
+      <guid>http://localhost:1313/tags/space-age/</guid>
       <description></description>
     </item>
     <item>
       <title>Wireshark</title>
-      <link>https://w3nch.github.io/tags/wireshark/</link>
+      <link>http://localhost:1313/tags/wireshark/</link>
       <pubDate>Sat, 17 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/wireshark/</guid>
+      <guid>http://localhost:1313/tags/wireshark/</guid>
       <description></description>
     </item>
     <item>
       <title>Blue</title>
-      <link>https://w3nch.github.io/tags/blue/</link>
+      <link>http://localhost:1313/tags/blue/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/blue/</guid>
+      <guid>http://localhost:1313/tags/blue/</guid>
       <description></description>
     </item>
     <item>
       <title>Macro</title>
-      <link>https://w3nch.github.io/tags/macro/</link>
+      <link>http://localhost:1313/tags/macro/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/macro/</guid>
+      <guid>http://localhost:1313/tags/macro/</guid>
       <description></description>
     </item>
     <item>
       <title>Xlsm</title>
-      <link>https://w3nch.github.io/tags/xlsm/</link>
+      <link>http://localhost:1313/tags/xlsm/</link>
       <pubDate>Fri, 16 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/xlsm/</guid>
+      <guid>http://localhost:1313/tags/xlsm/</guid>
       <description></description>
     </item>
     <item>
       <title>Home-Lab</title>
-      <link>https://w3nch.github.io/tags/home-lab/</link>
+      <link>http://localhost:1313/tags/home-lab/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/home-lab/</guid>
+      <guid>http://localhost:1313/tags/home-lab/</guid>
       <description></description>
     </item>
     <item>
       <title>Http</title>
-      <link>https://w3nch.github.io/tags/http/</link>
+      <link>http://localhost:1313/tags/http/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/http/</guid>
+      <guid>http://localhost:1313/tags/http/</guid>
       <description></description>
     </item>
     <item>
       <title>Pfsense</title>
-      <link>https://w3nch.github.io/tags/pfsense/</link>
+      <link>http://localhost:1313/tags/pfsense/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/pfsense/</guid>
+      <guid>http://localhost:1313/tags/pfsense/</guid>
       <description></description>
     </item>
     <item>
       <title>Snort</title>
-      <link>https://w3nch.github.io/tags/snort/</link>
+      <link>http://localhost:1313/tags/snort/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/snort/</guid>
+      <guid>http://localhost:1313/tags/snort/</guid>
       <description></description>
     </item>
     <item>
       <title>Suricata</title>
-      <link>https://w3nch.github.io/tags/suricata/</link>
+      <link>http://localhost:1313/tags/suricata/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/suricata/</guid>
+      <guid>http://localhost:1313/tags/suricata/</guid>
       <description></description>
     </item>
     <item>
       <title>Ticketing</title>
-      <link>https://w3nch.github.io/tags/ticketing/</link>
+      <link>http://localhost:1313/tags/ticketing/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/ticketing/</guid>
+      <guid>http://localhost:1313/tags/ticketing/</guid>
       <description></description>
     </item>
     <item>
       <title>Wazuh</title>
-      <link>https://w3nch.github.io/tags/wazuh/</link>
+      <link>http://localhost:1313/tags/wazuh/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/wazuh/</guid>
+      <guid>http://localhost:1313/tags/wazuh/</guid>
       <description></description>
     </item>
     <item>
       <title>Web</title>
-      <link>https://w3nch.github.io/tags/web/</link>
+      <link>http://localhost:1313/tags/web/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/web/</guid>
+      <guid>http://localhost:1313/tags/web/</guid>
       <description></description>
     </item>
     <item>
       <title>Zeek</title>
-      <link>https://w3nch.github.io/tags/zeek/</link>
+      <link>http://localhost:1313/tags/zeek/</link>
       <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/zeek/</guid>
+      <guid>http://localhost:1313/tags/zeek/</guid>
       <description></description>
     </item>
     <item>
       <title>Pcap</title>
-      <link>https://w3nch.github.io/tags/pcap/</link>
+      <link>http://localhost:1313/tags/pcap/</link>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/pcap/</guid>
+      <guid>http://localhost:1313/tags/pcap/</guid>
       <description></description>
     </item>
     <item>
       <title>Command-Injection</title>
-      <link>https://w3nch.github.io/tags/command-injection/</link>
+      <link>http://localhost:1313/tags/command-injection/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/command-injection/</guid>
+      <guid>http://localhost:1313/tags/command-injection/</guid>
       <description></description>
     </item>
     <item>
       <title>Web-Attack</title>
-      <link>https://w3nch.github.io/tags/web-attack/</link>
+      <link>http://localhost:1313/tags/web-attack/</link>
       <pubDate>Tue, 13 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/web-attack/</guid>
+      <guid>http://localhost:1313/tags/web-attack/</guid>
       <description></description>
     </item>
     <item>
       <title>Directory-Traversal</title>
-      <link>https://w3nch.github.io/tags/directory-traversal/</link>
+      <link>http://localhost:1313/tags/directory-traversal/</link>
       <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/directory-traversal/</guid>
+      <guid>http://localhost:1313/tags/directory-traversal/</guid>
       <description></description>
     </item>
     <item>
       <title>Lfi</title>
-      <link>https://w3nch.github.io/tags/lfi/</link>
+      <link>http://localhost:1313/tags/lfi/</link>
       <pubDate>Mon, 12 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/lfi/</guid>
+      <guid>http://localhost:1313/tags/lfi/</guid>
       <description></description>
     </item>
     <item>
       <title>Exploitation</title>
-      <link>https://w3nch.github.io/tags/exploitation/</link>
+      <link>http://localhost:1313/tags/exploitation/</link>
       <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/exploitation/</guid>
+      <guid>http://localhost:1313/tags/exploitation/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>https://w3nch.github.io/tags/windows/</link>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Sun, 11 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>Ole</title>
-      <link>https://w3nch.github.io/tags/ole/</link>
+      <link>http://localhost:1313/tags/ole/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/ole/</guid>
+      <guid>http://localhost:1313/tags/ole/</guid>
       <description></description>
     </item>
     <item>
       <title>Rce</title>
-      <link>https://w3nch.github.io/tags/rce/</link>
+      <link>http://localhost:1313/tags/rce/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/rce/</guid>
+      <guid>http://localhost:1313/tags/rce/</guid>
       <description></description>
     </item>
     <item>
       <title>Zero-Click</title>
-      <link>https://w3nch.github.io/tags/zero-click/</link>
+      <link>http://localhost:1313/tags/zero-click/</link>
       <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/zero-click/</guid>
+      <guid>http://localhost:1313/tags/zero-click/</guid>
       <description></description>
     </item>
     <item>
       <title>Pentesting</title>
-      <link>https://w3nch.github.io/tags/pentesting/</link>
+      <link>http://localhost:1313/tags/pentesting/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/pentesting/</guid>
+      <guid>http://localhost:1313/tags/pentesting/</guid>
       <description></description>
     </item>
     <item>
       <title>Wifi</title>
-      <link>https://w3nch.github.io/tags/wifi/</link>
+      <link>http://localhost:1313/tags/wifi/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/wifi/</guid>
+      <guid>http://localhost:1313/tags/wifi/</guid>
       <description></description>
     </item>
     <item>
       <title>Wireless-Security</title>
-      <link>https://w3nch.github.io/tags/wireless-security/</link>
+      <link>http://localhost:1313/tags/wireless-security/</link>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/wireless-security/</guid>
+      <guid>http://localhost:1313/tags/wireless-security/</guid>
       <description></description>
     </item>
     <item>
       <title>Automation</title>
-      <link>https://w3nch.github.io/tags/automation/</link>
+      <link>http://localhost:1313/tags/automation/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/automation/</guid>
+      <guid>http://localhost:1313/tags/automation/</guid>
       <description></description>
     </item>
     <item>
       <title>N8n</title>
-      <link>https://w3nch.github.io/tags/n8n/</link>
+      <link>http://localhost:1313/tags/n8n/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/n8n/</guid>
+      <guid>http://localhost:1313/tags/n8n/</guid>
       <description></description>
     </item>
     <item>
       <title>Security-Operations</title>
-      <link>https://w3nch.github.io/tags/security-operations/</link>
+      <link>http://localhost:1313/tags/security-operations/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/security-operations/</guid>
+      <guid>http://localhost:1313/tags/security-operations/</guid>
       <description></description>
     </item>
     <item>
       <title>Threat-Intelligence</title>
-      <link>https://w3nch.github.io/tags/threat-intelligence/</link>
+      <link>http://localhost:1313/tags/threat-intelligence/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/threat-intelligence/</guid>
+      <guid>http://localhost:1313/tags/threat-intelligence/</guid>
       <description></description>
     </item>
     <item>
       <title>Detection-Engineering</title>
-      <link>https://w3nch.github.io/tags/detection-engineering/</link>
+      <link>http://localhost:1313/tags/detection-engineering/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/detection-engineering/</guid>
+      <guid>http://localhost:1313/tags/detection-engineering/</guid>
       <description></description>
     </item>
     <item>
       <title>Siem</title>
-      <link>https://w3nch.github.io/tags/siem/</link>
+      <link>http://localhost:1313/tags/siem/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/siem/</guid>
+      <guid>http://localhost:1313/tags/siem/</guid>
       <description></description>
     </item>
     <item>
       <title>Sigma</title>
-      <link>https://w3nch.github.io/tags/sigma/</link>
+      <link>http://localhost:1313/tags/sigma/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/sigma/</guid>
+      <guid>http://localhost:1313/tags/sigma/</guid>
       <description></description>
     </item>
     <item>
       <title>Threat-Detection</title>
-      <link>https://w3nch.github.io/tags/threat-detection/</link>
+      <link>http://localhost:1313/tags/threat-detection/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/threat-detection/</guid>
+      <guid>http://localhost:1313/tags/threat-detection/</guid>
       <description></description>
     </item>
     <item>
       <title>Collaboration</title>
-      <link>https://w3nch.github.io/tags/collaboration/</link>
+      <link>http://localhost:1313/tags/collaboration/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/collaboration/</guid>
+      <guid>http://localhost:1313/tags/collaboration/</guid>
       <description></description>
     </item>
     <item>
       <title>Devops</title>
-      <link>https://w3nch.github.io/tags/devops/</link>
+      <link>http://localhost:1313/tags/devops/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/devops/</guid>
+      <guid>http://localhost:1313/tags/devops/</guid>
       <description></description>
     </item>
     <item>
       <title>Git</title>
-      <link>https://w3nch.github.io/tags/git/</link>
+      <link>http://localhost:1313/tags/git/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/git/</guid>
+      <guid>http://localhost:1313/tags/git/</guid>
       <description></description>
     </item>
     <item>
       <title>Github</title>
-      <link>https://w3nch.github.io/tags/github/</link>
+      <link>http://localhost:1313/tags/github/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/github/</guid>
+      <guid>http://localhost:1313/tags/github/</guid>
       <description></description>
     </item>
     <item>
       <title>Version-Control</title>
-      <link>https://w3nch.github.io/tags/version-control/</link>
+      <link>http://localhost:1313/tags/version-control/</link>
       <pubDate>Sat, 01 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/version-control/</guid>
+      <guid>http://localhost:1313/tags/version-control/</guid>
       <description></description>
     </item>
     <item>
       <title>Cli-Tools</title>
-      <link>https://w3nch.github.io/tags/cli-tools/</link>
+      <link>http://localhost:1313/tags/cli-tools/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/cli-tools/</guid>
+      <guid>http://localhost:1313/tags/cli-tools/</guid>
       <description></description>
     </item>
     <item>
       <title>Productivity</title>
-      <link>https://w3nch.github.io/tags/productivity/</link>
+      <link>http://localhost:1313/tags/productivity/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/productivity/</guid>
+      <guid>http://localhost:1313/tags/productivity/</guid>
       <description></description>
     </item>
     <item>
       <title>Student-Life</title>
-      <link>https://w3nch.github.io/tags/student-life/</link>
+      <link>http://localhost:1313/tags/student-life/</link>
       <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/tags/student-life/</guid>
+      <guid>http://localhost:1313/tags/student-life/</guid>
       <description></description>
     </item>
   </channel>

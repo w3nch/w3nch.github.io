@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LeetCode on Hello w3nch</title>
-    <link>https://w3nch.github.io/writeups/coding/leetcode/</link>
+    <link>http://localhost:1313/writeups/coding/leetcode/</link>
     <description>Recent content in LeetCode on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 08 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://w3nch.github.io/writeups/coding/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/writeups/coding/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Building a Custom Threat Intelligence Feed with n8n</title>
-      <link>https://w3nch.github.io/writeups/coding/leetcode/test/</link>
+      <link>http://localhost:1313/writeups/coding/leetcode/test/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>https://w3nch.github.io/writeups/coding/leetcode/test/</guid>
+      <guid>http://localhost:1313/writeups/coding/leetcode/test/</guid>
       <description></description>
     </item>
   </channel>
