@@ -1,7 +1,7 @@
 baseURL = "https://w3nch.github.io/"
 languageCode = "en-us"
 title = "Hello w3nch"
-theme = "hello-friend-ng"
+theme = "hugo-theme-hello-friend-ng"
 paginate = 10
 
 [params]
