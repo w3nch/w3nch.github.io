@@ -499,6 +499,13 @@
       <description></description>
     </item>
     <item>
+      <title>Ai</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Automation</title>
       <link>http://localhost:1313/tags/automation/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
@@ -506,10 +513,31 @@
       <description></description>
     </item>
     <item>
+      <title>Cve</title>
+      <link>http://localhost:1313/tags/cve/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/cve/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Heap Overflow</title>
+      <link>http://localhost:1313/tags/heap-overflow/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/heap-overflow/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>N8n</title>
       <link>http://localhost:1313/tags/n8n/</link>
       <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/n8n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ollama</title>
+      <link>http://localhost:1313/tags/ollama/</link>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ollama/</guid>
       <description></description>
     </item>
     <item>

@@ -5,8 +5,136 @@
         <description>Recent content in Blog on Hello w3nch</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate>
         <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Bleeding Lama CVE-2026-7482</title>
+            <link>http://localhost:1313/posts/bleeding-lama-cve-2026-7482/</link>
+            <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
+            
+            <guid>http://localhost:1313/posts/bleeding-lama-cve-2026-7482/</guid>
+            <description>What is ollama Ollama is a tool used to run large language models locally. Instead of relying on cloud providers, developers can download and run models like Llama, Mistral, Gemma, and others directly on their own systems.
+It exposes an API server that allows applications to:
+load AI models, generate responses, create custom models, and share or push models to remote registries. Its API is a local HTTP REST API, usually running on:</description>
+            <content type="html"><![CDATA[<h2 id="what-is-ollama">What is ollama</h2>
+<p>Ollama is a tool used to run large language models locally. Instead of relying on cloud providers, developers can download and run models like Llama, Mistral, Gemma, and others directly on their own systems.</p>
+<p><img src="https://i.ibb.co/Q7RJfmn1/image.png" alt="image"></p>
+<p>It exposes an API server that allows applications to:</p>
+<ul>
+<li>load AI models,</li>
+<li>generate responses,</li>
+<li>create custom models,</li>
+<li>and share or push models to remote registries.</li>
+</ul>
+<p>Its API is a local HTTP REST API, usually running on:</p>
+<pre tabindex="0"><code class="language-api" data-lang="api">http://localhost:11434
+</code></pre><table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/api/generate</code></td>
+<td>Generate text</td>
+</tr>
+<tr>
+<td><code>/api/chat</code></td>
+<td>Chat completion</td>
+</tr>
+<tr>
+<td><code>/api/tags</code></td>
+<td>List installed models</td>
+</tr>
+<tr>
+<td><code>/api/pull</code></td>
+<td>Download models</td>
+</tr>
+<tr>
+<td><code>/api/push</code></td>
+<td>Push models</td>
+</tr>
+<tr>
+<td><code>/api/create</code></td>
+<td>Create custom models</td>
+</tr>
+<tr>
+<td><code>/api/delete</code></td>
+<td>Delete models</td>
+</tr>
+<tr>
+<td><code>/api/embeddings</code></td>
+<td>Generate embeddings</td>
+</tr>
+</tbody>
+</table>
+<p>Exmple: generate text</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl http://localhost:11434/api/generate -d <span style="color:#e6db74">&#39;{
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;model&#34;: &#34;llama3&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &#34;prompt&#34;: &#34;Explain SQL injection&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">}&#39;</span>
+</span></span></code></pre></div><p>Internally, Ollama supports models stored in the GGUF format, which is commonly used for quantized LLMs because it reduces memory usage and improves performance on consumer hardware.</p>
+<h2 id="what-is-cve-2026-7482">What is CVE-2026-7482</h2>
+<p>CVE-2026-7482 is a critical heap out-of-bounds read vulnerability affecting Ollama versions before <code>0.17.1</code>.</p>
+<p>The issue exists inside the  <a href="https://huggingface.co/Hussain2050/GGUF-Loader">GGUF</a>  model loader. Ollama trusted certain values inside uploaded GGUF files without properly validating them first. A specially crafted malicious model could trick the server into reading memory outside the intended buffer.</p>
+<p>Because the vulnerable API endpoints can be exposed over the network, an attacker may remotely leak sensitive memory contents from the Ollama process.</p>
+<p><img src="https://i.ibb.co/67c8qNPC/image2.png" alt="image2"></p>
+<h2 id="root-cause">Root Cause</h2>
+<p>The vulnerability comes from improper validation of tensor metadata inside GGUF files.</p>
+<p>A GGUF file contains structured metadata describing:</p>
+<ul>
+<li>tensor offsets,</li>
+<li>tensor sizes,</li>
+<li>quantization data,</li>
+<li>and model layout information.</li>
+</ul>
+<p>Ollama parsed attacker-controlled values from the file and later used them during model loading and quantization without checking whether the requested memory region actually existed inside the file boundaries.</p>
+<p>Example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">data</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">buffer</span>[<span style="color:#a6e22e">offset</span> : <span style="color:#a6e22e">offset</span><span style="color:#f92672">+</span><span style="color:#a6e22e">size</span>]
+</span></span></code></pre></div><p>if:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>offset + size &gt; actual_file_size
+</span></span></code></pre></div><p>the program ends up reading memory past the allocated heap buffer.</p>
+<p>That unintended memory may contain sensitive information belonging to the running Ollama process.</p>
+<p>The core problem was essentially:</p>
+<ul>
+<li>trusting untrusted metadata,</li>
+<li>missing bounds checks,</li>
+<li>and unsafe slicing operations during GGUF parsing.</li>
+</ul>
+<h2 id="exploit-flow">Exploit flow</h2>
+<p>An attacker first creates a malicious GGUF model file. Instead of using normal tensor metadata, the attacker modifies fields like tensor offsets and tensor sizes so they point outside the valid model boundaries.</p>
+<p><img src="https://i.ibb.co/gM4qTfcP/image3.png" alt="image3"></p>
+<p>When the file gets uploaded to the Ollama server through endpoints such as <code>/api/create</code>, Ollama begins parsing the model as if it were legitimate.</p>
+<p>During the quantization or model loading process, the server uses the attacker-controlled offsets to read memory regions that were never meant to be accessed. Since the application does not properly validate the boundaries, it accidentally leaks portions of heap memory.</p>
+<p>The leaked memory can contain fragments of prompts,API tokens,chat history,environment variables or other sensitive runtime data.</p>
+<p>An attacker can then use Ollama’s own functionality, such as <code>/api/push</code>, to retrieve or export the corrupted model output containing the leaked memory data.</p>
+<p>What makes this particularly dangerous is that:</p>
+<ul>
+<li>no authentication is required in many default deployments,</li>
+<li>no user interaction is needed,and exploitation can happen entirely over the network if the Ollama instance is publicly exposed.</li>
+</ul>
+<p>In real-world cases, a publicly reachable Ollama server could be scanned, exploited remotely, and used to collect sensitive information from the host system without crashing the service or drawing immediate attention.</p>
+<h2 id="ioc">IOC</h2>
+<p>Possible signs:</p>
+<ul>
+<li>Unexpected requests to <code>/api/create</code></li>
+<li>Unusual GGUF uploads</li>
+<li>Unknown outbound <code>/api/push</code> operations</li>
+<li>Suspicious registry uploads</li>
+<li>Large memory consumption spikes</li>
+<li>Unexpected model quantization activity</li>
+</ul>
+<h3 id="referrences">Referrences</h3>
+<p><a href="https://app.opencve.io/cve/CVE-2026-7482">https://app.opencve.io/cve/CVE-2026-7482</a></p>
+<p><a href="https://thehackernews.com/2026/05/ollama-out-of-bounds-read-vulnerability.html">https://thehackernews.com/2026/05/ollama-out-of-bounds-read-vulnerability.html</a></p>
+<p><a href="https://www.sentinelone.com/vulnerability-database/cve-2026-7482/">https://www.sentinelone.com/vulnerability-database/cve-2026-7482/</a></p>
+<p><a href="https://advisories.gitlab.com/golang/github.com/ollama/ollama/CVE-2026-7482/">https://advisories.gitlab.com/golang/github.com/ollama/ollama/CVE-2026-7482/</a></p>
+<p><a href="https://github.com/advisories/GHSA-x8qc-fggm-mpqg">https://github.com/advisories/GHSA-x8qc-fggm-mpqg</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>Python Tar Path Traversal with Symlink Exploitation</title>

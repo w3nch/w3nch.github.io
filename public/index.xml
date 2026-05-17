@@ -6,8 +6,15 @@
     <description>Recent content on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bleeding Lama CVE-2026-7482</title>
+      <link>http://localhost:1313/posts/bleeding-lama-cve-2026-7482/</link>
+      <pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/bleeding-lama-cve-2026-7482/</guid>
+      <description>What is ollama Ollama is a tool used to run large language models locally. Instead of relying on cloud providers, developers can download and run models like Llama, Mistral, Gemma, and others directly on their own systems.&#xA;It exposes an API server that allows applications to:&#xA;load AI models, generate responses, create custom models, and share or push models to remote registries. Its API is a local HTTP REST API, usually running on:</description>
+    </item>
     <item>
       <title>Python Tar Path Traversal with Symlink Exploitation</title>
       <link>http://localhost:1313/posts/python-tar-path-traversal-and-symlink-exploitation/</link>
