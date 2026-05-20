@@ -5,7 +5,8 @@
     <link>http://localhost:1313/tags/github/</link>
     <description>Recent content in Github on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>© 1337 w3nch</copyright>
     <lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>

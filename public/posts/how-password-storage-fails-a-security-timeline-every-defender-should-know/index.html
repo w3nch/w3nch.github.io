@@ -1,73 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>How Password Storage Fails: A Security Timeline Every Defender Should Know :: Hello w3nch</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.
 Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way." />
-<meta name="keywords" content=", passwords, infosec, blue-team, hashing, breaches, soc" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/" />
 
 
-    <title>
-        
-            How Password Storage Fails: A Security Timeline Every Defender Should Know :: Hello w3nch 
-        
-    </title>
 
 
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.64355604529405b8a6a03699668a57f6e03d8fd15b6b3b96cf9364bf18a602f8.css">
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/writeups.min.f97cbcd47e8113ea91483092b8ce27fd630e9643fa563f0ba30c56c5fb1557c4.css">
 
-  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
 
-    
-        <link rel="stylesheet" type="text/css" href="css/code.css">
-    
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
 
-    
-        <link rel="stylesheet" type="text/css" href="css/writeups.css">
-    
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="msapplication-TileColor" content="">
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
 
-<meta itemprop="name" content="How Password Storage Fails: A Security Timeline Every Defender Should Know">
-<meta itemprop="description" content="Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.
-Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way."><meta itemprop="datePublished" content="2026-01-31T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-01-31T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1124">
-<meta itemprop="keywords" content="passwords,infosec,blue-team,hashing,breaches,soc," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="How Password Storage Fails: A Security Timeline Every Defender Should Know"/>
-<meta name="twitter:description" content="Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.
-Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way."/>
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
 
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
 
-
-
-
-    <meta property="article:section" content="Defensive Security" />
-
-    <meta property="article:section" content="Identity Security" />
-
-
-
-    <meta property="article:published_time" content="2026-01-31 00:00:00 &#43;0000 UTC" />
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
 
 
 
@@ -75,104 +66,172 @@ Below are six common ways passwords have been handled over time, starting with t
 
 
 
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="How Password Storage Fails: A Security Timeline Every Defender Should Know">
+<meta property="og:description" content="Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.
+Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way." />
+<meta property="og:url" content="http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/" />
+<meta property="og:site_name" content="Hello w3nch" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="Defensive Security" />
+
+  <meta property="article:section" content="Identity Security" />
+
+
+  <meta property="article:published_time" content="2026-01-31 00:00:00 &#43;0000 UTC" />
 
 
 
 
 
-    </head>
 
-    
-        <body>
-    
-    
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
-    <div class="logo">
-        
-            <span class="logo__mark">></span>
-            <span class="logo__text ">
-                hello ;)</span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
-        
-    </div>
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    hello ;)
+  </div>
 </a>
 
-
-        <span class="header__right">
-                <nav class="menu">
-    <ul class="menu__inner">
-                <li><a href="/about/">About</a></li>
-            
-                <li><a href="/posts/">Blog</a></li>
-            
-                <li><a href="/contact/">Contact</a></li>
-            
-                <li><a href="/resume.pdf">Resume</a></li>
-            
-                <li><a href="/writeups/">Writeup</a></li>
-            
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/">Blog</a></li>
+        
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf">Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/">Writeup</a></li>
+        
+      
+      
     </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/" >Blog</a></li>
+        
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/contact/" >Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf" >Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/" >Writeup</a></li>
+        
+      
+      
+    
+  </ul>
 </nav>
 
-
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </span>
-                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
- </svg></span>
-        </span>
-    </span>
+  
 </header>
 
 
-            
   <div class="content">
-    <main class="post">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/">How Password Storage Fails: A Security Timeline Every Defender Should Know</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-01-31</time></div>
 
-      <div class="post-info">
-        <p>
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/passwords/">passwords</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/infosec/">infosec</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/blue-team/">blue-team</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/hashing/">hashing</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/breaches/">breaches</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/soc/">soc</a>&nbsp;
+      
+    </span>
+  
+  
 
-          
-        </p>
-      </div>
 
-      <article>
-        <h1 class="post-title">
-          <a href="http://localhost:1313/posts/how-password-storage-fails-a-security-timeline-every-defender-should-know/">How Password Storage Fails: A Security Timeline Every Defender Should Know</a>
-        </h1>
+  
 
-        
-
-        
-
-        
-
-        <div class="post-content">
-          <p>Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.</p>
+  <div class="post-content"><div>
+        <p>Storing passwords safely is a really important part of running any website or app where people create accounts. When this is done badly, it has led to some of the biggest data leaks ever. Even years later, stolen passwords are still being reused by attackers to break into other accounts.</p>
 <p>Below are six common ways passwords have been handled over time, starting with the worst ideas and moving toward safer ones, explained in a simple way.</p>
 <hr>
-<h2 id="1-plain-text">1. Plain Text</h2>
+<h2 id="1-plain-text">1. Plain Text<a href="#1-plain-text" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Plain text storage means a password is saved exactly as a person types it. If someone creates an account with a password like <code>hello123</code>, that exact text is stored in the database.</p>
-<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.next7it.com%2Fwp-content%2Fuploads%2F2019%2F05%2FPlain-Text-Password.jpg&amp;f=1&amp;nofb=1&amp;ipt=657fa3be1078e3781ca9daf34f8248fb36cfae57c4fe1ad1e3afd7c89c981330" alt=""></p>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.next7it.com%2Fwp-content%2Fuploads%2F2019%2F05%2FPlain-Text-Password.jpg&f=1&nofb=1&ipt=657fa3be1078e3781ca9daf34f8248fb36cfae57c4fe1ad1e3afd7c89c981330"></p>
 <p>This approach was common in the early internet era around <code>1990-2000</code>, when security was not treated as a serious concern. At that time, strong cryptography was either difficult to use or legally restricted. In the United States during the 1990s, encryption was classified as a munition. Exporting strong cryptographic software outside the country could be illegal. This period is often referred to as the <a href="https://darknetdiaries.com/transcript/12/">crypto wars</a> and is discussed in depth in podcasts like <a href="https://darknetdiaries.com/">Darknet Diaries</a>, which explain how many early security disasters happened simply because the internet was not built with attackers in mind.</p>
 <p>When passwords are stored in plain text, there is no protection at all. If someone gains access to the database, every password is immediately readable. Nothing needs to be cracked or guessed. Since people commonly reuse passwords across email, social media, and shopping sites, a single breach can spread far beyond the original service.</p>
 <p>The <a href="https://techcrunch.com/2009/12/14/rockyou-hack-security-myspace-facebook-passwords/">RockYou breach in 2009</a> is one of the most well known examples. Millions of passwords were leaked because they were stored in plain text. Those passwords later became part of <a href="https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-75.txt">wordlists</a> that attackers still use today in credential stuffing attacks. A mistake made more than a decade ago continues to harm users today.</p>
-<h2 id="2--encryption">2.  Encryption</h2>
+<h2 id="2--encryption">2.  Encryption<a href="#2--encryption" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>To improve on plain text, some systems began encrypting passwords before storing them. Instead of saving the password directly, the system encrypts it using algorithms such as AES-256 or RSA and stores the encrypted output.</p>
-<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fasecuritysite.com%2Fpublic%2Frsa_0002.png&amp;f=1&amp;nofb=1&amp;ipt=bd8075c2a4c192392b4ebc86651dadfa5e5499bfb5e55a570fe2b80963c3109e" alt=""></p>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fasecuritysite.com%2Fpublic%2Frsa_0002.png&f=1&nofb=1&ipt=bd8075c2a4c192392b4ebc86651dadfa5e5499bfb5e55a570fe2b80963c3109e"></p>
 <p>At first glance, this looks secure. The password is no longer readable. However, encryption has one unavoidable requirement. It needs a key.</p>
 <p>That key must be stored somewhere so the application can decrypt the password when needed. If an attacker ever gains access to both the database and the encryption key, every password can be decrypted instantly.</p>
 <p>If you want to try it for your self visit <a href="https://encrypt-online.com/tools/rsa-encryption">encrypt-online</a>.</p>
@@ -208,164 +267,173 @@ LJ6qHjV42Zr/ccB/2vbovk5iQie1G1HjXc6TUzcmnkykklwsc+cSHij9eOXozhV3
 vkYsm25gHOZBU5pVKwDlqcM=
 -----END PRIVATE KEY-----
 </code></pre><p>This has happened in real breaches. Encryption keys have been discovered hard coded in application source code, stored alongside databases, or exposed through backups and cloud misconfigurations. Once the key is compromised, encryption provides little protection.</p>
-<p><img src="https://i.ibb.co/vx0gr1Xp/Pasted-image-20260131141814.png" alt=""></p>
+<p><img src="https://i.ibb.co/vx0gr1Xp/Pasted-image-20260131141814.png"></p>
 <p>The <a href="https://dehashed.com/insights/adobe-data-breach-2013-october">Adobe breach in 2013</a> is a well known example. Adobe used reversible encryption instead of proper password hashing. Once attackers understood how the encryption worked, millions of passwords were exposed. That incident became a major lesson for the industry.</p>
 <p>Encryption is designed for data that must be recovered later, such as files or messages. Passwords should never need to be recovered. They only need to be verified.</p>
-<h2 id="3-hashing">3. Hashing</h2>
+<h2 id="3-hashing">3. Hashing<a href="#3-hashing" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Hashing marked a major improvement. Instead of encrypting passwords, systems began converting them into fixed length values using hash functions. A password hashed with MD5 or SHA-1 cannot be reversed back into the original text.</p>
 <p>Early hashing algorithms like MD5, SHA-1, and later SHA-256 were designed to be fast. Their original purpose was file integrity checking, not password protection.</p>
 <p>That speed became the weakness. Modern CPUs and GPUs can compute millions or even billions of hashes per second. Attackers simply try large lists of common passwords until they find matches.</p>
 <p>Huge databases of precomputed hashes already exit  online like <a href="https://crackstation.net/">CrackStation</a>. If a password appears in one of those lists, it can often be identified almost instantly. This is why many older breaches were devastating even though passwords were technically hashed.</p>
 <pre tabindex="0"><code class="language-md5" data-lang="md5">5f4dcc3b5aa765d61d8327deb882cf99
 </code></pre><p>Try to find the original text from this.</p>
-<h2 id="4-hashing-with-salt">4. Hashing with Salt</h2>
+<h2 id="4-hashing-with-salt">4. Hashing with Salt<a href="#4-hashing-with-salt" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Salting was introduced to fix a major flaw in basic hashing. A salt is a random value added to a password before hashing it. Even if two people use the same password, their stored hashes will be different.</p>
-<p><img src="https://i.ibb.co/XfxQq3mx/hahahah.png" alt="">
+<p><img src="https://i.ibb.co/XfxQq3mx/hahahah.png">
 For example, the password  hashed with SHA-256 will always produce the same result. When a unique salt is added, the output becomes completely different for every user.</p>
 <pre tabindex="0"><code class="language-sha-256" data-lang="sha-256">Salt + word + hashing = unique value
 </code></pre><p>This change made precomputed hash tables useless and forced attackers to crack each password individually. It significantly raised the cost of attacks and stopped many large scale compromises.</p>
 <p>Salting became common after repeated breaches showed that unsalted hashes were too easy to crack. However, if the hashing algorithm is still fast, attackers can continue guessing passwords quickly using modern hardware.</p>
-<h2 id="5-slow-hashing">5. Slow Hashing</h2>
+<h2 id="5-slow-hashing">5. Slow Hashing<a href="#5-slow-hashing" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>To address the speed problem, password specific hashing algorithms were created. These include bcrypt, scrypt, PBKDF2, and Argon2.</p>
-<p><img src="https://i.ibb.co/W9q06vZ/Pasted-image-20260130185458.png" alt=""></p>
+<p><img src="https://i.ibb.co/W9q06vZ/Pasted-image-20260130185458.png"></p>
 <p>These algorithms are intentionally slow. Each password guess takes noticeable time and often uses large amounts of memory. This makes brute force attacks expensive and slow, even when attackers use GPUs or specialized hardware.</p>
 <p>They also include salting by default and allow systems to adjust the cost factor over time. As computers get faster, systems can increase the difficulty without forcing users to change their passwords.</p>
 <p>Most modern applications that take security seriously use one of these methods today. Even if a database is stolen, cracking passwords becomes difficult and sometimes impractical.</p>
-<h2 id="6-not-storing-passwords-at-all">6. Not Storing Passwords at All</h2>
+<h2 id="6-not-storing-passwords-at-all">6. Not Storing Passwords at All<a href="#6-not-storing-passwords-at-all" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The safest password is the one that does not exist.</p>
-<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmattermost.com%2Fwp-content%2Fuploads%2F2022%2F12%2F03_Google_GitHub_Login%402x.png&amp;f=1&amp;nofb=1&amp;ipt=4f5724fa954b529c6cead77d873389c9e7ef808d57996a42aaedef352e9a2699" alt=""></p>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmattermost.com%2Fwp-content%2Fuploads%2F2022%2F12%2F03_Google_GitHub_Login%402x.png&f=1&nofb=1&ipt=4f5724fa954b529c6cead77d873389c9e7ef808d57996a42aaedef352e9a2699"></p>
 <p>Many modern systems avoid traditional passwords entirely. They use technologies like time based one time passwords, hardware security keys, passkeys built into browsers and phones, or third party authentication providers such as Google or GitHub.</p>
 <p>Because there is no password database, there is nothing useful to steal. Old leaked passwords cannot be reused, and phishing attacks become much harder.</p>
 <p>This approach does introduce challenges like device loss and account recovery, but when designed properly it removes one of the most common causes of real world breaches.</p>
 <hr>
 <p>Passwords should never be readable, never reversible, and never easy to guess. Most real breaches are not caused by advanced hacking techniques. They happen because basic design decisions were made years earlier and never corrected. Understanding how password storage evolved explains why modern systems work the way they do today.If you like to read more on this there is a amazin article on <a href="https://dojowithrenan.medium.com/the-5-factors-of-authentication-bcb79d354c13">medium by Renan Dias</a></p>
 
-        </div>
-      </article>
+      </div></div>
 
-      <hr />
-
-      <div class="post-info">
-        
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
-
-        <span class="tag"><a href="http://localhost:1313/tags/passwords/">passwords</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/infosec/">infosec</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/blue-team/">blue-team</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/hashing/">hashing</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/breaches/">breaches</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
-        
-    </p>
-
-        
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="http://localhost:1313/categories/defensive-security/">Defensive Security</a></span>
-        <span class="tag"><a href="http://localhost:1313/categories/identity-security/">Identity Security</a></span>
-        
-    </p>
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="http://localhost:1313/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/" class="button inline prev">
+        &lt; [<span class="button__text">How Iran Shut Down the Internet: A Technical Analysis of Centralized Network Control</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/" class="button inline next">
+         [<span class="button__text">What Happens If You Import os on LeetCode?</span>] &gt;
+      </a>
+    
+  </div>
+</div>
 
 
-        <p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          1124 Words
-        </p>
+  
 
-        <p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-            <line x1="16" y1="2" x2="16" y2="6"></line>
-            <line x1="8" y1="2" x2="8" y2="6"></line>
-            <line x1="3" y1="10" x2="21" y2="10"></line>
-          </svg>
-          
-            2026-01-31 05:30
-          
+  
+    
 
-           
-            
-          
-        </p>
-      </div>
+  
+</article>
 
-      
-    <div class="pagination">
-        
-
-        <div class="pagination__buttons">
-            
-            <span class="button previous">
-                <a href="http://localhost:1313/posts/how-iran-shut-down-the-internet-a-technical-analysis-of-centralized-network-control/">
-                    <span class="button__icon">←</span>
-                    <span class="button__text">How Iran Shut Down the Internet: A Technical Analysis of Centralized Network Control</span>
-                </a>
-            </span>
-            
-
-            
-            <span class="button next">
-                <a href="http://localhost:1313/posts/what-happens-if-you-import-os-on-leetcode/">
-                    <span class="button__text">What Happens If You Import os on LeetCode?</span>
-                    <span class="button__icon">→</span>
-                </a>
-            </span>
-            
-        </div>
-    </div>
-
-
-      
-
-      
-
-      
-
-    </main>
   </div>
 
-
-            
-                <footer class="footer">
+  
+    <footer class="footer">
+  <div class="footer__inner">
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            
-            <span><a href="http://localhost:1313/"></a></span>
-            <span></span>
-            
-            
-        </div>
-    </div>
+      <div class="copyright copyright--user">
+        <span>© 1337 w3nch</span>
     
-    
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by Hugo</span>
-        </div>
-    </div>
-    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
 
-            
-        </div>
-
-        
-
-
-
-<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
 
 
 
 
-    </body>
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+<script>
+(function() {
+  const themes = {
+    terminal: {
+      '--background': '#1a170f',
+      '--foreground': '#eceae5',
+      '--accent': '#eec35e'
+    },
+    latte: {
+      '--background': '#eff1f5',
+      '--foreground': '#4c4f69',
+      '--accent': '#dc8a78'
+    },
+    frappe: {
+      '--background': '#303446',
+      '--foreground': '#c6d0f5',
+      '--accent': '#f2d5cf'
+    },
+    macchiato: {
+      '--background': '#24273a',
+      '--foreground': '#cad3f5',
+      '--accent': '#f4dbd6'
+    },
+    mocha: {
+      '--background': '#1e1e2e',
+      '--foreground': '#cdd6f4',
+      '--accent': '#f5e0dc'
+    },
+    paper: {
+      '--background': '#faf9f6',
+      '--foreground': '#2d2d2d',
+      '--accent': '#4a4a4a'
+    }
+  };
+
+  const saved = localStorage.getItem('terminal-theme') || 'terminal';
+  function applyTheme(name) {
+    const t = themes[name] || themes.terminal;
+    for (const [k, v] of Object.entries(t)) {
+      document.documentElement.style.setProperty(k, v);
+    }
+    localStorage.setItem('terminal-theme', name);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === name);
+    });
+  }
+
+  function createButtons() {
+    const nav = document.querySelector('.header__inner');
+    if (!nav) return;
+    const div = document.createElement('div');
+    div.className = 'theme-switcher';
+    div.style.cssText = 'display:flex;gap:8px;align-items:center;margin-left:12px;';
+    Object.keys(themes).forEach(name => {
+      const btn = document.createElement('button');
+      btn.className = 'theme-btn';
+      btn.dataset.theme = name;
+      btn.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+      btn.style.cssText = 'padding:4px 10px;font-size:0.75rem;border-width:2px;';
+      btn.onclick = () => applyTheme(name);
+      div.appendChild(btn);
+    });
+    nav.appendChild(div);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { createButtons(); applyTheme(saved); });
+  } else {
+    createButtons();
+    applyTheme(saved);
+  }
+})();
+</script>
+</body>
 </html>

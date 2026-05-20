@@ -5,7 +5,8 @@
     <link>http://localhost:1313/tags/powershell/</link>
     <description>Recent content in Powershell on Hello w3nch</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>© 1337 w3nch</copyright>
     <lastBuildDate>Tue, 03 Feb 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
