@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="home-hero">
+  <h1 class="home-title">{{ $.Site.Params.homeTitle | default "Hello, Friend." }}</h1>
+  <p class="home-subtitle">{{ $.Site.Params.homeSubtitle | default "Breaking things to understand them." }}</p>
+
+  <div class="social-links">
+    <a href="https://cyberdefenders.org" target="_blank" class="social-link">CyberDefenders</a>
+    <a href="https://app.hackthebox.com" target="_blank" class="social-link">HackTheBox</a>
+    <a href="https://letsdefend.io" target="_blank" class="social-link">LetsDefend</a>
+    <a href="https://github.com/w3nch" target="_blank" class="social-link">GitHub</a>
+  </div>
+</div>
+{{ end }}

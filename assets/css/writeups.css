@@ -7,3 +7,39 @@
   opacity: 0.8;
   margin-right: 0.6rem;
 }
+
+.home-hero {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.home-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-link {
+  padding: 8px 16px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  transition: background 0.15s linear;
+}
+
+.social-link:hover {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
